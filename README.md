@@ -16,7 +16,6 @@ I'm an engineering leader with **9.5 years of experience** in backend developmen
 - ⚡ Optimized performance and cut pre-release times from hours to minutes
 - 🎯 Focus: Building systems that are scalable, secure, and reliable
 - 📝 Passionate about mentoring developers and conducting mock interviews
-- 🌐 Visit my website: [0xdps.xyz](https://0xdps.xyz)
 
 ## 🛠️ Tech Stack
 
@@ -42,15 +41,15 @@ I'm an engineering leader with **9.5 years of experience** in backend developmen
 
 - 🌐 Website: [0xdps.xyz](https://0xdps.xyz)
 - 📧 Email: dps.manit@gmail.com
-- 💼 LinkedIn: [devendrapratap02](https://linkedin.com/in/devendrapratap02)
-- 🐦 Twitter: [@_devendrapratap](https://twitter.com/_devendrapratap)
-- ✍️ Medium: [@devendrapratap02](https://medium.com/@devendrapratap02)
-- 📅 Book a call: [topmate.io/devendrapratap02](https://topmate.io/devendrapratap02)
-- ☕ Support: [buymeacoffee.com/devendrapratap02](https://buymeacoffee.com/devendrapratap02)
+- 💼 LinkedIn: [0xdps](https://linkedin.com/in/0xdps)
+- 🐦 Twitter: [@0xdps](https://twitter.com/0xdps)
+- ✍️ Medium: [@0xdps](https://medium.com/@0xdps)
+- 📅 Book a call: [topmate.io/xdps02](https://topmate.io/xdps02)
+- ☕ Support: [buymeacoffee.com/0xdps](https://buymeacoffee.com/0xdps)
 
 ## 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=devendrapratap02&show_icons=true&theme=radical)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=0xdps&show_icons=true&theme=radical)
 
 ---
 
