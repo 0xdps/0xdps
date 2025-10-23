@@ -44,7 +44,7 @@ I'm an engineering leader with **9.5 years of experience** in backend developmen
 - 💼 LinkedIn: [0xdps](https://linkedin.com/in/0xdps)
 - 🐦 Twitter: [@0xdps](https://twitter.com/0xdps)
 - ✍️ Medium: [@0xdps](https://medium.com/@0xdps)
-- 📅 Book a call: [topmate.io/xdps02](https://topmate.io/xdps02)
+- 📅 Book a call: [topmate.io/i0xdps](https://topmate.io/i0xdps)
 - ☕ Support: [buymeacoffee.com/0xdps](https://buymeacoffee.com/0xdps)
 
 ## 📊 GitHub Stats
