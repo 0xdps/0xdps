@@ -51,41 +51,4 @@ I'm an engineering leader with **9.5 years of experience** in backend developmen
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=0xdps&show_icons=true&theme=radical)
 
----
-
-## 🏗️ Build System
-
-Uses **build-time rendering** with industry-standard tools for fast page loads and better SEO.
-
-**Commands:**
-```bash
-npm run build     # Generate & minify everything
-npm run dev       # Watch + serve with live reload on port 8000
-npm run serve     # Just serve (no watching)
-```
-
-**Tools:**
-- **Handlebars** - Clean templating engine
-- **esbuild** - Fast CSS/JS minification
-- **html-minifier-terser** - HTML minification
-- **npm-run-all** - Parallel task execution
-- **chokidar** - File watching
-- **reload** - Live browser reload
-
-**Workflow:**
-1. Edit `data/site-data.json` or templates
-2. Run `npm run build`
-3. Deploy
-
-**What happens (optimized with parallelization):**
-1. **Parallel** (runs simultaneously):
-   - `esbuild` minifies CSS (~10ms)
-   - `esbuild` minifies JS (~10ms)
-   - Handlebars renders HTML from template
-2. **Sequential** (waits for step 1):
-   - `html-minifier-terser` minifies HTML
-3. Result: Optimized site (~35KB) in **~750ms**
-
----
-
 💡 *"Good engineering is about clarity — in systems and in communication."*
