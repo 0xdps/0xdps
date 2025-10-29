@@ -53,4 +53,29 @@ I'm an engineering leader with **9.5 years of experience** in backend developmen
 
 ---
 
+## 🏗️ Build System
+
+Uses **build-time rendering** for fast page loads and better SEO.
+
+**Commands:**
+```bash
+npm run build     # Generate index.html
+npm run dev       # Watch mode (auto-rebuild)
+npm run serve     # Local server on port 8000
+```
+
+**Workflow:**
+1. Edit `data/site-data.json`
+2. Run `npm run build`
+3. Deploy
+
+**Architecture:**
+- `data/site-data.json` → Content source
+- `index.template.html` → Template with placeholders
+- `build.js` → Generates static `index.html` + minifies CSS/JS
+- `assets/js/scripts.js` → Theme toggle & modals only
+- Minified assets: `styles.min.css` & `scripts.min.js` (auto-generated)
+
+---
+
 💡 *"Good engineering is about clarity — in systems and in communication."*
