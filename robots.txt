@@ -1,0 +1,15 @@
+# robots.txt for dps.codes
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://dps.codes/sitemap.xml
+
+# Block access to admin/private areas (if any in future)
+Disallow: /private/
+Disallow: /.git/
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1
+
