@@ -1,6 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Build outputs (generated files)
 # Uncomment if you want to exclude the generated index.html from git

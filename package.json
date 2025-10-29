@@ -2,11 +2,16 @@
   "name": "0xdps-portfolio",
   "version": "2.0.0",
   "description": "Personal portfolio website for Devendra Pratap Singh - Static site with build-time rendering",
-  "main": "build.js",
+  "type": "module",
   "scripts": {
-    "build": "node build.js",
-    "dev": "node watch.js",
-    "serve": "python3 -m http.server 8000"
+    "minify:css": "esbuild assets/css/styles.css --minify --outfile=assets/css/styles.min.css",
+    "minify:js": "esbuild assets/js/scripts.js --minify --outfile=assets/js/scripts.min.js",
+    "generate:html": "node build.js",
+    "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o index.html index.html",
+    "build": "npm-run-all --parallel minify:css minify:js generate:html --sequential minify:html",
+    "watch": "chokidar 'data/site-data.json' 'index.template.html' 'assets/css/styles.css' 'assets/js/scripts.js' -c 'npm run build'",
+    "serve": "reload -b -p 8000 -d .",
+    "dev": "npm-run-all --parallel watch serve"
   },
   "keywords": [
     "portfolio",
@@ -15,9 +20,15 @@
   ],
   "author": "Devendra Pratap Singh",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "esbuild": "^0.19.0",
+    "handlebars": "^4.7.8",
+    "html-minifier-terser": "^7.2.0",
+    "npm-run-all": "^4.1.5",
+    "reload": "^3.4.2"
+  },
   "engines": {
     "node": ">=14.0.0"
   }
 }
-

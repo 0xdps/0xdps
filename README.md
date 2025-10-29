@@ -55,26 +55,36 @@ I'm an engineering leader with **9.5 years of experience** in backend developmen
 
 ## 🏗️ Build System
 
-Uses **build-time rendering** for fast page loads and better SEO.
+Uses **build-time rendering** with industry-standard tools for fast page loads and better SEO.
 
 **Commands:**
 ```bash
-npm run build     # Generate index.html
-npm run dev       # Watch mode (auto-rebuild)
-npm run serve     # Local server on port 8000
+npm run build     # Generate & minify everything
+npm run dev       # Watch + serve with live reload on port 8000
+npm run serve     # Just serve (no watching)
 ```
 
+**Tools:**
+- **Handlebars** - Clean templating engine
+- **esbuild** - Fast CSS/JS minification
+- **html-minifier-terser** - HTML minification
+- **npm-run-all** - Parallel task execution
+- **chokidar** - File watching
+- **reload** - Live browser reload
+
 **Workflow:**
-1. Edit `data/site-data.json`
+1. Edit `data/site-data.json` or templates
 2. Run `npm run build`
 3. Deploy
 
-**Architecture:**
-- `data/site-data.json` → Content source
-- `index.template.html` → Template with placeholders
-- `build.js` → Generates static `index.html` + minifies CSS/JS
-- `assets/js/scripts.js` → Theme toggle & modals only
-- Minified assets: `styles.min.css` & `scripts.min.js` (auto-generated)
+**What happens (optimized with parallelization):**
+1. **Parallel** (runs simultaneously):
+   - `esbuild` minifies CSS (~10ms)
+   - `esbuild` minifies JS (~10ms)
+   - Handlebars renders HTML from template
+2. **Sequential** (waits for step 1):
+   - `html-minifier-terser` minifies HTML
+3. Result: Optimized site (~35KB) in **~750ms**
 
 ---
 

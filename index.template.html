@@ -1,301 +1,282 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>Devendra Pratap Singh | Engineering Leader & Backend Specialist</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Devendra Pratap Singh | Engineering Leader & Backend Specialist</title>
+	
+	<!-- SEO Meta Tags -->
+	<meta name="description" content="Devendra Pratap Singh — Engineering leader with 9.5 years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille).">
+	<meta name="keywords" content="Devendra Pratap Singh, backend engineer, engineering manager, cloud migration, AWS to GCP, FarmVille, Zynga">
+	<link rel="canonical" href="https://0xdps.xyz/">
+	
+	<!-- Open Graph / Twitter -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems">
+	<meta property="og:description" content="Engineering leader with 9.5 years experience in backend, cloud migrations and game performance.">
+	<meta property="og:url" content="https://0xdps.xyz/">
+	<meta property="og:image" content="https://0xdps.xyz/og-image.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="author" content="Devendra Pratap Singh">
+	<meta name="robots" content="index, follow">
+	
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+<body data-theme="light">
+	<div class="container">
+		<header>
+			<div class="brand">
+				<div class="logo">{{personal.logo}}</div>
+				<div>
+					<div class="personal-name" style="font-weight:700">{{personal.name}}</div>
+					<div class="personal-title" style="font-size:13px;color:var(--muted)">{{personal.title}}</div>
+				</div>
+			</div>
+			
+			<div style="display:flex;align-items:center;gap:12px">
+				<button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+					<svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+					</svg>
+				</button>
+				
+				<div class="socials" aria-hidden="false">
+					{{#each socialLinks}}
+					<a href="{{url}}" target="_blank" rel="noopener noreferrer" title="{{name}}" aria-label="{{name}}" style="text-decoration:none">
+						{{{socialIcon icon}}}
+					</a>
+					{{/each}}
+				</div>
+			</div>
+		</header>
 
-		<!-- Primary SEO -->
-		<title>Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems</title>
-		<meta
-			name="description"
-			content="Devendra Pratap Singh — Engineering leader with 9.5 years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille). I design scalable systems, drive architecture, and mentor engineering teams. Based in Delhi NCR." />
-		<meta
-			name="keywords"
-			content="Devendra Pratap Singh, backend engineer, engineering manager, cloud migration, AWS to GCP, FarmVille, Zynga, Python, Node.js, Golang, system design, distributed systems, DevOps, Delhi NCR" />
-		<link rel="canonical" href="https://0xdps.xyz/" />
+		<main>
+			<!-- Hero Section -->
+			<section class="hero">
+				<div class="hero-left">
+					<h1 class="personal-tagline">{{personal.tagline}}</h1>
+					<p class="lead personal-description">{{personal.description}}</p>
+					
+					<div class="cta">
+						<a href="mailto:{{personal.email}}" class="btn btn-primary contact-email">Email Me</a>
+						<a href="{{personal.resumeUrl}}" class="btn btn-ghost contact-resume">Download Resume</a>
+					</div>
+					
+					<div class="personal-location" style="margin-top:12px;font-size:13px;color:var(--muted)">
+						{{personal.location}}
+					</div>
+				</div>
+				
+				<div class="hero-right" style="background-image:url('assets/profile.webp');background-size:cover;background-position:center"></div>
+			</section>
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems" />
-		<meta
-			property="og:description"
-			content="Engineering leader with 9.5 years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille). I design scalable systems and mentor engineering teams. Based in Delhi NCR." />
-		<meta property="og:url" content="https://0xdps.xyz/" />
-		<meta property="og:site_name" content="Devendra Pratap Singh" />
-		<meta property="og:image" content="https://0xdps.xyz/og-image.png" />
-		<meta property="og:locale" content="en_IN" />
-
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@your_twitter_handle" />
-		<meta name="twitter:creator" content="@your_twitter_handle" />
-		<meta name="twitter:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems" />
-		<meta
-			name="twitter:description"
-			content="Engineering leader with 9.5 years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille). Based in Delhi NCR." />
-		<meta name="twitter:image" content="https://0xdps.xyz/og-image.png" />
-
-		<!-- Misc -->
-		<meta name="author" content="Devendra Pratap Singh" />
-		<meta name="robots" content="index, follow" />
-
-		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-		<link rel="stylesheet" href="assets/css/styles.min.css" />
-
-		<style>
-			/* Inline styles for critical above-the-fold content can go here if needed */
-		</style>
-	</head>
-	<body data-theme="light">
-		<div class="container">
-			<header>
-				<div class="brand">
-					<div class="logo">{{PERSONAL_LOGO}}</div>
+			<!-- Services Section -->
+			{{#if services}}
+			<section class="card" style="margin-top:18px">
+				<div style="display:flex;align-items:center;justify-content:space-between">
 					<div>
-						<div class="personal-name" style="font-weight: 700">{{PERSONAL_NAME}}</div>
-						<div class="personal-title" style="font-size: 13px; color: var(--muted)">
-							{{PERSONAL_TITLE}}
-						</div>
+						<div style="font-weight:700">{{services.title}}</div>
+						<div style="color:var(--muted);font-size:13px;margin-top:6px">{{services.subtitle}}</div>
+					</div>
+					<div style="display:flex;gap:8px;align-items:center">
+						<a class="btn btn-primary" href="{{services.topmateUrl}}" target="_blank" rel="noopener">Book on Topmate</a>
 					</div>
 				</div>
+				
+				<div class="services" style="margin-top:12px">
+					{{#each services.offerings}}
+					<div class="service-item" style="display:flex; {{#unless @last}}border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:12px;{{/unless}}">
+						<div style="width:34px;height:34px;border-radius:8px;background:rgba(20,184,166,.12);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)">
+							{{icon}}
+						</div>
+						<div>
+							<h4>{{title}}</h4>
+							<div class="service-desc">{{description}}</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</section>
+			{{/if}}
 
-				<div style="display: flex; align-items: center; gap: 12px">
-					<!-- Theme toggle as an icon (sun / moon) -->
-					<button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
-						<!-- moon icon initially (for dark toggle) -->
-						<svg
-							id="themeIcon"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.6">
-							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-						</svg>
-					</button>
-
-					<!-- social links -->
-					<div class="socials" aria-hidden="false">
-						{{SOCIAL_LINKS}}
+			<!-- About Section -->
+			{{#if about}}
+			<section class="card" style="margin-top:18px">
+				<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+					<div>
+						<div style="font-weight:700;font-size:20px">{{about.title}}</div>
+						<div style="color:var(--muted);font-size:14px;margin-top:4px">{{about.subtitle}}</div>
 					</div>
 				</div>
-			</header>
-
-			<main>
-				<section class="hero">
-					<div class="hero-left">
-						<h1 class="personal-tagline">{{PERSONAL_TAGLINE}}</h1>
-						<p class="lead personal-description">
-							{{PERSONAL_DESCRIPTION}}
-						</p>
-
-						<div class="cta">
-							<a href="mailto:{{PERSONAL_EMAIL}}" class="btn btn-primary contact-email">Email Me</a>
-							<a href="{{PERSONAL_RESUME_URL}}" class="btn btn-ghost contact-resume">Download Resume</a>
-						</div>
-
-						<div class="personal-location" style="margin-top: 12px; font-size: 13px; color: var(--muted)">
-							{{PERSONAL_LOCATION}}
-						</div>
+				
+				<div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start">
+					<div>
+						{{#each about.description}}
+						<p style="margin:0 0 16px 0;line-height:1.6">{{this}}</p>
+						{{/each}}
 					</div>
-
-					<div
-						class="hero-right"
-						style="
-							background-image: url(&quot;assets/profile.webp&quot;);
-							background-size: cover;
-							background-position: center;
-						"></div>
-				</section>
-
-				<!-- Services Section -->
-				{{SERVICES_SECTION}}
-
-				<!-- About Section -->
-				{{ABOUT_SECTION}}
-
-				<!-- Projects Section -->
-				{{PROJECTS_SECTION}}
-
-				<!-- Side Projects Section -->
-				{{SIDE_PROJECTS_SECTION}}
-
-				<!-- Experience Section -->
-				{{EXPERIENCE_SECTION}}
-
-				<footer>
-					© <span id="year">{{CURRENT_YEAR}}</span> Devendra Pratap — Built with clarity. •
-					<a href="#privacy" onclick="togglePrivacy()">Privacy</a>
-				</footer>
-
-				<!-- Privacy Modal/Section (hidden by default) -->
-				<div
-					id="privacy-modal"
-					style="
-						display: none;
-						position: fixed;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background: rgba(0, 0, 0, 0.8);
-						z-index: 1000;
-					">
-					<div
-						style="
-							position: absolute;
-							top: 50%;
-							left: 50%;
-							transform: translate(-50%, -50%);
-							background: var(--card);
-							border-radius: 16px;
-							max-width: 600px;
-							max-height: 80vh;
-							overflow: hidden;
-							box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-						">
-						<div style="padding: 32px; max-height: 80vh; overflow-y: auto">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px">
-								<h2 style="margin: 0; color: var(--text)">Privacy Policy</h2>
-								<button
-									onclick="togglePrivacy()"
-									style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--muted)">
-									&times;
-								</button>
+					
+					<div>
+						<div style="margin-bottom:16px">
+							<h4 style="margin:0 0 8px 0;font-size:14px;color:var(--muted)">Core Technologies</h4>
+							<div style="display:flex;flex-wrap:wrap;gap:6px">
+								{{#each about.technologies}}{{{chip this}}}{{/each}}
 							</div>
-
-							<div style="color: var(--text); line-height: 1.6">
-								<p><strong>Last updated:</strong> <span id="privacy-date">{{PRIVACY_DATE}}</span></p>
-
-								<h3 style="color: var(--accent); margin-top: 24px; margin-bottom: 12px">Information Collection</h3>
-								<p>
-									This website is a static portfolio site. I don't collect, store, or process any personal data. No
-									cookies, analytics, or tracking scripts are used.
-								</p>
-
-								<h3 style="color: var(--accent); margin-top: 24px; margin-bottom: 12px">Contact Information</h3>
-								<p>
-									When you contact me via email or social media links, your communication is handled according to the
-									respective platform's privacy policies (Gmail, LinkedIn, GitHub, etc.).
-								</p>
-
-								<h3 style="color: var(--accent); margin-top: 24px; margin-bottom: 12px">Third-Party Services</h3>
-								<p>
-									This site may link to external services (Topmate, social media platforms). These services have their
-									own privacy policies which govern their data handling practices.
-								</p>
-
-								<h3 style="color: var(--accent); margin-top: 24px; margin-bottom: 12px">Data Security</h3>
-								<p>
-									Since no personal data is collected or stored on this website, there are no data security concerns
-									related to this site specifically.
-								</p>
-
-								<h3 style="color: var(--accent); margin-top: 24px; margin-bottom: 12px">Changes to Privacy Policy</h3>
-								<p>Any updates to this privacy policy will be reflected on this page with a new "last updated" date.</p>
-
-								<h3 style="color: var(--accent); margin-top: 24px; margin-bottom: 12px">Contact</h3>
-								<p>
-									For privacy-related questions, contact me at:
-									<a href="mailto:{{PERSONAL_EMAIL}}" id="privacy-email-link" style="color: var(--accent)">{{PERSONAL_EMAIL}}</a>
-								</p>
+						</div>
+						
+						<div>
+							<h4 style="margin:0 0 8px 0;font-size:14px;color:var(--muted)">Interests</h4>
+							<div style="display:flex;flex-wrap:wrap;gap:6px">
+								{{#each about.interests}}{{{chip this}}}{{/each}}
 							</div>
 						</div>
 					</div>
 				</div>
-			</main>
-		</div>
+			</section>
+			{{/if}}
 
-		<!-- JavaScript for interactivity only (theme toggle and modals) -->
-		<script src="assets/js/scripts.min.js"></script>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@graph": [
-					{
-						"@type": "Person",
-						"@id": "https://0xdps.xyz/#person",
-						"name": "Devendra Pratap Singh",
-						"url": "https://0xdps.xyz/",
-						"sameAs": [
-							"https://www.linkedin.com/in/0xdps",
-							"https://github.com/0xdps",
-							"https://twitter.com/0xdps",
-							"https://medium.com/@0xdps",
-							"https://topmate.io/i0xdps"
-						],
-						"jobTitle": "Engineering Leader / Senior Backend Engineer",
-						"worksFor": {
-							"@type": "Organization",
-							"name": "Faze Technologies"
-						},
-						"alumniOf": {
-							"@type": "CollegeOrUniversity",
-							"name": "National Institute of Technology, Bhopal"
-						},
-						"address": {
-							"@type": "PostalAddress",
-							"addressLocality": "Delhi NCR",
-							"addressCountry": "IN"
-						},
-						"description": "Engineering leader with 9.5 years of experience in backend engineering, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille). Specializes in Python, Node.js, Golang, distributed systems and DevOps."
-					},
-					{
-						"@type": "WebSite",
-						"url": "https://0xdps.xyz/",
-						"name": "Devendra Pratap Singh",
-						"publisher": {
-							"@id": "https://0xdps.xyz/"
-						},
-						"potentialAction": {
-							"@type": "SearchAction",
-							"target": "https://0xdps.xyz/?s={search_term_string}",
-							"query-input": "required name=search_term_string"
-						}
-					},
-					{
-						"@type": "WebPage",
-						"@id": "https://0xdps.xyz/",
-						"url": "https://0xdps.xyz/",
-						"name": "Home - Devendra Pratap Singh",
-						"isPartOf": {
-							"@id": "https://0xdps.xyz/"
-						},
-						"description": "Portfolio and personal site of Devendra Pratap Singh — engineering leader focused on backend, cloud migrations and system design."
-					},
-					{
-						"@type": "ItemList",
-						"@id": "https://0xdps.xyz/",
-						"name": "Featured Projects",
-						"itemListElement": [
-							{
-								"@type": "ListItem",
-								"position": 1,
-								"url": "https://0xdps.xyz/projects/aws-gcp-migration",
-								"name": "AWS → GCP Migration"
-							},
-							{
-								"@type": "ListItem",
-								"position": 2,
-								"url": "https://0xdps.xyz/projects/nft-transaction-rearchitecture",
-								"name": "Re-architecting NFT Transactions"
-							},
-							{
-								"@type": "ListItem",
-								"position": 3,
-								"url": "https://0xdps.xyz/projects/farmville-memory-optimization",
-								"name": "FarmVille 2 Memory Optimization"
-							}
-						]
-					}
-				]
-			}
-		</script>
-		<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="0xdps" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-	</body>
+			<!-- Projects Section -->
+			{{#if projects}}
+			<section class="card" style="margin-top:18px">
+				<div style="margin-bottom:20px">
+					<div style="font-weight:700;font-size:20px">{{projects.title}}</div>
+					<div style="color:var(--muted);font-size:14px;margin-top:4px">{{projects.subtitle}}</div>
+				</div>
+				
+				<div style="display:flex;flex-direction:column;gap:16px">
+					{{#each projects.items}}
+					<div class="project">
+						<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+							<h3>{{title}}</h3>
+							<div style="display:flex;gap:6px">
+								{{#each technologies}}{{{chip this}}}{{/each}}
+							</div>
+						</div>
+						<p>{{description}}</p>
+						<div style="margin-top:8px;font-size:13px;color:var(--muted)">
+							Key achievements: {{achievements}}
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</section>
+			{{/if}}
+
+			<!-- Side Projects Section -->
+			{{#if sideProjects}}
+			<section class="card" style="margin-top:18px">
+				<div style="margin-bottom:18px">
+					<div style="font-weight:700;font-size:20px">{{sideProjects.title}}</div>
+					<div style="color:var(--muted);font-size:14px;margin-top:4px">{{sideProjects.subtitle}}</div>
+				</div>
+				
+				<div style="display:flex;flex-direction:column;gap:14px">
+					{{#each sideProjects.items}}
+					<div class="project" style="padding:12px">
+						<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+							<h3 style="margin:0;font-size:15px">{{name}}</h3>
+							<div style="font-size:12px;color:var(--muted)">{{year}}</div>
+						</div>
+						<div style="display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px 0">
+							{{#each technologies}}{{{chip this}}}{{/each}}
+						</div>
+						<p style="margin:0;color:var(--muted);font-size:14px">{{description}}</p>
+					</div>
+					{{/each}}
+				</div>
+			</section>
+			{{/if}}
+
+			<!-- Experience Section -->
+			{{#if experience}}
+			<section class="card" style="margin-top:18px">
+				<div style="margin-bottom:20px">
+					<div style="font-weight:700;font-size:20px">{{experience.title}}</div>
+					<div style="color:var(--muted);font-size:14px;margin-top:4px">{{experience.subtitle}}</div>
+				</div>
+				
+				<div style="display:flex;flex-direction:column;gap:20px">
+					{{#each experience.items}}
+					<div style="border-left:3px solid var(--accent);padding-left:16px">
+						<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+							<div>
+								<h3 style="margin:0;font-size:16px">{{role}}</h3>
+								<div style="color:var(--accent);font-size:14px;margin-top:2px">{{company}}</div>
+							</div>
+							<div style="font-size:13px;color:var(--muted)">{{period}}</div>
+						</div>
+						
+						<div style="margin-bottom:12px">
+							<div style="display:flex;flex-wrap:wrap;gap:6px">
+								{{#each technologies}}{{{chip this}}}{{/each}}
+							</div>
+						</div>
+						
+						<ul style="margin:0;padding-left:20px;color:var(--muted);font-size:14px">
+							{{#each achievements}}<li>{{this}}</li>{{/each}}
+						</ul>
+					</div>
+					{{/each}}
+				</div>
+			</section>
+			{{/if}}
+
+			<!-- Footer -->
+			<footer>
+				© <span id="year">{{{year}}}</span> Devendra Pratap — Built with clarity. •
+				<a href="#privacy" onclick="togglePrivacy()">Privacy</a>
+			</footer>
+
+			<!-- Privacy Modal -->
+			<div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:1000">
+				<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--card);border-radius:16px;max-width:600px;max-height:80vh;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.3)">
+					<div style="padding:32px;max-height:80vh;overflow-y:auto">
+						<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+							<h2 style="margin:0;color:var(--text)">Privacy Policy</h2>
+							<button onclick="togglePrivacy()" style="background:0 0;border:none;font-size:24px;cursor:pointer;color:var(--muted)">&times;</button>
+						</div>
+						
+						<div style="color:var(--text);line-height:1.6">
+							<p><strong>Last updated:</strong> <span id="privacy-date">{{{date}}}</span></p>
+							
+							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Information Collection</h3>
+							<p>This website is a static portfolio site. I don't collect, store, or process any personal data. No cookies, analytics, or tracking scripts are used.</p>
+							
+							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Contact Information</h3>
+							<p>When you contact me via email or social media links, your communication is handled according to the respective platform's privacy policies (Gmail, LinkedIn, GitHub, etc.).</p>
+							
+							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Third-Party Services</h3>
+							<p>This site may link to external services (Topmate, social media platforms). These services have their own privacy policies which govern their data handling practices.</p>
+							
+							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Data Security</h3>
+							<p>Since no personal data is collected or stored on this website, there are no data security concerns related to this site specifically.</p>
+							
+							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Changes to Privacy Policy</h3>
+							<p>Any updates to this privacy policy will be reflected on this page with a new "last updated" date.</p>
+							
+							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Contact</h3>
+							<p>For privacy-related questions, contact me at: 
+								<a href="mailto:{{personal.email}}" id="privacy-email-link" style="color:var(--accent)">{{personal.email}}</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="assets/js/scripts.min.js"></script>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Devendra Pratap Singh",
+		"url": "https://0xdps.xyz/",
+		"jobTitle": "Engineering Leader / Senior Backend Engineer",
+		"description": "Engineering leader with 9.5 years of experience in backend engineering, cloud migrations and game performance."
+	}
+	</script>
+	<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="0xdps" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
 </html>
-
