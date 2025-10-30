@@ -1,41 +1,47 @@
 # Hi, I'm Devendra Pratap Singh 👋
 
-**Engineering Leader | Backend & Cloud Systems | Ex-Zynga (FarmVille)**
+**Principal Software Engineer @ Spinny | Backend & Cloud Systems | Ex-Zynga (FarmVille) | Ex-BookMyShow**
 
-> Engineering leader turning complex problems into simple systems.
+> Turning complex problems into simple, scalable systems.
 
-I'm an engineering leader with **9.5 years of experience** in backend development, distributed systems, and cloud infrastructure. Specialized in backend architecture, cloud platforms, and mentoring teams. I value pragmatic trade-offs, scalability, and clean design.
+I'm a software engineer with **9+ years of professional experience** in backend development, distributed systems, and cloud infrastructure. Currently at Spinny, building scalable automotive-tech solutions. Specialized in backend architecture, cloud platforms, and engineering leadership. I value pragmatic trade-offs, system scalability, and clean design.
 
 🌍 Based in India • 🌱 Vegetarian • 💡 Believes good engineering is about clarity — in systems and in communication
 
 ## 🚀 About Me
 
-- 💼 Currently **Engineering Manager** with experience leading teams of 10+ engineers
-- 🎮 Spent 5 years at **Zynga** working on FarmVille 2 & 3, scaling to millions of players
-- ☁️ Led **AWS → GCP migration** and re-architected blockchain systems at Faze Technologies
-- ⚡ Optimized performance and cut pre-release times from hours to minutes
-- 🎯 Focus: Building systems that are scalable, secure, and reliable
-- 📝 Passionate about mentoring developers and conducting mock interviews
+- 💼 Currently at **Spinny**, building backend systems for India's largest used car platform
+- 🎮 Spent 5 years at **Zynga** working on FarmVille 2 & 3, optimizing performance for millions of players
+- 🏏 Led engineering initiatives at **Fancraze** (Official Cricket NFT Provider), managing cloud migration and system re-architecture
+- 🎫 Developed identity management systems and monitoring tools at **BookMyShow**
+- ☁️ Led **AWS → GCP migration** and re-architected blockchain systems, reducing transaction times from minutes to seconds
+- ⚡ Optimized game performance (40MB to 20KB memory usage) and cut pre-release times from 2 hours to 15 minutes
+- 🎯 Focus: Building systems across diverse domains — automotive, gaming, fintech, blockchain, entertainment
+- 📝 Passionate about mentoring developers, conducting mock interviews, and technical leadership
 
 ## 🛠️ Tech Stack
 
-**Languages:** Java, Python, Go, Node.js
+**Languages:** Node.js, Python, Golang, Java, JavaScript, C#, PHP
 
-**Frameworks:** Django, Express
+**Frameworks:** Django, FastAPI, Express.js, Koa.js, React, Angular
 
-**Databases:** PostgreSQL, MySQL, Redis, MongoDB
+**Databases:** PostgreSQL, MongoDB, MariaDB, Redis
 
-**Cloud & DevOps:** AWS, GCP, Docker, Kubernetes, Kafka
+**Cloud & DevOps:** GCP, AWS, Docker, Kubernetes
 
-**Tools:** Git, Jenkins, Nginx, Linux
+**Messaging:** Kafka, RabbitMQ
+
+**Other:** ActionScript, Unity, SAP PI
 
 ## 💼 What I Do
 
-- **System Design & Architecture** — Building scalable microservices and distributed systems
-- **Cloud Migration & Infrastructure** — AWS, GCP, containerization, orchestration
-- **Performance Optimization** — Database tuning, caching strategies, load balancing
-- **Team Leadership** — Mentoring engineers, code reviews, technical decision-making
-- **DevOps & Automation** — CI/CD pipelines, infrastructure as code, monitoring
+- **System Architecture & Re-engineering** — Removing blockchain dependencies, database-first architecture, background synchronization
+- **Cloud Migration & Infrastructure** — AWS to GCP migrations, containerization, secret management with GCP Secret Manager
+- **Performance Optimization** — Memory optimization (40MB to 20KB), process improvements (2 hours to 15 minutes), transaction speed optimization
+- **Financial & Accounting Systems** — Comprehensive fund flow tracking, revenue reporting, transparent financial systems
+- **Identity & Access Management** — LDAP integration, universal dashboards, centralized access control
+- **Engineering Leadership** — Team management, technical strategy, mentoring, code reviews
+- **Full-Stack Development** — End-to-end API development, UI components, system integration
 
 ## 📫 Connect with Me
 

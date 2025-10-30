@@ -11,7 +11,7 @@
     "build": "npm-run-all --parallel minify:css minify:js generate:html --sequential minify:html",
     "watch": "chokidar 'data/site-data.json' 'index.template.html' 'assets/css/styles.css' 'assets/js/scripts.js' -c 'npm run build'",
     "serve": "reload -b -p 8000 -d .",
-    "dev": "npm-run-all --parallel watch serve"
+    "dev": "npm-run-all --parallel build watch serve"
   },
   "keywords": [
     "portfolio",
