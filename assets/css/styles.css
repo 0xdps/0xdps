@@ -73,6 +73,8 @@ header {
 .logo {
   width: 56px;
   height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -81,6 +83,7 @@ header {
   color: white;
   font-weight: 700;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .socials {
@@ -702,5 +705,6 @@ footer a:hover {
   #projects .project > div:first-child > div:last-child,
   #experience > div:last-child > div > div:first-child > div:last-child {
     margin-top: 8px !important;
+    justify-content: flex-start !important;
   }
 }
