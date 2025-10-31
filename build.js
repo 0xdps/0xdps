@@ -14,7 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Paths
 const DATA_FILE = path.join(__dirname, 'data', 'site-data.json');
-const TEMPLATE_FILE = path.join(__dirname, 'index.template.html');
+const TEMPLATE_FILE = path.join(__dirname, 'templates', 'index.template.html');
 const OUTPUT_FILE = path.join(__dirname, 'index.html');
 
 /**
@@ -69,8 +69,8 @@ function build() {
 // Generate sitemap from template
 function updateSitemap() {
   try {
-    const SITEMAP_TEMPLATE = './sitemap/sitemap.template.xml';
-    const SITEMAP_XSL_TEMPLATE = './sitemap/sitemap.template.xsl';
+    const SITEMAP_TEMPLATE = './templates/sitemap.template.xml';
+    const SITEMAP_XSL_TEMPLATE = './templates/sitemap.template.xsl';
     const SITEMAP_DEST = './sitemap.xml';
     const SITEMAP_XSL_DEST = './sitemap.xsl';
     const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
