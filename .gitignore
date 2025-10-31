@@ -5,6 +5,10 @@ node_modules/
 # Uncomment if you want to exclude the generated index.html from git
 index.html
 
+# Generated sitemap files (built from templates)
+sitemap.xml
+sitemap.xsl
+
 # Minified assets (generated during build)
 assets/css/*.min.css
 assets/js/*.min.js

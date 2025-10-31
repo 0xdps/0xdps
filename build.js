@@ -61,6 +61,39 @@ function build() {
   // Write output
   fs.writeFileSync(OUTPUT_FILE, html, 'utf-8');
   console.log('✅ HTML generated successfully!\n');
+  
+  // Update sitemap lastmod date
+  updateSitemap();
+}
+
+// Generate sitemap from template
+function updateSitemap() {
+  try {
+    const SITEMAP_TEMPLATE = './sitemap/sitemap.template.xml';
+    const SITEMAP_XSL_TEMPLATE = './sitemap/sitemap.template.xsl';
+    const SITEMAP_DEST = './sitemap.xml';
+    const SITEMAP_XSL_DEST = './sitemap.xsl';
+    const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+    
+    console.log('🗺️ Generating sitemap from template...');
+    
+    // Read template
+    let sitemapTemplate = fs.readFileSync(SITEMAP_TEMPLATE, 'utf-8');
+    
+    // Replace placeholder with current date
+    const sitemap = sitemapTemplate.replace(/{{BUILD_DATE}}/g, currentDate);
+    
+    // Write generated sitemap to root
+    fs.writeFileSync(SITEMAP_DEST, sitemap, 'utf-8');
+    
+    // Copy XSL stylesheet to root
+    const xslContent = fs.readFileSync(SITEMAP_XSL_TEMPLATE, 'utf-8');
+    fs.writeFileSync(SITEMAP_XSL_DEST, xslContent, 'utf-8');
+    
+    console.log(`✅ Sitemap generated with date: ${currentDate}\n`);
+  } catch (error) {
+    console.warn('⚠️ Failed to generate sitemap:', error.message);
+  }
 }
 
 // Run build
