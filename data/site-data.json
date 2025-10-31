@@ -5,7 +5,7 @@
     "logo": "DPS",
     "tagline": "Turning complex problems into simple, scalable systems.",
     "description": "Specialized in backend architecture, cloud platforms, and engineering leadership. Currently building automotive-tech solutions at Spinny. I value pragmatic trade-offs, system scalability, and clean design.",
-    "location": "Based in India • Vegetarian • Believes good engineering is about clarity — in systems and in communication",
+    "location": "🌍 Based in India • 🌱 Vegetarian • 💡 Believes good engineering is about clarity — in systems and in communication",
     "email": "dps.manit@gmail.com",
     "phone": "+91-9424475996",
     "resumeUrl": "./assets/resume/Devendra_Pratap_Singh_Resume.pdf"
@@ -47,14 +47,14 @@
       "SAP PI"
     ],
     "interests": [
-      "System Design",
-      "Microservices Architecture",
-      "Performance Optimization",
-      "DevOps & SRE",
-      "Cloud Migrations",
-      "Observability & Monitoring",
-      "Data Engineering",
-      "Engineering Leadership"
+      "🏗️ System Design",
+      "🔄 Microservices Architecture",
+      "⚡ Performance Optimization",
+      "🔧 DevOps & SRE",
+      "☁️ Cloud Migrations",
+      "🔍 Data Engineering",
+      "📊 Observability & Monitoring",
+      "👥 Engineering Leadership"
     ]
   },
   "services": {
@@ -64,22 +64,22 @@
     "offerings": [
       {
         "icon": "MI",
-        "title": "Mock Interviews (60 min)",
+        "title": "🎯 Mock Interviews (60 min)",
         "description": "Live, structured mock interviews with detailed feedback — system design rounds, backend architecture, and deep dives into Java/Python/Go. Includes comprehensive written notes and personalized improvement roadmap."
       },
       {
         "icon": "1-1",
-        "title": "One-on-One Mentorship (30/60 min)",
+        "title": "👨‍💻 One-on-One Mentorship (30/60 min)",
         "description": "Focused sessions for career guidance, system design walkthroughs, code reviews, and technical leadership advice. Perfect for engineers looking to level up their skills or transition to senior/principal roles."
       },
       {
         "icon": "QD",
-        "title": "Quick Doubt Call (15–20 min)",
+        "title": "⚡ Quick Doubt Call (15–20 min)",
         "description": "Short, focused calls to clear specific technical problems — debugging help, architecture decisions, interview preparation, or career-related questions. Quick and actionable solutions."
       },
       {
         "icon": "SD",
-        "title": "System Design Reviews (45 min)",
+        "title": "🏗️ System Design Reviews (45 min)",
         "description": "Deep dive into your system design approaches, architecture decisions, and scalability considerations. Perfect for preparing for senior+ interviews or validating production system designs."
       }
     ]
@@ -119,7 +119,7 @@
     "subtitle": "Building scalable systems and leading technical initiatives",
     "items": [
       {
-        "role": "Principal Software Engineer",
+        "role": "🚀 Principal Software Engineer",
         "company": "Spinny (India's Largest Used Car Platform)",
         "period": "October 2025 - Present",
         "technologies": ["Python", "Django", "PostgreSQL", "Kafka"],
@@ -131,7 +131,7 @@
         ]
       },
       {
-        "role": "Engineering Manager",
+        "role": "👨‍💼 Engineering Manager",
         "company": "Fancraze (Official Cricket NFT Provider)",
         "period": "April 2024 - August 2025",
         "technologies": ["Node.js", "Golang", "MongoDB", "PostgreSQL", "React"],
@@ -143,7 +143,7 @@
         ]
       },
       {
-        "role": "Software Engineer Developer 2",
+        "role": "🎮 Software Engineer Developer 2",
         "company": "Zynga Gaming",
         "period": "September 2018 - July 2023",
         "technologies": ["ActionScript", "Python", "PHP", "C# Unity", "Node.js", "React"],
@@ -157,7 +157,7 @@
         ]
       },
       {
-        "role": "Software Engineer Developer",
+        "role": "🎬 Software Engineer Developer",
         "company": "BookMyShow",
         "period": "November 2016 - September 2018",
         "technologies": ["Node.js", "Express", "Koa.js", "Python", "Django", "Golang", "PHP", "MongoDB", "MariaDB", "RabbitMQ", "Kafka", "Angular", "React"],
@@ -171,7 +171,7 @@
         ]
       },
       {
-        "role": "Software Engineer Consultant",
+        "role": "💼 Software Engineer Consultant",
         "company": "Incture Technologies",
         "period": "July 2015 - October 2016",
         "technologies": ["SAP PI", "Java", "Node.js", "Angular", "MongoDB"],
@@ -227,18 +227,18 @@
     ]
   },
   "achievements": {
-    "title": "Achievements",
+    "title": "🏆 Achievements",
     "subtitle": "Recognition and accomplishments",
     "items": [
       {
-        "title": "2nd Runner-Up Hackathon @ BookMyShow",
+        "title": "🥉 2nd Runner-Up Hackathon @ BookMyShow",
         "year": "April 2017",
         "description": "Achieved 2nd runner-up position in internal hackathon by developing innovative ticket reselling module solution"
       }
     ]
   },
   "education": {
-    "degree": "B.Tech in Computer Science and Engineering",
+    "degree": "🎓 B.Tech in Computer Science and Engineering",
     "institution": "National Institute of Technology, Bhopal",
     "period": "2011 - 2015",
     "grade": "6.4 CGPA"
