@@ -3,7 +3,7 @@ node_modules/
 
 # Build outputs (generated files)
 # Uncomment if you want to exclude the generated index.html from git
-# index.html
+index.html
 
 # Minified assets (generated during build)
 assets/css/*.min.css
