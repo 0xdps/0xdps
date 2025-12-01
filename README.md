@@ -59,4 +59,8 @@ I'm a software engineer with **9+ years of professional experience** in backend 
 | --- | --- |
 | ![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=0xdps&show_icons=true&theme=radical) | ![GitHub Streak](https://streak-stats.demolab.com?user=0xdps&theme=radical) |
 
+
+![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=0xdps&theme=tokyo-night)
+
+
 💡 *"Good engineering is about clarity — in systems and in communication."*
