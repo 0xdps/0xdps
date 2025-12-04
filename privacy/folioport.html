@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FolioPort</title>
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <style>
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 1px 3px var(--shadow);
+            margin-top: 2rem;
+        }
+        h1, h2 {
+            color: var(--text);
+        }
+        h2 {
+            margin-top: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+        .highlight {
+            background: rgba(20, 184, 166, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .feature-box {
+            background: var(--subtle-bg);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid var(--border-light);
+        }
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="policy-container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / FolioPort
+        </div>
+
+        <h1>FolioPort Privacy Policy</h1>
+        <h2 style="border: none; margin-top: 0.5rem; padding-bottom: 0; font-size: 1rem; color: #666;">Static Portfolio Generator</h2>
+        <p class="last-updated">Last Updated: December 2025</p>
+
+        <h2>Overview</h2>
+        <p>
+            FolioPort is a static portfolio generator that converts public GitHub data into a personal website. 
+            It sources information from your public GitHub profile to create a stunning portfolio site.
+        </p>
+
+        <h2>Information Collected</h2>
+        
+        <h3>Data You Provide</h3>
+        <ul>
+            <li>GitHub username</li>
+            <li>Custom content (bio, links, descriptions)</li>
+            <li>Personalization settings</li>
+        </ul>
+
+        <h3>Public GitHub Data</h3>
+        <p>FolioPort reads only <strong>publicly available</strong> GitHub information:</p>
+        <ul>
+            <li>Public repositories</li>
+            <li>Stars and forks</li>
+            <li>Programming languages used</li>
+            <li>Public contributions</li>
+            <li>README files</li>
+        </ul>
+
+        <h2>Data FolioPort Never Accesses</h2>
+        <div class="highlight">
+            <strong>FolioPort NEVER accesses:</strong>
+        </div>
+        <ul>
+            <li>Private repositories</li>
+            <li>GitHub authentication tokens</li>
+            <li>Email addresses</li>
+            <li>Sensitive project information</li>
+            <li>Private gists or notes</li>
+        </ul>
+
+        <h2>Data Storage</h2>
+        <p>
+            The generated portfolio is a static website. <strong>No persistent data is stored on our servers.</strong>
+        </p>
+        <div class="feature-box">
+            <p><strong>Generated Files:</strong> Stored temporarily during generation, then deleted</p>
+            <p><strong>User Input:</strong> Not stored unless you explicitly save a project configuration</p>
+            <p><strong>Analytics:</strong> None collected by FolioPort</p>
+        </div>
+
+        <h2>Hosting Your Portfolio</h2>
+        <p>
+            You own and host the generated portfolio. Hosting providers may have their own privacy policies:
+        </p>
+        <ul>
+            <li>GitHub Pages</li>
+            <li>Vercel</li>
+            <li>Netlify</li>
+            <li>Your own server</li>
+        </ul>
+        <p>
+            Consult their privacy policies for information about how they handle your portfolio data.
+        </p>
+
+        <h2>Third-Party Services</h2>
+        <p>
+            FolioPort reads data from GitHub's public API. 
+            Refer to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub's Privacy Policy</a> 
+            for details about their data handling.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+            For privacy inquiries, contact us at:<br>
+            <strong>Email:</strong> <a href="mailto:dps.manit@gmail.com">dps.manit@gmail.com</a>
+        </p>
+
+        <hr style="margin-top: 2rem; opacity: 0.3;">
+        <p style="font-size: 0.9rem; color: var(--muted);">
+            <a href="/privacy">← Back to Master Privacy Policy</a>
+        </p>
+    </div>
+    <script>
+        // Sync theme from parent window or localStorage
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+        
+        // Watch for theme changes
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                document.documentElement.setAttribute('data-theme', e.newValue);
+            }
+        });
+        
+        // Check parent window for theme updates
+        setInterval(() => {
+            const parentTheme = localStorage.getItem('theme');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (parentTheme && parentTheme !== currentTheme) {
+                document.documentElement.setAttribute('data-theme', parentTheme);
+            }
+        }, 500);
+        
+        initTheme();
+    </script>
+</body>
+</html>

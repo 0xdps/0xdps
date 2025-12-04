@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Mockly</title>
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <style>
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 1px 3px var(--shadow);
+            margin-top: 2rem;
+        }
+        h1, h2 {
+            color: var(--text);
+        }
+        h2 {
+            margin-top: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+        .highlight {
+            background: rgba(20, 184, 166, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .feature-box {
+            background: var(--subtle-bg);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid var(--border-light);
+        }
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="policy-container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / Mockly
+        </div>
+
+        <h1>Mockly Privacy Policy</h1>
+        <h2 style="border: none; margin-top: 0.5rem; padding-bottom: 0; font-size: 1rem; color: #666;">Mock API Service for Developers</h2>
+        <p class="last-updated">Last Updated: December 2025</p>
+
+        <h2>Overview</h2>
+        <p>
+            Mockly is a mock API service that provides developers with mock endpoints, dynamic responses, 
+            and debugging utilities for API development and testing.
+        </p>
+
+        <h2>Information Collected</h2>
+        
+        <h3>Operational Logs</h3>
+        <p>For service reliability and security, we may log:</p>
+        <ul>
+            <li>Request timestamps</li>
+            <li>IP addresses (standard web server logging)</li>
+            <li>Requested endpoints</li>
+            <li>Error traces (for debugging)</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Important:</strong> Logs are for debugging and abuse prevention only. 
+            No profiling or personalization occurs.
+        </div>
+
+        <h2>Data You Send to Mockly</h2>
+        <p>
+            Customer data sent via API requests is <strong>processed in memory and not retained</strong> 
+            unless explicitly requested with "log mode" for debugging purposes.
+        </p>
+
+        <h2>Personal Data</h2>
+        <p>
+            Mockly does not collect personal identifiable information (PII) unless you explicitly 
+            configure it to log request bodies for debugging.
+        </p>
+
+        <h2>User Accounts (Future)</h2>
+        <p>
+            If Mockly supports authentication or user accounts in the future, a separate privacy 
+            policy update will be published detailing data collection.
+        </p>
+
+        <h2>Third-Party Services</h2>
+        <div class="feature-box">
+            <p><strong>Hosting:</strong> Vercel or Fly.io</p>
+            <p><strong>Optional Analytics:</strong> Privacy-respecting analytics (if enabled)</p>
+            <p><strong>No tracking or profiling:</strong> We do not share user data with advertisers or data brokers</p>
+        </div>
+
+        <h2>Data Retention</h2>
+        <p>
+            Operational logs are typically retained for up to 30 days for debugging and security purposes. 
+            Custom data is not retained unless explicitly stored by the user.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+            For privacy inquiries, contact us at:<br>
+            <strong>Email:</strong> <a href="mailto:dps.manit@gmail.com">dps.manit@gmail.com</a>
+        </p>
+
+        <hr style="margin-top: 2rem; opacity: 0.3;">
+        <p style="font-size: 0.9rem; color: var(--muted);">
+            <a href="/privacy">← Back to Master Privacy Policy</a>
+        </p>
+    </div>
+    <script>
+        // Sync theme from parent window or localStorage
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+        
+        // Watch for theme changes
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                document.documentElement.setAttribute('data-theme', e.newValue);
+            }
+        });
+        
+        // Check parent window for theme updates
+        setInterval(() => {
+            const parentTheme = localStorage.getItem('theme');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (parentTheme && parentTheme !== currentTheme) {
+                document.documentElement.setAttribute('data-theme', parentTheme);
+            }
+        }, 500);
+        
+        initTheme();
+    </script>
+</body>
+</html>
