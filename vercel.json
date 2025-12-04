@@ -4,8 +4,18 @@
   "installCommand": "npm install",
   "framework": null,
   "devCommand": "npm run dev",
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/privacy",
+      "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
