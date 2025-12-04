@@ -4,6 +4,7 @@ node_modules/
 # Build outputs (generated files)
 # Uncomment if you want to exclude the generated index.html from git
 index.html
+!privacy/index.html
 
 # Generated sitemap files (built from templates)
 sitemap.xml
@@ -39,3 +40,4 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+.vercel
