@@ -11,11 +11,14 @@ import { fileURLToPath } from 'url';
 import Handlebars from 'handlebars';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.join(__dirname, '..');
 
 // Paths
-const DATA_FILE = path.join(__dirname, 'data', 'site-data.json');
-const TEMPLATE_FILE = path.join(__dirname, 'templates', 'index.template.html');
-const OUTPUT_FILE = path.join(__dirname, 'index.html');
+const WEBSITE_DIR = path.join(ROOT_DIR, 'website');
+const BUILD_DIR = path.join(ROOT_DIR, 'build');
+const DATA_FILE = path.join(WEBSITE_DIR, 'data', 'site-data.json');
+const TEMPLATE_FILE = path.join(WEBSITE_DIR, 'index.template.html');
+const OUTPUT_FILE = path.join(BUILD_DIR, 'index.html');
 
 /**
  * Register Handlebars helpers
@@ -43,10 +46,23 @@ Handlebars.registerHelper('date', function() {
 });
 
 /**
+ * Ensure build directory exists
+ */
+function ensureBuildDir() {
+  if (!fs.existsSync(BUILD_DIR)) {
+    fs.mkdirSync(BUILD_DIR, { recursive: true });
+  }
+}
+
+
+/**
  * Main build function
  */
 function build() {
-  console.log('🚀 Generating HTML from template...\n');
+  console.log('🚀 Generating HTML...\n');
+
+  // Ensure build directory exists
+  ensureBuildDir();
 
   // Read site data
   const siteData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
@@ -62,20 +78,22 @@ function build() {
   fs.writeFileSync(OUTPUT_FILE, html, 'utf-8');
   console.log('✅ HTML generated successfully!\n');
   
-  // Update sitemap lastmod date
+  // Generate sitemap
   updateSitemap();
+  
+  console.log('🎉 HTML generation complete!\n');
 }
 
 // Generate sitemap from template
 function updateSitemap() {
   try {
-    const SITEMAP_TEMPLATE = './templates/sitemap.template.xml';
-    const SITEMAP_XSL_TEMPLATE = './templates/sitemap.template.xsl';
-    const SITEMAP_DEST = './sitemap.xml';
-    const SITEMAP_XSL_DEST = './sitemap.xsl';
+    const SITEMAP_TEMPLATE = path.join(WEBSITE_DIR, 'sitemap.template.xml');
+    const SITEMAP_XSL_TEMPLATE = path.join(WEBSITE_DIR, 'sitemap.template.xsl');
+    const SITEMAP_DEST = path.join(BUILD_DIR, 'sitemap.xml');
+    const SITEMAP_XSL_DEST = path.join(BUILD_DIR, 'sitemap.xsl');
     const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
     
-    console.log('🗺️ Generating sitemap from template...');
+    console.log('🗺️ Generating sitemap...');
     
     // Read template
     let sitemapTemplate = fs.readFileSync(SITEMAP_TEMPLATE, 'utf-8');
@@ -83,14 +101,14 @@ function updateSitemap() {
     // Replace placeholder with current date
     const sitemap = sitemapTemplate.replace(/{{BUILD_DATE}}/g, currentDate);
     
-    // Write generated sitemap to root
+    // Write generated sitemap to build
     fs.writeFileSync(SITEMAP_DEST, sitemap, 'utf-8');
     
-    // Copy XSL stylesheet to root
+    // Copy XSL stylesheet to build
     const xslContent = fs.readFileSync(SITEMAP_XSL_TEMPLATE, 'utf-8');
     fs.writeFileSync(SITEMAP_XSL_DEST, xslContent, 'utf-8');
     
-    console.log(`✅ Sitemap generated with date: ${currentDate}\n`);
+    console.log(`✅ Sitemap generated with date: ${currentDate}`);
   } catch (error) {
     console.warn('⚠️ Failed to generate sitemap:', error.message);
   }

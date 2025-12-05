@@ -45,7 +45,7 @@ I'm a software engineer with **9+ years of professional experience** in backend 
 
 ## 📫 Connect with Me
 
-- 🌐 Website: [0xdps.xyz](https://0xdps.xyz)
+- 🌐 Website: [dps.codes](https://dps.codes)
 - 📧 Email: dps.manit@gmail.com
 - 💼 LinkedIn: [0xdps](https://linkedin.com/in/0xdps)
 - 🐦 Twitter: [@0xdps](https://twitter.com/0xdps)

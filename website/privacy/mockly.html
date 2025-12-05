@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - SheetAlchemy</title>
+    <title>Privacy Policy - Mockly</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="apple-touch-icon" href="../assets/profile/profile.webp">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
@@ -54,6 +54,13 @@
             margin: 1rem 0;
             border-radius: 4px;
         }
+        .feature-box {
+            background: var(--subtle-bg);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid var(--border-light);
+        }
         ul {
             margin: 1rem 0;
             padding-left: 1.5rem;
@@ -66,15 +73,15 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Privacy Policy - SheetAlchemy",
-        "url": "https://0xdps.xyz/privacy/sheetalchemy.html",
-        "description": "Privacy policy for SheetAlchemy - a Google Sheets library that collects no data.",
+        "name": "Privacy Policy - Mockly",
+        "url": "https://dps.codes/privacy/mockly.html",
+        "description": "Privacy policy for Mockly - a mock API service with transparent operational logging.",
         "dateModified": "2025-12-04",
         "organization": {
             "@type": "Organization",
             "name": "0xDPS",
-            "url": "https://0xdps.xyz",
-            "privacyPolicy": "https://0xdps.xyz/privacy/"
+            "url": "https://dps.codes",
+            "privacyPolicy": "https://dps.codes/privacy/"
         }
     }
     </script>
@@ -82,61 +89,64 @@
 <body>
     <div class="policy-container">
         <div class="breadcrumb">
-            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / SheetAlchemy
+            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / Mockly
         </div>
 
-        <h1>SheetAlchemy Privacy Policy</h1>
-        <h2 style="border: none; margin-top: 0.5rem; padding-bottom: 0; font-size: 1rem; color: #666;">Python Library for Google Sheets</h2>
+        <h1>Mockly Privacy Policy</h1>
+        <h2 style="border: none; margin-top: 0.5rem; padding-bottom: 0; font-size: 1rem; color: #666;">Mock API Service for Developers</h2>
         <p class="last-updated">Last Updated: December 2025</p>
 
         <h2>Overview</h2>
         <p>
-            SheetAlchemy is a Python library that provides a programmatic interface for interacting with Google Sheets. 
-            It allows developers to read, write, and manage spreadsheets through code.
+            Mockly is a mock API service that provides developers with mock endpoints, dynamic responses, 
+            and debugging utilities for API development and testing.
         </p>
 
         <h2>Information Collected</h2>
-        <div class="highlight">
-            <strong>SheetAlchemy does not collect or store any user data.</strong>
-        </div>
-        <p>
-            SheetAlchemy is a library that runs entirely on your machine. It does not transmit telemetry, 
-            usage data, or any information to external servers.
-        </p>
-
-        <h2>Data Handling</h2>
-        <p>
-            If you configure Google API keys, OAuth tokens, or sheet data, it stays:</p>
+        
+        <h3>Operational Logs</h3>
+        <p>For service reliability and security, we may log:</p>
         <ul>
-            <li>In your user code</li>
-            <li>On your infrastructure</li>
-            <li>Under your control</li>
+            <li>Request timestamps</li>
+            <li>IP addresses (standard web server logging)</li>
+            <li>Requested endpoints</li>
+            <li>Error traces (for debugging)</li>
         </ul>
 
-        <h2>No External Logging</h2>
+        <div class="highlight">
+            <strong>Important:</strong> Logs are for debugging and abuse prevention only. 
+            No profiling or personalization occurs.
+        </div>
+
+        <h2>Data You Send to Mockly</h2>
         <p>
-            The library performs no external logging, telemetry, or transmission of any kind. 
-            All operations are local to your Python environment.
+            Customer data sent via API requests is <strong>processed in memory and not retained</strong> 
+            unless explicitly requested with "log mode" for debugging purposes.
+        </p>
+
+        <h2>Personal Data</h2>
+        <p>
+            Mockly does not collect personal identifiable information (PII) unless you explicitly 
+            configure it to log request bodies for debugging.
+        </p>
+
+        <h2>User Accounts (Future)</h2>
+        <p>
+            If Mockly supports authentication or user accounts in the future, a separate privacy 
+            policy update will be published detailing data collection.
         </p>
 
         <h2>Third-Party Services</h2>
-        <p>
-            SheetAlchemy communicates with Google Sheets APIs when you explicitly call it. 
-            Refer to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> 
-            for information about how Google handles data sent through their APIs.
-        </p>
+        <div class="feature-box">
+            <p><strong>Hosting:</strong> Vercel or Fly.io</p>
+            <p><strong>Optional Analytics:</strong> Privacy-respecting analytics (if enabled)</p>
+            <p><strong>No tracking or profiling:</strong> We do not share user data with advertisers or data brokers</p>
+        </div>
 
-        <h2>Google Authentication</h2>
+        <h2>Data Retention</h2>
         <p>
-            When you use OAuth authentication with Google, you control:
-        </p>
-        <ul>
-            <li>Which credentials are used</li>
-            <li>What permissions you grant</li>
-            <li>Which sheets you connect to</li>
-        </ul>
-        <p>
-            SheetAlchemy never stores or transmits your credentials to any third party.
+            Operational logs are typically retained for up to 30 days for debugging and security purposes. 
+            Custom data is not retained unless explicitly stored by the user.
         </p>
 
         <h2>Contact</h2>

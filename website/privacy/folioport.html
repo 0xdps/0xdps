@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - PingPong</title>
+    <title>Privacy Policy - FolioPort</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="apple-touch-icon" href="../assets/profile/profile.webp">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
@@ -61,9 +61,6 @@
             margin: 1rem 0;
             border: 1px solid var(--border-light);
         }
-        .feature-box strong {
-            color: var(--accent);
-        }
         ul {
             margin: 1rem 0;
             padding-left: 1.5rem;
@@ -76,15 +73,15 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Privacy Policy - PingPong",
-        "url": "https://0xdps.xyz/privacy/pingpong.html",
-        "description": "Privacy policy for PingPong - a browser extension that stores data locally only.",
+        "name": "Privacy Policy - FolioPort",
+        "url": "https://dps.codes/privacy/folioport.html",
+        "description": "Privacy policy for FolioPort - a portfolio generator that accesses only public GitHub data.",
         "dateModified": "2025-12-04",
         "organization": {
             "@type": "Organization",
             "name": "0xDPS",
-            "url": "https://0xdps.xyz",
-            "privacyPolicy": "https://0xdps.xyz/privacy/"
+            "url": "https://dps.codes",
+            "privacyPolicy": "https://dps.codes/privacy/"
         }
     }
     </script>
@@ -92,66 +89,79 @@
 <body>
     <div class="policy-container">
         <div class="breadcrumb">
-            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / PingPong
+            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / FolioPort
         </div>
 
-        <h1>PingPong Browser Extension Privacy Policy</h1>
+        <h1>FolioPort Privacy Policy</h1>
+        <h2 style="border: none; margin-top: 0.5rem; padding-bottom: 0; font-size: 1rem; color: #666;">Static Portfolio Generator</h2>
         <p class="last-updated">Last Updated: December 2025</p>
 
         <h2>Overview</h2>
         <p>
-            PingPong is a browser extension that helps developers test APIs, send HTTP requests, manage histories, 
-            and use collections—similar to a lightweight Postman alternative.
+            FolioPort is a static portfolio generator that converts public GitHub data into a personal website. 
+            It sources information from your public GitHub profile to create a stunning portfolio site.
         </p>
 
-        <h2>Data Collected</h2>
+        <h2>Information Collected</h2>
         
-        <h3>Stored Locally Only</h3>
-        <p>All user data stays on your device:</p>
+        <h3>Data You Provide</h3>
         <ul>
-            <li>Request history</li>
-            <li>Collections</li>
-            <li>Environment variables (if any)</li>
-            <li>Custom headers and settings</li>
-        </ul>
-        <p>
-            All data is kept inside your browser's local storage or extension storage. 
-            <strong>Nothing is uploaded unless explicitly configured by you.</strong>
-        </p>
-
-        <h2>Data Never Collected</h2>
-        <ul>
-            <li>Personal identity information</li>
-            <li>Your APIs' request/response content</li>
-            <li>Tokens or secrets (unless you store them locally yourself)</li>
-            <li>Browsing history</li>
-            <li>Email addresses or personal data</li>
+            <li>GitHub username</li>
+            <li>Custom content (bio, links, descriptions)</li>
+            <li>Personalization settings</li>
         </ul>
 
-        <h2>Data Sharing</h2>
+        <h3>Public GitHub Data</h3>
+        <p>FolioPort reads only <strong>publicly available</strong> GitHub information:</p>
+        <ul>
+            <li>Public repositories</li>
+            <li>Stars and forks</li>
+            <li>Programming languages used</li>
+            <li>Public contributions</li>
+            <li>README files</li>
+        </ul>
+
+        <h2>Data FolioPort Never Accesses</h2>
         <div class="highlight">
-            <strong>PingPong does not transmit data to third-party servers.</strong>
+            <strong>FolioPort NEVER accesses:</strong>
         </div>
-        <p>The only outgoing data is:</p>
         <ul>
-            <li>Requests you intentionally send to your own APIs</li>
-            <li>Error logs sent optionally (only if you explicitly enable reporting)</li>
+            <li>Private repositories</li>
+            <li>GitHub authentication tokens</li>
+            <li>Email addresses</li>
+            <li>Sensitive project information</li>
+            <li>Private gists or notes</li>
         </ul>
 
-        <h2>Browser Permissions</h2>
-        <div class="feature-box">
-            <p><strong>storage</strong> — To save your collections & history locally</p>
-            <p><strong>tabs / activeTab</strong> — For UI interactions and context</p>
-            <p><strong>http://*/* / https://*/*</strong> — To allow sending requests to any API endpoint</p>
-        </div>
+        <h2>Data Storage</h2>
         <p>
-            <strong>Important:</strong> PingPong does not inspect or track your browsing activity. 
-            These permissions only enable the features you explicitly use.
+            The generated portfolio is a static website. <strong>No persistent data is stored on our servers.</strong>
+        </p>
+        <div class="feature-box">
+            <p><strong>Generated Files:</strong> Stored temporarily during generation, then deleted</p>
+            <p><strong>User Input:</strong> Not stored unless you explicitly save a project configuration</p>
+            <p><strong>Analytics:</strong> None collected by FolioPort</p>
+        </div>
+
+        <h2>Hosting Your Portfolio</h2>
+        <p>
+            You own and host the generated portfolio. Hosting providers may have their own privacy policies:
+        </p>
+        <ul>
+            <li>GitHub Pages</li>
+            <li>Vercel</li>
+            <li>Netlify</li>
+            <li>Your own server</li>
+        </ul>
+        <p>
+            Consult their privacy policies for information about how they handle your portfolio data.
         </p>
 
         <h2>Third-Party Services</h2>
         <p>
-            <strong>None.</strong> PingPong does not rely on external services, analytics platforms, or cloud storage.
+            FolioPort reads data from GitHub's public API. 
+            Refer to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub's Privacy Policy</a> 
+            for details about their data handling.
         </p>
 
         <h2>Contact</h2>

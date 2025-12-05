@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Azure DevOps (0xDPS)</title>
+    <title>Privacy Policy - PingPong</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="apple-touch-icon" href="../assets/profile/profile.webp">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
@@ -61,6 +61,9 @@
             margin: 1rem 0;
             border: 1px solid var(--border-light);
         }
+        .feature-box strong {
+            color: var(--accent);
+        }
         ul {
             margin: 1rem 0;
             padding-left: 1.5rem;
@@ -73,15 +76,15 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Privacy Policy - Azure DevOps (0xDPS)",
-        "url": "https://0xdps.xyz/privacy/devops.html",
-        "description": "Privacy policy for 0xDPS Azure DevOps organization covering data handling and access control practices.",
+        "name": "Privacy Policy - PingPong",
+        "url": "https://dps.codes/privacy/pingpong.html",
+        "description": "Privacy policy for PingPong - a browser extension that stores data locally only.",
         "dateModified": "2025-12-04",
         "organization": {
             "@type": "Organization",
             "name": "0xDPS",
-            "url": "https://0xdps.xyz",
-            "privacyPolicy": "https://0xdps.xyz/privacy/"
+            "url": "https://dps.codes",
+            "privacyPolicy": "https://dps.codes/privacy/"
         }
     }
     </script>
@@ -89,93 +92,72 @@
 <body>
     <div class="policy-container">
         <div class="breadcrumb">
-            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / Azure DevOps
+            <a href="/">Home</a> / <a href="/privacy">Privacy</a> / PingPong
         </div>
 
-        <h1>Azure DevOps Organization Privacy Policy</h1>
-        <h2 style="border: none; margin-top: 0.5rem; padding-bottom: 0; font-size: 1rem; color: #666;">0xDPS Organization</h2>
+        <h1>PingPong Browser Extension Privacy Policy</h1>
         <p class="last-updated">Last Updated: December 2025</p>
 
         <h2>Overview</h2>
         <p>
-            The 0xDPS Azure DevOps organization is used internally for managing repositories, pipelines, CI/CD, 
-            and collaboration across projects. This policy explains how data is handled within this organization.
+            PingPong is a browser extension that helps developers test APIs, send HTTP requests, manage histories, 
+            and use collections—similar to a lightweight Postman alternative.
         </p>
 
-        <h2>Information Collected</h2>
-        <p>
-            Azure DevOps may display and process the following information for organization members and contributors:
-        </p>
+        <h2>Data Collected</h2>
+        
+        <h3>Stored Locally Only</h3>
+        <p>All user data stays on your device:</p>
         <ul>
-            <li>Contributor names</li>
-            <li>Email addresses (associated with accounts)</li>
-            <li>Commit metadata and history</li>
-            <li>Branch information</li>
-            <li>Build and deployment logs</li>
-            <li>Issue tracking and work items</li>
+            <li>Request history</li>
+            <li>Collections</li>
+            <li>Environment variables (if any)</li>
+            <li>Custom headers and settings</li>
+        </ul>
+        <p>
+            All data is kept inside your browser's local storage or extension storage. 
+            <strong>Nothing is uploaded unless explicitly configured by you.</strong>
+        </p>
+
+        <h2>Data Never Collected</h2>
+        <ul>
+            <li>Personal identity information</li>
+            <li>Your APIs' request/response content</li>
+            <li>Tokens or secrets (unless you store them locally yourself)</li>
+            <li>Browsing history</li>
+            <li>Email addresses or personal data</li>
         </ul>
 
-        <h2>Data Control</h2>
+        <h2>Data Sharing</h2>
         <div class="highlight">
-            <strong>Important:</strong> This data is controlled by Microsoft, not by 0xDPS directly. 
-            0xDPS does not collect or share any personal data beyond what Azure DevOps' standard infrastructure requires.
+            <strong>PingPong does not transmit data to third-party servers.</strong>
         </div>
-
-        <h2>Data Usage</h2>
-        <p>Data is used solely for:</p>
+        <p>The only outgoing data is:</p>
         <ul>
-            <li>Repository and code management</li>
-            <li>Identity verification and access control</li>
-            <li>Build and deployment pipelines</li>
-            <li>Issue tracking and project management</li>
-            <li>Team collaboration</li>
+            <li>Requests you intentionally send to your own APIs</li>
+            <li>Error logs sent optionally (only if you explicitly enable reporting)</li>
         </ul>
-        <p>
-            <strong>0xDPS does not use this data for:</strong> commercial purposes, profiling, or analytics.
-        </p>
 
-        <h2>Access Control</h2>
+        <h2>Browser Permissions</h2>
         <div class="feature-box">
-            <p><strong>Organization Members:</strong> Only explicitly invited users may access the organization</p>
-            <p><strong>Guest Access:</strong> Guests may access specific projects as permitted</p>
-            <p><strong>Removal:</strong> Members or guests may request removal at any time</p>
+            <p><strong>storage</strong> — To save your collections & history locally</p>
+            <p><strong>tabs / activeTab</strong> — For UI interactions and context</p>
+            <p><strong>http://*/* / https://*/*</strong> — To allow sending requests to any API endpoint</p>
         </div>
+        <p>
+            <strong>Important:</strong> PingPong does not inspect or track your browsing activity. 
+            These permissions only enable the features you explicitly use.
+        </p>
 
         <h2>Third-Party Services</h2>
         <p>
-            Azure DevOps is hosted and managed by Microsoft. For information about how Microsoft handles data, 
-            refer to the <a href="https://privacy.microsoft.com/" target="_blank">Microsoft Privacy Statement</a>.
+            <strong>None.</strong> PingPong does not rely on external services, analytics platforms, or cloud storage.
         </p>
-
-        <h2>Security</h2>
-        <p>
-            0xDPS follows Azure DevOps security best practices:
-        </p>
-        <ul>
-            <li>Authentication via Microsoft accounts</li>
-            <li>Role-based access control (RBAC)</li>
-            <li>Encryption in transit and at rest</li>
-            <li>Regular security reviews</li>
-        </ul>
-
-        <h2>User Rights</h2>
-        <p>Members may request:</p>
-        <ul>
-            <li>Information about data stored in the organization</li>
-            <li>Removal from the organization</li>
-            <li>Deletion of personal data (subject to legal retention requirements)</li>
-        </ul>
 
         <h2>Contact</h2>
         <p>
-            For privacy inquiries related to the Azure DevOps organization, contact us at:<br>
+            For privacy inquiries, contact us at:<br>
             <strong>Email:</strong> <a href="mailto:dps.manit@gmail.com">dps.manit@gmail.com</a>
-        </p>
-
-        <h2>Changes to This Policy</h2>
-        <p>
-            This policy may be updated as the organization evolves or as Microsoft updates Azure DevOps services. 
-            Updates will be reflected on this page.
         </p>
 
         <hr style="margin-top: 2rem; opacity: 0.3;">
@@ -183,7 +165,6 @@
             <a href="/privacy">← Back to Master Privacy Policy</a>
         </p>
     </div>
-
     <script>
         // Sync theme from parent window or localStorage
         function initTheme() {

@@ -1,18 +1,8 @@
 # Dependencies
 node_modules/
 
-# Build outputs (generated files)
-# Uncomment if you want to exclude the generated index.html from git
-index.html
-!privacy/index.html
-
-# Generated sitemap files (built from templates)
-sitemap.xml
-sitemap.xsl
-
-# Minified assets (generated during build)
-assets/css/*.min.css
-assets/js/*.min.js
+# Build output directory
+build/
 
 # OS files
 .DS_Store

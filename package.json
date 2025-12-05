@@ -4,14 +4,15 @@
   "description": "Personal portfolio website for Devendra Pratap Singh - Static site with build-time rendering",
   "type": "module",
   "scripts": {
-    "minify:css": "esbuild assets/css/styles.css --minify --outfile=assets/css/styles.min.css",
-    "minify:js": "esbuild assets/js/scripts.js --minify --outfile=assets/js/scripts.min.js",
-    "generate:html": "node build.js",
-    "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o index.html index.html",
-    "build": "npm-run-all --parallel minify:css minify:js generate:html --sequential minify:html",
-    "watch": "chokidar 'data/site-data.json' 'index.template.html' 'assets/css/styles.css' 'assets/js/scripts.js' -c 'npm run build'",
-    "serve": "reload -b -p 8000 -d .",
-    "dev": "npm-run-all --parallel build watch serve"
+    "minify:css": "esbuild website/assets/css/styles.css --minify --outfile=build/assets/css/styles.min.css",
+    "minify:js": "esbuild website/assets/js/scripts.js --minify --outfile=build/assets/js/scripts.min.js",
+    "copy:assets": "node scripts/copy-assets.js",
+    "generate:html": "node scripts/build.js",
+    "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o build/index.html build/index.html",
+    "build": "npm-run-all copy:assets --parallel minify:css minify:js --sequential generate:html minify:html",
+    "watch": "chokidar 'website/**/*' -c 'npm run build'",
+    "serve": "reload -b -p 8000 -d build",
+    "dev": "npm-run-all build --parallel watch serve"
   },
   "keywords": [
     "portfolio",

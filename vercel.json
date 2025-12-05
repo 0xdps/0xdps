@@ -1,5 +1,5 @@
 {
-  "outputDirectory": ".",
+  "outputDirectory": "build",
   "framework": null,
   "cleanUrls": false,
   "trailingSlash": true,
