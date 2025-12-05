@@ -11,8 +11,9 @@
     "copy:assets": "node scripts/copy-assets.js",
     "generate:html": "node scripts/build.js",
     "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o build/index.html build/index.html",
+    "minify:404": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o build/404.html build/404.html",
     "minify:privacy-html": "for file in build/privacy/*.html; do html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o \"$file\" \"$file\"; done",
-    "build": "npm-run-all copy:assets --parallel minify:css minify:privacy-css minify:js minify:privacy-js --sequential generate:html minify:html minify:privacy-html",
+    "build": "npm-run-all copy:assets --parallel minify:css minify:privacy-css minify:js minify:privacy-js --sequential generate:html minify:html minify:404 minify:privacy-html",
     "watch": "chokidar 'website/**/*' -c 'npm run build'",
     "serve": "reload -b -p 8000 -d build",
     "dev": "npm-run-all build --parallel watch serve"

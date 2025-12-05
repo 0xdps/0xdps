@@ -82,6 +82,13 @@ function copyAssets() {
     console.log('✓ robots.txt copied');
   }
 
+  // Copy 404 page
+  const src404 = path.join(WEBSITE_DIR, '404.html');
+  if (fs.existsSync(src404)) {
+    fs.copyFileSync(src404, path.join(BUILD_DIR, '404.html'));
+    console.log('✓ 404.html copied');
+  }
+
   console.log('\n✅ Static assets copied!\n');
 }
 
