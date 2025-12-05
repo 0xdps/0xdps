@@ -70,6 +70,7 @@ h2.subtitle {
     border-color: var(--accent);
     background: linear-gradient(135deg, var(--subtle-bg), rgba(20, 184, 166, 0.05));
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
 .product-card h3 {
