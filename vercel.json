@@ -8,8 +8,16 @@
   "trailingSlash": true,
   "rewrites": [
     {
+      "source": "/privacy",
+      "destination": "/privacy/"
+    },
+    {
       "source": "/privacy/",
       "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/privacy/:page",
+      "destination": "/privacy/:page.html"
     }
   ],
   "headers": [
