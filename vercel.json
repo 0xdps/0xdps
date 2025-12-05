@@ -4,22 +4,8 @@
   "devCommand": "npm run dev",
   "outputDirectory": "build",
   "framework": null,
-  "cleanUrls": false,
-  "trailingSlash": true,
-  "rewrites": [
-    {
-      "source": "/privacy",
-      "destination": "/privacy/"
-    },
-    {
-      "source": "/privacy/",
-      "destination": "/privacy/index.html"
-    },
-    {
-      "source": "/privacy/:page",
-      "destination": "/privacy/:page.html"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -31,7 +17,7 @@
       ]
     },
     {
-      "source": "/(.*).html",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control", 
