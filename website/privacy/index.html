@@ -3,94 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - 0xDPS Ecosystem</title>
+    <title>Privacy Policy - 0xdps labs</title>
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="apple-touch-icon" href="../assets/profile/profile.webp">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
-    <style>
-        body {
-            background: var(--bg);
-            color: var(--text);
-        }
-        .policy-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: var(--card);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-light);
-            box-shadow: 0 1px 3px var(--shadow);
-            margin-top: 2rem;
-        }
-        h1, h2 {
-            color: var(--text);
-        }
-        h2 {
-            margin-top: 2rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-        }
-        .breadcrumb {
-            font-size: 0.9rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-        .breadcrumb a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        .product-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        .product-card {
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s ease;
-            background: var(--subtle-bg);
-        }
-        .product-card:hover {
-            border-color: var(--accent);
-            background: linear-gradient(135deg, var(--subtle-bg), rgba(20, 184, 166, 0.05));
-            transform: translateY(-2px);
-        }
-        .product-card h3 {
-            margin: 0 0 0.5rem 0;
-            color: var(--accent);
-        }
-        .product-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-        .last-updated {
-            font-size: 0.9rem;
-            color: var(--muted);
-            font-style: italic;
-        }
-        ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-        li {
-            margin: 0.5rem 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/privacy.min.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": ["WebPage", "Organization"],
-        "name": "Privacy Policy - 0xDPS Ecosystem",
+        "name": "Privacy Policy - 0xdps labs",
         "url": "https://dps.codes/privacy/",
-        "description": "Comprehensive privacy policy for 0xDPS ecosystem covering data handling practices for all products and services.",
+        "description": "Comprehensive privacy policy for 0xdps labs covering data handling practices for all products and services.",
         "dateModified": "2025-12-04",
         "organization": {
             "@type": "Organization",
@@ -107,7 +31,7 @@
             <a href="/">Home</a> / Privacy
         </div>
 
-        <h1>Privacy Policy — 0xDPS Ecosystem</h1>
+        <h1>Privacy Policy — 0xdps labs</h1>
         <p class="last-updated">Last Updated: December 2025</p>
 
         <h2>Introduction</h2>
@@ -211,30 +135,6 @@
             This policy may change as our ecosystem evolves. Updates are reflected on this page with the "Last Updated" date.
         </p>
     </div>
-    <script>
-        // Sync theme from parent window or localStorage
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        }
-        
-        // Watch for theme changes
-        window.addEventListener('storage', (e) => {
-            if (e.key === 'theme') {
-                document.documentElement.setAttribute('data-theme', e.newValue);
-            }
-        });
-        
-        // Check parent window for theme updates
-        setInterval(() => {
-            const parentTheme = localStorage.getItem('theme');
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (parentTheme && parentTheme !== currentTheme) {
-                document.documentElement.setAttribute('data-theme', parentTheme);
-            }
-        }, 500);
-        
-        initTheme();
-    </script>
+    <script src="../assets/js/privacy-theme.min.js"></script>
 </body>
 </html>

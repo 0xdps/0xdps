@@ -61,9 +61,9 @@ function copyAssets() {
   fs.mkdirSync(buildJsDir, { recursive: true });
 
   // Copy favicon
-  const srcFavicon = path.join(WEBSITE_DIR, 'favicon.svg');
+  const srcFavicon = path.join(WEBSITE_DIR, 'assets', 'favicon.svg');
   if (fs.existsSync(srcFavicon)) {
-    fs.copyFileSync(srcFavicon, path.join(BUILD_DIR, 'favicon.svg'));
+    fs.copyFileSync(srcFavicon, path.join(BUILD_DIR, 'assets', 'favicon.svg'));
     console.log('✓ Favicon copied');
   }
 

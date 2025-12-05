@@ -108,12 +108,12 @@ header {
 
 .socials a {
   transition: color 0.2s ease;
-  color: var(--muted);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .socials a:hover {
-  color: var(--text);
+  color: var(--accent-hover);
 }
 
 /* Hero section */

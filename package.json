@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "minify:css": "esbuild website/assets/css/styles.css --minify --outfile=build/assets/css/styles.min.css",
+    "minify:privacy-css": "esbuild website/assets/css/privacy.css --minify --outfile=build/assets/css/privacy.min.css",
     "minify:js": "esbuild website/assets/js/scripts.js --minify --outfile=build/assets/js/scripts.min.js",
+    "minify:privacy-js": "esbuild website/assets/js/privacy-theme.js --minify --outfile=build/assets/js/privacy-theme.min.js",
     "copy:assets": "node scripts/copy-assets.js",
     "generate:html": "node scripts/build.js",
     "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o build/index.html build/index.html",
-    "build": "npm-run-all copy:assets --parallel minify:css minify:js --sequential generate:html minify:html",
+    "minify:privacy-html": "for file in build/privacy/*.html; do html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o \"$file\" \"$file\"; done",
+    "build": "npm-run-all copy:assets --parallel minify:css minify:privacy-css minify:js minify:privacy-js --sequential generate:html minify:html minify:privacy-html",
     "watch": "chokidar 'website/**/*' -c 'npm run build'",
     "serve": "reload -b -p 8000 -d build",
     "dev": "npm-run-all build --parallel watch serve"
