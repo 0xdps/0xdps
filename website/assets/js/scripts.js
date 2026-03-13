@@ -51,8 +51,9 @@ function togglePrivacy() {
 	const modal = document.getElementById('privacy-modal');
 	if (!modal) return;
 
-	const isOpen = modal.style.display !== 'none';
-	modal.style.display = isOpen ? 'none' : 'block';
+	// Use computed style to correctly detect CSS-driven display:none
+	const isOpen = window.getComputedStyle(modal).display !== 'none';
+	modal.style.display = isOpen ? 'none' : 'flex';
 
 	if (!isOpen) {
 		// Close on background click

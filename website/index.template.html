@@ -5,355 +5,396 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Devendra Pratap Singh | Engineering Leader & Backend Specialist</title>
-	
-	<!-- SEO Meta Tags -->
-	<meta name="description" content="Devendra Pratap Singh — Engineering leader with 9.5 years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille).">
+
+	<!-- SEO -->
+	<meta name="description" content="Devendra Pratap Singh — Engineering leader with 9+ years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille).">
 	<meta name="keywords" content="Devendra Pratap Singh, backend engineer, engineering manager, cloud migration, AWS to GCP, FarmVille, Zynga">
 	<meta name="author" content="Devendra Pratap Singh">
-	<meta name="language" content="English">
 	<meta name="robots" content="index, follow">
 	<link rel="canonical" href="https://dps.codes/">
-	
-	<!-- Open Graph Meta Tags -->
+
+	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Devendra Pratap Singh">
 	<meta property="og:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems">
-	<meta property="og:description" content="Engineering leader with 9.5 years experience in backend, cloud migrations and game performance.">
+	<meta property="og:description" content="Engineering leader with 9+ years experience in backend, cloud migrations and game performance.">
 	<meta property="og:url" content="https://dps.codes/">
 	<meta property="og:image" content="https://dps.codes/assets/profile/profile.webp">
 	<meta property="og:image:alt" content="Devendra Pratap Singh profile photo">
 	<meta property="og:locale" content="en_US">
-	
-	<!-- Twitter Card Meta Tags -->
+
+	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@0xdps">
 	<meta name="twitter:creator" content="@0xdps">
 	<meta name="twitter:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems">
-	<meta name="twitter:description" content="Engineering leader with 9.5 years experience in backend, cloud migrations and game performance.">
+	<meta name="twitter:description" content="Engineering leader with 9+ years experience in backend, cloud migrations and game performance.">
 	<meta name="twitter:image" content="https://dps.codes/assets/profile/profile.webp">
-	<meta name="twitter:image:alt" content="Devendra Pratap Singh profile photo">
-	
-	<!-- Mobile/PWA Meta Tags -->
-	<meta name="theme-color" content="#14b8a6">
+
+	<!-- PWA -->
+	<meta name="theme-color" content="#1a2640">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	
+
 	<!-- Favicons -->
 	<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 	<link rel="apple-touch-icon" href="assets/profile/profile.webp">
-	
-	<!-- Stylesheets -->
+
+	<!-- Stylesheet -->
 	<link rel="stylesheet" href="assets/css/styles.min.css">
-	
+
 	<!-- Vercel Analytics -->
-	<script>
-		window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-	</script>
+	<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 	<script defer src="https://cdn.vercel-analytics.com/v1/script.debug.js"></script>
-	
+
 	<!-- Vercel Speed Insights -->
-	<script>
-		window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-	</script>
+	<script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
 	<script defer src="https://cdn.vercel-insights.com/v1/script.debug.js"></script>
 </head>
 <body data-theme="light">
-	<div class="container">
-		<header>
-			<div class="brand">
-				<div class="logo">{{personal.logo}}</div>
+<div class="resume-wrapper">
+
+	<!-- ░░ STICKY HEADER ░░ -->
+	<header class="resume-header">
+		<div class="brand">
+			<div class="logo">{{personal.logo}}</div>
+			<div class="brand-text">
+				<div class="brand-name">{{personal.name}}</div>
+				<div class="brand-title">{{personal.title}}</div>
+			</div>
+		</div>
+
+		<div class="header-right">
+			<button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+				<svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+				</svg>
+			</button>
+			<div class="socials">
+				{{#each socialLinks}}
+				<a href="{{url}}" target="_blank" rel="noopener noreferrer" title="{{name}}" aria-label="{{name}}">
+					{{{socialIcon icon}}}
+				</a>
+				{{/each}}
+			</div>
+		</div>
+	</header>
+
+	<!-- ░░ TWO-COLUMN BODY ░░ -->
+	<div class="resume-body">
+
+		<!-- ▌ LEFT SIDEBAR ▌ -->
+		<aside class="resume-sidebar">
+
+			<!-- Profile -->
+			<div class="sidebar-profile">
+				<div class="profile-avatar" style="background-image:url('assets/profile/profile.webp')" role="img" aria-label="{{personal.name}} profile photo"></div>
+				<div class="profile-name">{{personal.name}}</div>
+				<div class="profile-role">Principal Software Engineer</div>
+				<div class="profile-location">📍 India</div>
+			</div>
+
+			<!-- Download Resume CTA -->
+			<a href="{{personal.resumeUrl}}" class="sidebar-cta" target="_blank" rel="noopener">
+				↓ &nbsp;Download Resume
+			</a>
+
+			<!-- Contact -->
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Contact</div>
+				<div class="contact-list">
+					<div class="contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+						<a href="mailto:{{personal.email}}">{{personal.email}}</a>
+					</div>
+					<div class="contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+						<span>{{personal.phone}}</span>
+					</div>
+					<div class="contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+						<span>Delhi NCR, India</span>
+					</div>
+					<div class="contact-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+						<a href="https://dps.codes" target="_blank" rel="noopener">dps.codes</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Core Skills -->
+			{{#if skills}}
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Core Languages</div>
+				<div class="sb-chips">
+					{{#each skills.primary}}<span class="sb-chip">{{this}}</span>{{/each}}
+				</div>
+			</div>
+
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Databases & Messaging</div>
+				<div class="sb-chips">
+					{{#each skills.databases}}<span class="sb-chip">{{this}}</span>{{/each}}
+					{{#each skills.messaging}}<span class="sb-chip">{{this}}</span>{{/each}}
+				</div>
+			</div>
+
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">DevOps & Cloud</div>
+				<div class="sb-chips">
+					{{#each skills.devops}}<span class="sb-chip">{{this}}</span>{{/each}}
+				</div>
+			</div>
+
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Leadership & Monitoring</div>
+				<div class="sb-chips">
+					{{#each skills.leadership}}<span class="sb-chip">{{this}}</span>{{/each}}
+					{{#each skills.monitoring}}<span class="sb-chip">{{this}}</span>{{/each}}
+				</div>
+			</div>
+			{{/if}}
+
+			<!-- Education -->
+			{{#if education}}
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Education</div>
 				<div>
-					<div class="personal-name" style="font-weight:700">{{personal.name}}</div>
-					<div class="personal-title" style="font-size:13px;color:var(--muted)">{{personal.title}}</div>
+					<div class="edu-degree">{{education.degree}}</div>
+					<div class="edu-inst">{{education.institution}}</div>
+					<div class="edu-meta">{{education.period}} &nbsp;·&nbsp; {{education.grade}}</div>
 				</div>
 			</div>
-			
-			<div style="display:flex;align-items:center;gap:12px">
-				<button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
-					<svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-					</svg>
-				</button>
-				
-				<div class="socials" aria-hidden="false">
-					{{#each socialLinks}}
-					<a href="{{url}}" target="_blank" rel="noopener noreferrer" title="{{name}}" aria-label="{{name}}" style="text-decoration:none">
-						{{{socialIcon icon}}}
-					</a>
-					{{/each}}
-				</div>
-			</div>
-		</header>
-
-		<main>
-			<!-- Hero Section -->
-			<section class="hero">
-				<div class="hero-left">
-					<h1 class="personal-tagline">{{personal.tagline}}</h1>
-					<p class="lead personal-description">{{personal.description}}</p>
-					
-					<div class="cta">
-						<a href="mailto:{{personal.email}}" class="btn btn-primary contact-email">Email Me</a>
-						<a href="{{personal.resumeUrl}}" class="btn btn-ghost contact-resume">Download Resume</a>
-					</div>
-					
-					<div class="personal-location" style="margin-top:12px;font-size:13px;color:var(--muted)">
-						{{personal.location}}
-					</div>
-				</div>
-				
-				<div class="hero-right" style="background-image:url('assets/profile/profile.webp');background-size:cover;background-position:center"></div>
-			</section>
-
-			<!-- Services Section -->
-			{{#if services}}
-			<section class="card" style="margin-top:18px">
-				<div style="display:flex;align-items:center;justify-content:space-between">
-					<div>
-						<div style="font-weight:700">{{services.title}}</div>
-						<div style="color:var(--muted);font-size:13px;margin-top:6px">{{services.subtitle}}</div>
-					</div>
-					<div style="display:flex;gap:8px;align-items:center">
-						<a class="btn btn-primary" href="{{services.topmateUrl}}" target="_blank" rel="noopener">Book on Topmate</a>
-					</div>
-				</div>
-				
-				<div class="services" style="margin-top:12px">
-					{{#each services.offerings}}
-					<div class="service-item" style="display:flex;{{#unless @last}} border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:12px;{{/unless}}">
-						<div style="width:48px;height:48px;border-radius:10px;cursor:pointer;background:rgba(20,184,166,.12);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);flex-shrink:0">
-							{{icon}}
-						</div>
-						<div>
-							<h4>{{title}}</h4>
-							<div class="service-desc">{{description}}</div>
-						</div>
-					</div>
-					{{/each}}
-				</div>
-			</section>
 			{{/if}}
 
-			<!-- About Section -->
+			<!-- Interests -->
 			{{#if about}}
-			<section class="card" style="margin-top:18px">
-				<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-					<div>
-						<div style="font-weight:700;font-size:20px">{{about.title}}</div>
-						<div style="color:var(--muted);font-size:14px;margin-top:4px">{{about.subtitle}}</div>
-					</div>
+			<div class="sidebar-section">
+				<div class="sidebar-section-title">Interests</div>
+				<div class="sb-chips">
+					{{#each about.interests}}<span class="sb-chip">{{this}}</span>{{/each}}
 				</div>
-				
-				<div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start">
-					<div>
-						{{#each about.description}}
-						<p style="margin:0 0 16px 0;line-height:1.6">{{this}}</p>
-						{{/each}}
-					</div>
-					
-					<div>
-						<div style="margin-bottom:16px">
-							<h4 style="margin:0 0 8px 0;font-size:14px;color:var(--muted)">Core Technologies</h4>
-							<div style="display:flex;flex-wrap:wrap;gap:6px">
-								{{#each about.technologies}}{{{chip this}}}{{/each}}
-							</div>
-						</div>
-						
-						<div>
-							<h4 style="margin:0 0 8px 0;font-size:14px;color:var(--muted)">Interests</h4>
-							<div style="display:flex;flex-wrap:wrap;gap:6px">
-								{{#each about.interests}}{{{chip this}}}{{/each}}
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			</div>
 			{{/if}}
 
-			<!-- Projects Section -->
-			{{#if projects}}
-			<section id="projects" class="card" style="margin-top:18px">
-				<div style="margin-bottom:20px">
-					<div style="font-weight:700;font-size:20px">{{projects.title}}</div>
-					<div style="color:var(--muted);font-size:14px;margin-top:4px">{{projects.subtitle}}</div>
+		</aside>
+
+		<!-- ▌ MAIN CONTENT ▌ -->
+		<main class="resume-main">
+
+			<!-- Professional Summary -->
+			<div class="hero-card">
+				<h1 class="hero-tagline">{{personal.tagline}}</h1>
+				<p class="hero-desc">{{personal.description}}</p>
+				<div class="hero-actions">
+					<a href="mailto:{{personal.email}}" class="btn btn-primary contact-email">Email Me</a>
+					<a href="{{personal.resumeUrl}}" class="btn btn-ghost contact-resume">Download Resume</a>
+					{{#if services}}
+					<a href="{{services.topmateUrl}}" class="btn btn-ghost" target="_blank" rel="noopener">Book on Topmate</a>
+					{{/if}}
 				</div>
-				
-				<div style="display:flex;flex-direction:column;gap:16px">
-					{{#each projects.items}}
-					<div class="project">
-						<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
-							<h3>{{title}}</h3>
-							<div style="display:flex;gap:6px">
-								{{#each technologies}}{{{chip this}}}{{/each}}
-							</div>
-						</div>
-						<p>{{description}}</p>
-						<div style="margin-top:8px;font-size:13px;color:var(--muted)">
-							Key achievements: {{achievements}}
-						</div>
+				<p class="hero-location">{{personal.location}}</p>
+			</div>
+
+			<!-- Services -->
+			{{#if services}}
+			<div class="resume-section">
+				<div class="section-head">
+					<span class="section-label">{{services.title}}</span>
+					<div class="section-rule"></div>
+					<a href="{{services.topmateUrl}}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Book Session →</a>
+				</div>
+				<p style="font-size:13px;color:var(--muted);margin-bottom:16px">{{services.subtitle}}</p>
+				<div class="services-grid">
+					{{#each services.offerings}}
+					<div class="service-tile">
+						<div class="service-icon">{{icon}}</div>
+						<div class="service-title">{{title}}</div>
+						<div class="service-desc">{{description}}</div>
 					</div>
 					{{/each}}
 				</div>
-			</section>
+			</div>
 			{{/if}}
 
-			<!-- Side Projects Section -->
-			{{#if sideProjects}}
-			<section class="card" style="margin-top:18px">
-				<div style="margin-bottom:18px">
-					<div style="font-weight:700;font-size:20px">{{sideProjects.title}}</div>
-					<div style="color:var(--muted);font-size:14px;margin-top:4px">{{sideProjects.subtitle}}</div>
-				</div>
-				
-				<div style="display:flex;flex-direction:column;gap:14px">
-					{{#each sideProjects.items}}
-					<div class="project" style="padding:12px">
-						<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
-							<h3 style="margin:0;font-size:15px">{{name}}</h3>
-							<div style="font-size:12px;color:var(--muted)">{{year}}</div>
-						</div>
-						<div style="display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px 0">
-							{{#each technologies}}{{{chip this}}}{{/each}}
-						</div>
-						<p style="margin:0;color:var(--muted);font-size:14px">{{description}}</p>
-					</div>
-					{{/each}}
-				</div>
-			</section>
-			{{/if}}
-
-			<!-- Experience Section -->
+			<!-- Experience -->
 			{{#if experience}}
-			<section class="card" style="margin-top:18px">
-				<div style="margin-bottom:20px">
-					<div style="font-weight:700;font-size:20px">{{experience.title}}</div>
-					<div style="color:var(--muted);font-size:14px;margin-top:4px">{{experience.subtitle}}</div>
+			<div class="resume-section">
+				<div class="section-head">
+					<span class="section-label">{{experience.title}}</span>
+					<div class="section-rule"></div>
 				</div>
-				
-				<div style="display:flex;flex-direction:column;gap:20px">
+				<div class="timeline">
 					{{#each experience.items}}
-					<div style="border-left:3px solid var(--accent);padding-left:16px">
-						<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
-							<div>
-								<h3 style="margin:0;font-size:16px">{{role}}</h3>
-								<div style="color:var(--accent);font-size:14px;margin-top:2px">{{company}}</div>
+					<div class="timeline-item">
+						<div class="timeline-top">
+							<div class="timeline-info">
+								<div class="timeline-role">{{role}}</div>
+								<div class="timeline-company">{{company}}</div>
 							</div>
-							<div style="font-size:13px;color:var(--muted)">{{period}}</div>
+							<div class="timeline-period">{{period}}</div>
 						</div>
-						
-						<div style="margin-bottom:12px">
-							<div style="display:flex;flex-wrap:wrap;gap:6px">
-								{{#each technologies}}{{{chip this}}}{{/each}}
-							</div>
+						<div class="timeline-chips">
+							{{#each technologies}}<span class="tech-chip">{{this}}</span>{{/each}}
 						</div>
-						
-						<ul style="margin:0;padding-left:20px;color:var(--muted);font-size:14px">
+						<ul class="timeline-ul">
 							{{#each achievements}}<li>{{this}}</li>{{/each}}
 						</ul>
 					</div>
 					{{/each}}
 				</div>
-			</section>
+			</div>
 			{{/if}}
 
-			<!-- Footer -->
-			<footer>
-				© <span id="year">{{{year}}}</span> Devendra Pratap — Built with clarity. •
-				<a href="#privacy" onclick="togglePrivacy()">Privacy</a>
-			</footer>
-
-			<!-- Privacy Modal -->
-			<div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:1000">
-				<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--card);border-radius:16px;max-width:600px;max-height:80vh;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.3)">
-					<div style="padding:32px;max-height:80vh;overflow-y:auto">
-						<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-							<h2 style="margin:0;color:var(--text)">Privacy Policy</h2>
-							<button onclick="togglePrivacy()" style="background:0 0;border:none;font-size:24px;cursor:pointer;color:var(--muted)">&times;</button>
-						</div>
-						
-						<div style="color:var(--text);line-height:1.6">
-							<p><strong>Last updated:</strong> <span id="privacy-date">{{{date}}}</span></p>
-							
-							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Information Collection</h3>
-							<p>This website is a static portfolio site. I don't collect, store, or process any personal data. No cookies, analytics, or tracking scripts are used.</p>
-							
-							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Contact Information</h3>
-							<p>When you contact me via email or social media links, your communication is handled according to the respective platform's privacy policies (Gmail, LinkedIn, GitHub, etc.).</p>
-							
-							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Third-Party Services</h3>
-							<p>This site may link to external services (Topmate, social media platforms). These services have their own privacy policies which govern their data handling practices.</p>
-							
-							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Data Security</h3>
-							<p>Since no personal data is collected or stored on this website, there are no data security concerns related to this site specifically.</p>
-							
-							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Changes to Privacy Policy</h3>
-							<p>Any updates to this privacy policy will be reflected on this page with a new "last updated" date.</p>
-							
-							<h3 style="color:var(--accent);margin-top:24px;margin-bottom:12px">Contact</h3>
-							<p>For privacy-related questions, contact me at: 
-								<a href="mailto:{{personal.email}}" id="privacy-email-link" style="color:var(--accent)">{{personal.email}}</a>
-							</p>
-							
-							<div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--border-light)">
-								<p style="margin:0;font-size:13px;color:var(--muted)">For comprehensive privacy information about 0xDPS products and services:</p>
-								<a href="/privacy" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;text-decoration:none;border:1px solid var(--accent);padding:8px 16px;border-radius:6px">View Full Privacy Policy →</a>
+			<!-- Featured Projects -->
+			{{#if projects}}
+			<div class="resume-section" id="projects">
+				<div class="section-head">
+					<span class="section-label">{{projects.title}}</span>
+					<div class="section-rule"></div>
+				</div>
+				<p style="font-size:13px;color:var(--muted);margin-bottom:16px">{{projects.subtitle}}</p>
+				<div class="projects-list">
+					{{#each projects.items}}
+					<div class="project-card">
+						<div class="project-card-top">
+							<div class="project-name">{{title}}</div>
+							<div class="project-chips">
+								{{#each technologies}}<span class="tech-chip">{{this}}</span>{{/each}}
 							</div>
 						</div>
+						<p class="project-desc">{{description}}</p>
+						<div class="project-achievements">
+							<strong>Key achievements:</strong> {{achievements}}
+						</div>
 					</div>
+					{{/each}}
 				</div>
 			</div>
+			{{/if}}
+
+			<!-- Side Projects -->
+			{{#if sideProjects}}
+			<div class="resume-section">
+				<div class="section-head">
+					<span class="section-label">{{sideProjects.title}}</span>
+					<div class="section-rule"></div>
+				</div>
+				<p style="font-size:13px;color:var(--muted);margin-bottom:16px">{{sideProjects.subtitle}}</p>
+				<div class="side-grid">
+					{{#each sideProjects.items}}
+					<div class="side-card">
+						<div class="side-card-top">
+							<div class="side-name">{{name}}</div>
+							<div class="side-year">{{year}}</div>
+						</div>
+						<div class="side-chips">
+							{{#each technologies}}<span class="tech-chip">{{this}}</span>{{/each}}
+						</div>
+						<div class="side-desc">{{description}}</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			{{/if}}
+
+			<!-- Achievements -->
+			{{#if achievements}}
+			<div class="resume-section">
+				<div class="section-head">
+					<span class="section-label">{{achievements.title}}</span>
+					<div class="section-rule"></div>
+				</div>
+				<div class="achievements-list">
+					{{#each achievements.items}}
+					<div class="achievement-card">
+						<div class="achievement-title">{{title}}</div>
+						<div class="achievement-year">{{year}}</div>
+						<div class="achievement-desc">{{description}}</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			{{/if}}
+
 		</main>
+	</div><!-- /.resume-body -->
+
+	<!-- ░░ FOOTER ░░ -->
+	<footer class="resume-footer">
+		© <span id="year">{{{year}}}</span> Devendra Pratap Singh — Built with clarity. &nbsp;·&nbsp;
+		<a href="#privacy" onclick="togglePrivacy();return false;">Privacy</a>
+	</footer>
+
+	<!-- ░░ PRIVACY MODAL ░░ -->
+	<div id="privacy-modal" class="privacy-overlay">
+		<div class="privacy-box">
+			<div class="privacy-header">
+				<h2>Privacy Policy</h2>
+				<button onclick="togglePrivacy()" class="privacy-close" aria-label="Close">&times;</button>
+			</div>
+			<p><strong>Last updated:</strong> <span id="privacy-date">{{{date}}}</span></p>
+
+			<h3>Information Collection</h3>
+			<p>This website is a static portfolio site. I don't collect, store, or process any personal data. No cookies, analytics, or tracking scripts are used.</p>
+
+<h3>Contact Information</h3>
+<p>When you contact me via email or social media links, your communication is handled according to the respective platform's privacy policies (Gmail, LinkedIn, GitHub, etc.).</p>
+
+			<h3>Third-Party Services</h3>
+			<p>This site may link to external services (Topmate, social media platforms). These services have their own privacy policies which govern their data handling practices.</p>
+
+			<h3>Data Security</h3>
+			<p>Since no personal data is collected or stored on this website, there are no data security concerns related to this site specifically.</p>
+
+			<h3>Changes to Privacy Policy</h3>
+			<p>Any updates to this privacy policy will be reflected on this page with a new "last updated" date.</p>
+
+			<h3>Contact</h3>
+			<p>For privacy-related questions, contact me at:
+				<a href="mailto:{{personal.email}}" id="privacy-email-link">{{personal.email}}</a>
+			</p>
+
+			<div style="margin-top:24px;padding-top:18px;border-top:1px solid var(--border)">
+				<p style="font-size:13px;margin-bottom:12px">For comprehensive privacy information about 0xDPS products and services:</p>
+				<a href="/privacy" style="color:var(--accent);font-weight:600;border:1px solid var(--accent);padding:8px 16px;border-radius:6px;display:inline-block">View Full Privacy Policy →</a>
+			</div>
+		</div>
 	</div>
 
-	<script src="assets/js/scripts.min.js"></script>
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "Devendra Pratap Singh",
-		"alternateName": ["0xdps", "DPS"],
-		"url": "https://dps.codes/",
-		"image": "https://dps.codes/assets/profile/profile.webp",
-		"sameAs": [
-			"https://www.linkedin.com/in/0xdps",
-			"https://github.com/0xdps",
-			"https://twitter.com/0xdps",
-			"https://medium.com/@0xdps",
-			"https://topmate.io/i0xdps"
-		],
-		"jobTitle": "Engineering Leader / Senior Backend Engineer",
-		"worksFor": {
-			"@type": "Organization",
-			"name": "Faze Technologies",
-			"url": "https://faze.tech"
-		},
-		"alumniOf": {
-			"@type": "CollegeOrUniversity",
-			"name": "National Institute of Technology, Bhopal"
-		},
-		"address": {
-			"@type": "PostalAddress",
-			"addressLocality": "Delhi NCR",
-			"addressCountry": "IN"
-		},
-		"knowsAbout": [
-			"Backend Development",
-			"System Design",
-			"Cloud Migration",
-			"AWS",
-			"GCP",
-			"Python",
-			"Java",
-			"Node.js",
-			"Golang",
-			"Distributed Systems",
-			"Microservices",
-			"DevOps",
-			"Performance Optimization"
-		],
-		"description": "Engineering leader with 9.5 years of experience in backend engineering, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille). Specializes in Python, Node.js, Golang, distributed systems and DevOps."
-	}
-	</script>
-	<script defer data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="0xdps" data-description="Support me on Buy me a coffee!" data-message="" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</div><!-- /.resume-wrapper -->
+
+<script src="assets/js/scripts.min.js"></script>
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Devendra Pratap Singh",
+	"alternateName": ["0xdps", "DPS"],
+	"url": "https://dps.codes/",
+	"image": "https://dps.codes/assets/profile/profile.webp",
+	"sameAs": [
+		"https://www.linkedin.com/in/0xdps",
+		"https://github.com/0xdps",
+		"https://twitter.com/0xdps",
+		"https://medium.com/@0xdps",
+		"https://topmate.io/i0xdps"
+	],
+	"jobTitle": "Principal Software Engineer",
+	"alumniOf": {
+		"@type": "CollegeOrUniversity",
+		"name": "National Institute of Technology, Bhopal"
+	},
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Delhi NCR",
+		"addressCountry": "IN"
+	},
+	"knowsAbout": [
+		"Backend Development","System Design","Cloud Migration","AWS","GCP",
+		"Python","Java","Node.js","Golang","Distributed Systems","Microservices"
+	]
+}
+</script>
 </body>
 </html>
