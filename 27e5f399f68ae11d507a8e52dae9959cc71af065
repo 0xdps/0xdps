@@ -1,0 +1,23 @@
+website/vercel.json
+  ddee3e2247170abe 2-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "27e5f399f68ae11d507a8e52dae9959cc71af065",
+  "prompts": {
+    "ddee3e2247170abe": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "1fd2c6c0-4595-40cc-89bb-71c33e547e8d",
+        "model": "copilot/claude-sonnet-4.6"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 4,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    }
+  }
+}
