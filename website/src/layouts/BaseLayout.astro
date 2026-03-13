@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title = 'Devendra Pratap Singh | Engineering Leader & Backend Specialist',
-  description = 'Devendra Pratap Singh — Engineering leader with 9+ years experience in backend, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille).',
+  description = 'Devendra Pratap Singh — Engineering leader with 10+ years experience in backend systems, cloud migrations (AWS → GCP), and game performance (ex-Zynga, FarmVille).',
   canonical = 'https://dps.codes/',
 } = Astro.props;
 ---
@@ -43,7 +43,7 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Devendra Pratap Singh" />
     <meta property="og:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems" />
-    <meta property="og:description" content="Engineering leader with 9+ years experience in backend, cloud migrations and game performance." />
+    <meta property="og:description" content="Engineering leader with 10+ years experience in backend, cloud migrations and game performance." />
     <meta property="og:url" content="https://dps.codes/" />
     <meta property="og:image" content="https://dps.codes/assets/profile/profile.webp" />
     <meta property="og:image:alt" content="Devendra Pratap Singh profile photo" />
@@ -54,7 +54,7 @@ const {
     <meta name="twitter:site" content="@0xdps" />
     <meta name="twitter:creator" content="@0xdps" />
     <meta name="twitter:title" content="Devendra Pratap Singh | Engineering Leader • Backend & Cloud Systems" />
-    <meta name="twitter:description" content="Engineering leader with 9+ years experience in backend, cloud migrations and game performance." />
+    <meta name="twitter:description" content="Engineering leader with 10+ years experience in backend, cloud migrations and game performance." />
     <meta name="twitter:image" content="https://dps.codes/assets/profile/profile.webp" />
 
     <!-- PWA -->
@@ -76,6 +76,12 @@ const {
     <slot />
 
     <script>
+      declare global {
+        interface Window {
+          togglePrivacy: () => void;
+        }
+      }
+
       // Theme management
       (function initializeTheme() {
         const themeButton = document.getElementById('themeBtn');

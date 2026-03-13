@@ -4,8 +4,8 @@
     "title": "Principal Software Engineer @ Spinny | Backend & Cloud Systems | Ex-Zynga (FarmVille) | Ex-BookMyShow",
     "logo": "DPS",
     "tagline": "Turning complex problems into simple, scalable systems.",
-    "description": "Specialized in backend architecture, cloud platforms, and engineering leadership. Currently building automotive-tech solutions at Spinny. I value pragmatic trade-offs, system scalability, and clean design.",
-    "location": "🌍 Based in India • 🌱 Vegetarian • 💡 Believes good engineering is about clarity — in systems and in communication",
+    "description": "Results-driven technologist with 10 years of experience designing and scaling backend and platform systems using Python, Node.js, Java, Go, microservices, and PostgreSQL. Proven in leading runtime upgrades, large-scale migrations, and workflow transformations that reduced turnaround time from days to hours.",
+    "location": "Based in India · Believes good engineering is about clarity — in systems and in communication",
     "email": "dps.manit@gmail.com",
     "phone": "+91-9424475996",
     "resumeUrl": "/assets/resume/Devendra_Pratap_Singh.pdf"
@@ -14,7 +14,7 @@
     "title": "About Me",
     "subtitle": "Building scalable systems with clean architecture",
     "description": [
-      "I'm a software engineer with 9+ years of professional experience in backend development, distributed systems, and cloud infrastructure. Currently at Spinny, building scalable automotive-tech solutions. Over the years, I've worked across diverse domains — automotive, gaming, fintech, blockchain, entertainment — with a strong focus on building systems that are scalable, secure, and reliable.",
+      "I'm a software engineer with 10+ years of professional experience in backend development, distributed systems, and cloud infrastructure. Currently at Spinny, building scalable automotive-tech solutions. Over the years, I've worked across diverse domains — automotive, gaming, fintech, blockchain, entertainment — with a strong focus on building systems that are scalable, secure, and reliable.",
       "At Zynga, I spent 5 years working on FarmVille 2 & 3, where I optimized performance for millions of players, cut pre-release times from hours to minutes, and built automation frameworks. At BookMyShow, I developed identity management systems and real-time monitoring tools. After Zynga, I took time to explore emerging technologies and evaluate strategic career moves before joining Fancraze, where I led engineering initiatives for cricket NFT platform. Now at Spinny, I'm focusing on building robust backend systems for India's largest used car platform.",
       "I believe in pragmatic problem-solving, mentoring teams, and designing systems that balance performance with long-term maintainability. I value being intentional about career transitions, using these periods to stay updated with industry trends and make thoughtful decisions about the next challenge. Outside work, I enjoy writing about tech, conducting mock interviews, and helping developers grow through mentorship."
     ],
@@ -47,14 +47,14 @@
       "SAP PI"
     ],
     "interests": [
-      "🏗️ System Design",
-      "🔄 Microservices Architecture",
-      "⚡ Performance Optimization",
-      "🔧 DevOps & SRE",
-      "☁️ Cloud Migrations",
-      "🔍 Data Engineering",
-      "📊 Observability & Monitoring",
-      "👥 Engineering Leadership"
+      "System Design",
+      "Microservices Architecture",
+      "Performance Optimization",
+      "DevOps & SRE",
+      "Cloud Migrations",
+      "Data Engineering",
+      "Observability & Monitoring",
+      "Engineering Leadership"
     ]
   },
   "services": {
@@ -63,23 +63,23 @@
     "topmateUrl": "https://topmate.io/i0xdps",
     "offerings": [
       {
-        "icon": "MI",
-        "title": "🎯 Mock Interviews (60 min)",
+        "icon": "interview",
+        "title": "Mock Interviews (60 min)",
         "description": "Live, structured mock interviews with detailed feedback — system design rounds, backend architecture, and deep dives into Java/Python/Go. Includes comprehensive written notes and personalized improvement roadmap."
       },
       {
-        "icon": "1-1",
-        "title": "👨‍💻 One-on-One Mentorship (30/60 min)",
+        "icon": "mentorship",
+        "title": "One-on-One Mentorship (30/60 min)",
         "description": "Focused sessions for career guidance, system design walkthroughs, code reviews, and technical leadership advice. Perfect for engineers looking to level up their skills or transition to senior/principal roles."
       },
       {
-        "icon": "QD",
-        "title": "⚡ Quick Doubt Call (15–20 min)",
+        "icon": "lightning",
+        "title": "Quick Doubt Call (15–20 min)",
         "description": "Short, focused calls to clear specific technical problems — debugging help, architecture decisions, interview preparation, or career-related questions. Quick and actionable solutions."
       },
       {
-        "icon": "SD",
-        "title": "🏗️ System Design Reviews (45 min)",
+        "icon": "layers",
+        "title": "System Design Reviews (45 min)",
         "description": "Deep dive into your system design approaches, architecture decisions, and scalability considerations. Perfect for preparing for senior+ interviews or validating production system designs."
       }
     ]
@@ -124,15 +124,16 @@
         "period": "October 2025 - Present",
         "technologies": ["Python", "Django", "PostgreSQL", "Kafka"],
         "achievements": [
-          "Leading backend architecture initiatives for India's largest used car marketplace",
-          "Designing scalable systems to handle automotive inventory, pricing, and transaction workflows",
-          "Focusing on performance optimization and system reliability for high-traffic automotive platform",
-          "Contributing to technical strategy and engineering best practices"
+          "Leading a team of 11 engineers; driving upgrade of Python services from 3.7 → 3.10, strengthening security, enabling modern language features, and improving runtime performance",
+          "Designed and deployed an internal library for deep request tracing and structured logging, significantly improving observability and reducing production issue resolution time",
+          "Redesigned the vehicle and technician allocation workflow, streamlining orchestration logic to cut turnaround time from multiple days to under half a day",
+          "Led large-scale migration of vehicle parts inventory data, refactored database schemas, and tuned indexing and query strategies to enhance system performance under peak load",
+          "Providing technical leadership and mentorship to the engineering team, guiding best practices and fostering a culture of engineering excellence"
         ]
       },
       {
         "role": "👨‍💼 Engineering Manager",
-        "company": "Fancraze (Official Cricket NFT Provider)",
+        "company": "Fancraze / Faze Technologies (Official Cricket NFT Provider)",
         "period": "April 2024 - August 2025",
         "technologies": ["Node.js", "Golang", "MongoDB", "PostgreSQL", "React"],
         "achievements": [
@@ -189,40 +190,28 @@
     "subtitle": "Independent explorations, utilities & technical experiments",
     "items": [
       {
-        "name": "Personal Portfolio & Technical Blog",
-        "year": 2025,
-        "description": "Modern portfolio website built with vanilla HTML/CSS/JS focusing on performance and clean design. Includes technical blog posts and mentorship services integration.",
-        "technologies": ["HTML5", "CSS3", "JavaScript", "Performance Optimization"]
+        "name": "DefaultTamer",
+        "year": "2026–Present",
+        "description": "macOS menu-bar app built with SwiftUI to control link-opening behavior using per-domain and per-app rules. Optimized for low-latency UX, reliable background execution, and simple rule management.",
+        "technologies": ["SwiftUI", "macOS", "App Development"]
       },
       {
-        "name": "Object Data Model for Google Sheets",
-        "year": 2018,
-        "description": "Python library to fetch Google Sheets data and convert it into class objects resembling Django ORM models. Simplifies data manipulation and validation workflows.",
-        "technologies": ["Python", "Google Sheets API", "Object-Oriented Design"]
+        "name": "GitPlus",
+        "year": "2025–Present",
+        "description": "VS Code extension to streamline Git workflows by improving history visibility and commit hygiene. Focused on safe operations, intuitive UX, and high performance on large repositories.",
+        "technologies": ["TypeScript", "VS Code Extension API", "Git"]
       },
       {
-        "name": "Interview Preparation Resources",
-        "year": "Ongoing",
-        "description": "Curated collection of system design templates, coding interview patterns, and technical leadership resources shared through mentorship sessions.",
-        "technologies": ["System Design", "Documentation", "Technical Writing"]
+        "name": "Pingpong CLI",
+        "year": "2025–Present",
+        "description": "Developer-friendly npm CLI for API testing, supporting collections, request replay, and environment management to enable fast iteration, portability, and a consistent developer experience.",
+        "technologies": ["Node.js", "CLI", "npm"]
       },
       {
-        "name": "DevOps Automation Scripts",
-        "year": "2020-2024",
-        "description": "Collection of automation scripts for deployment, monitoring, and infrastructure management used across different projects and companies.",
-        "technologies": ["Python", "Bash", "Docker", "CI/CD", "Infrastructure Automation"]
-      },
-      {
-        "name": "Windows Phone Application for GeeksforGeeks",
-        "year": 2014,
-        "description": "Windows phone application for geeksforgeeks.org providing mobile access to programming content and tutorials with offline reading capabilities.",
-        "technologies": ["C# .Net", "Windows Phone Development Tools", "DOM Parser"]
-      },
-      {
-        "name": "Facebook Logout Script",
-        "year": 2013,
-        "description": "User-based script installed on GreaseMonkey allowing users to logout from Facebook account by pressing ALT+L from keyboard, enhancing user convenience.",
-        "technologies": ["JavaScript", "GreaseMonkey"]
+        "name": "Google Sheets ORM",
+        "year": "2018–Present",
+        "description": "Lightweight ORM-style Python framework over Google Sheets, enabling typed models, CRUD operations, validations, and batch processing. Packaged with documentation, tests, and versioned releases.",
+        "technologies": ["Python", "Google Sheets API", "ORM Design"]
       }
     ]
   },
