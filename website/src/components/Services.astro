@@ -1,0 +1,37 @@
+---
+interface Offering {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  topmateUrl: string;
+  offerings: Offering[];
+}
+
+const { title, subtitle, topmateUrl, offerings } = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">
+      <span class="section-label-text">{title}</span>
+      <span class="section-rule"></span>
+    </div>
+    <div class="services-grid">
+      {offerings.map((item) => (
+        <div class="svc-card">
+          <div class="svc-icon">{item.icon}</div>
+          <div class="svc-title">{item.title}</div>
+          <p class="svc-desc">{item.description}</p>
+        </div>
+      ))}
+    </div>
+    <div class="services-cta">
+      <a href={topmateUrl} class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a session on Topmate ↗</a>
+    </div>
+  </div>
+</section>

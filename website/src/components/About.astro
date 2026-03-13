@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string[];
+}
+
+const { title, subtitle, description } = Astro.props;
+---
+
+<section class="about-section section">
+  <div class="container">
+    <p class="section-hd">About</p>
+    <h2 class="about-title">{title}</h2>
+    <p class="about-subtitle">{subtitle}</p>
+    <div class="about-desc">
+      {description.map((para) => <p>{para}</p>)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+interface SideProject {
+  name: string;
+  year: string | number;
+  description: string;
+  technologies: string[];
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  items: SideProject[];
+}
+
+const { title, subtitle, items } = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-hd">{title}</h2>
+    <div class="sidep-grid">
+      {items.map((item) => (
+        <div class="sidep-card">
+          <div class="sidep-head">
+            <span class="sidep-name">{item.name}</span>
+            <span class="sidep-year">{item.year}</span>
+          </div>
+          <div class="sidep-techs">
+            {item.technologies.map((t) => <span class="chip">{t}</span>)}
+          </div>
+          <p class="sidep-desc">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

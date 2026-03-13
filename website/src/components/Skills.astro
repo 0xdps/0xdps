@@ -1,0 +1,62 @@
+---
+interface Props {
+  skills: {
+    primary: string[];
+    databases: string[];
+    devops: string[];
+    messaging: string[];
+    monitoring?: string[];
+    leadership?: string[];
+  };
+  education: {
+    degree: string;
+    institution: string;
+    period: string;
+    grade: string;
+  };
+  interests?: string[];
+}
+const { skills, education, interests } = Astro.props;
+
+const rows = [
+  { label: 'Languages',  items: skills.primary },
+  { label: 'Databases',  items: skills.databases },
+  { label: 'DevOps',     items: skills.devops },
+  { label: 'Messaging',  items: skills.messaging },
+  ...(skills.monitoring ? [{ label: 'Observability', items: skills.monitoring }] : []),
+  ...(skills.leadership ? [{ label: 'Leadership',    items: skills.leadership }] : []),
+];
+---
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-hd">Skills &amp; Education</h2>
+    <div class="edu-block">
+      <div class="edu-degree">{education.degree}</div>
+      <div class="edu-inst">{education.institution}</div>
+      <div class="edu-meta">{education.period}</div>
+    </div>
+    <div class="skills-block" style="margin-top: 20px;">
+      {rows.map(row => (
+        <div class="skills-row">
+          <span class="skills-cat">{row.label}</span>
+          <div class="chips">
+            {row.items.map((s, i) => (
+              <span class="chip">{s}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    {interests && interests.length > 0 && (
+      <div class="skills-block" style="margin-top: 20px;">
+        <div class="skills-row">
+          <span class="skills-cat">Interests</span>
+          <div class="chips">
+            {interests.map((i) => <span class="chip chip-accent">{i}</span>)}
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

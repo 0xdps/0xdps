@@ -1,0 +1,46 @@
+---
+interface Props {
+  email: string;
+}
+const { email } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; {year} Devendra Pratap Singh</span>
+      <nav class="footer-links">
+        <a href={`mailto:${email}`}>{email}</a>
+        <button onclick="togglePrivacy()" type="button">Privacy</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Privacy modal -->
+<div id="privacyModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Privacy Policy</h2>
+      <button class="modal-close" onclick="togglePrivacy()" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h3>This website</h3>
+      <p>This personal portfolio does not collect personal data, set cookies, or run tracking scripts. Vercel may collect anonymous, aggregated page-view data as part of their hosting infrastructure.</p>
+
+      <h3>External links</h3>
+      <p>Links from this site lead to third-party services with their own privacy policies:</p>
+      <ul>
+        <li><a href="https://topmate.io" target="_blank" rel="noopener">Topmate</a> — booking & mentorship sessions</li>
+        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter</a></li>
+        <li><a href="https://medium.com" target="_blank" rel="noopener">Medium</a></li>
+      </ul>
+
+      <h3>Contact</h3>
+      <p>Questions? Email <a href={`mailto:${email}`}>{email}</a>.</p>
+    </div>
+  </div>
+</div>
