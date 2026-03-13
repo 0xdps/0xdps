@@ -36,6 +36,7 @@ const socialIcons: Record<string, string> = {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.name}
+            data-umami-event={`social-${link.icon}-click`}
             set:html={socialIcons[link.icon] ?? ''}
           />
         ))}

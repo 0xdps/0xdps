@@ -32,7 +32,7 @@ const externalArrow = `<svg width="13" height="13" viewBox="0 0 24 24" fill="non
         <h2 class="topmate-title">{title}</h2>
         <p class="topmate-subtitle">{subtitle}</p>
       </div>
-      <a href={topmateUrl} class="btn btn-primary topmate-book-btn" target="_blank" rel="noopener noreferrer" set:html={`Book on Topmate${externalArrow}`} />
+      <a href={topmateUrl} class="btn btn-primary topmate-book-btn" target="_blank" rel="noopener noreferrer" data-umami-event="topmate-book-click" set:html={`Book on Topmate${externalArrow}`} />
     </div>
 
     <div class="topmate-offerings">

@@ -23,10 +23,10 @@ const { personal, services } = Astro.props;
     <h1 class="hero-name">{personal.name}</h1>
     <p class="hero-tagline">{personal.tagline}</p>
     <div class="hero-actions">
-      <a href={`mailto:${personal.email}`} class="btn btn-primary">Email me</a>
-      <a href={personal.resumeUrl} class="btn btn-ghost" target="_blank" rel="noopener noreferrer">CV / R&eacute;sum&eacute;</a>
+      <a href={`mailto:${personal.email}`} class="btn btn-primary" data-umami-event="hero-email-click">Email me</a>
+      <a href={personal.resumeUrl} class="btn btn-ghost" target="_blank" rel="noopener noreferrer" data-umami-event="hero-resume-download">CV / R&eacute;sum&eacute;</a>
       {services && (
-        <a href={services.topmateUrl} class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Topmate &#8599;</a>
+        <a href={services.topmateUrl} class="btn btn-ghost" target="_blank" rel="noopener noreferrer" data-umami-event="hero-topmate-click">Topmate &#8599;</a>
       )}
     </div>
     <p class="hero-meta">{personal.location}</p>
