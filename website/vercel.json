@@ -1,8 +1,4 @@
 {
-  "buildCommand": "cd website && npm run build",
-  "installCommand": "cd website && npm install",
-  "devCommand": "cd website && npm run dev",
-  "outputDirectory": "website/dist",
   "framework": "astro",
   "cleanUrls": true,
   "trailingSlash": false,
