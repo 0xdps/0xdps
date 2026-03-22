@@ -1,0 +1,24 @@
+# robots.txt for dps.codes
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://dps.codes/sitemap.xml
+
+# Block source files and development directories
+Disallow: /templates/
+Disallow: /data/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Block development and config files
+Disallow: /build.js
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vercel.json
+Disallow: /.gitignore
+Disallow: /TECHNICAL.md
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1

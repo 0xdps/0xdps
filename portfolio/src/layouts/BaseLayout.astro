@@ -1,0 +1,250 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Devendra Pratap Singh — Principal Software Engineer & System Architect',
+  description = 'Principal Software Engineer with 10+ years building scalable backend systems across gaming, automotive, NFT, and entertainment. Ex-Zynga FarmVille, Ex-BookMyShow. Currently at Spinny.',
+} = Astro.props;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Devendra Pratap Singh',
+  alternateName: '0xdps',
+  url: 'https://dps.codes/',
+  image: 'https://dps.codes/assets/profile/profile.webp',
+  email: 'dps.manit@gmail.com',
+  sameAs: [
+    'https://www.linkedin.com/in/0xdps',
+    'https://github.com/0xdps',
+    'https://twitter.com/0xdps',
+    'https://0xdps.medium.com',
+    'https://topmate.io/i0xdps',
+  ],
+  jobTitle: 'Principal Software Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Spinny',
+    description: "India's Largest Used Car Platform",
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'National Institute of Technology, Bhopal',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Delhi NCR',
+    addressCountry: 'IN',
+  },
+  knowsAbout: [
+    'Backend Development',
+    'System Design',
+    'Distributed Systems',
+    'Cloud Migration',
+    'AWS',
+    'GCP',
+    'Python',
+    'Node.js',
+    'Go',
+    'Java',
+    'Microservices',
+    'Performance Optimization',
+    'Engineering Leadership',
+  ],
+  description:
+    'Principal Software Engineer with 10+ years of experience building scalable backend systems across gaming, automotive, NFT, and entertainment industries.',
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Devendra Pratap Singh, 0xdps, Principal Software Engineer, Backend Engineer, System Design, Distributed Systems, Python, Node.js, Go, Java, Zynga, FarmVille, BookMyShow, Spinny, Cloud Migration, AWS GCP, Engineering Leader, India" />
+    <meta name="author" content="Devendra Pratap Singh" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://dps.codes/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dps.codes/" />
+    <meta property="og:title" content="Devendra Pratap Singh — Principal Software Engineer" />
+    <meta property="og:description" content="10+ years building systems that scale. Ex-Zynga FarmVille, Ex-BookMyShow. Currently Principal Engineer @ Spinny." />
+    <meta property="og:image" content="https://dps.codes/assets/profile/profile.webp" />
+    <meta property="og:image:alt" content="Devendra Pratap Singh — Principal Software Engineer" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Devendra Pratap Singh" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@0xdps" />
+    <meta name="twitter:creator" content="@0xdps" />
+    <meta name="twitter:title" content="Devendra Pratap Singh — Principal Software Engineer" />
+    <meta name="twitter:description" content="10+ years building systems that scale. Ex-Zynga FarmVille, Ex-BookMyShow. Currently @ Spinny." />
+    <meta name="twitter:image" content="https://dps.codes/assets/profile/profile.webp" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <!-- PWA / Theme -->
+    <meta name="theme-color" content="#07090e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Schema.org / JSON-LD -->
+    <Fragment set:html={`<script type="application/ld+json">${JSON.stringify(personSchema)}</script>`} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      /* ---- Nav: scroll effect ---- */
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', () => {
+        nav?.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+
+      /* ---- Hamburger / mobile nav ---- */
+      const ham = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobile-nav');
+      const mnClose = document.getElementById('mnClose');
+      const mnLinks = mobileNav?.querySelectorAll('a') ?? [];
+
+      function openMN() {
+        mobileNav?.classList.add('open');
+        ham?.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMN() {
+        mobileNav?.classList.remove('open');
+        ham?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      ham?.addEventListener('click', openMN);
+      mnClose?.addEventListener('click', closeMN);
+      mnLinks.forEach(a => a.addEventListener('click', closeMN));
+
+      /* ---- Smooth scroll for hash links ---- */
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const href = a.getAttribute('href');
+          if (!href || href === '#') return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          const navH = 70;
+          window.scrollTo({ top: (target as HTMLElement).offsetTop - navH - 16, behavior: 'smooth' });
+        });
+      });
+
+      /* ---- Rotating hero label ---- */
+      const labels = ['Systems Architect', 'Backend Engineer', 'Engineering Leader', 'Cloud Migrator', 'Perf Optimizer', 'Mentor & Coach'];
+      const rotEl = document.getElementById('rotating-label');
+      let li = 0;
+      if (rotEl) {
+        setInterval(() => {
+          rotEl.style.opacity = '0';
+          rotEl.style.transform = 'translateY(-8px)';
+          setTimeout(() => {
+            li = (li + 1) % labels.length;
+            rotEl.textContent = labels[li];
+            rotEl.style.opacity = '1';
+            rotEl.style.transform = 'translateY(0)';
+          }, 290);
+        }, 2800);
+      }
+
+      /* ---- Terminal card type-in ---- */
+      const termLines = [
+        { delay: 200,  html: '<span class="term-comment">// Principal Software Engineer</span>' },
+        { delay: 500,  html: '' },
+        { delay: 700,  html: '<span class="term-prompt">const</span> <span class="term-key">engineer</span> = {' },
+        { delay: 950,  html: '  <span class="term-key">name</span>:       <span class="term-str">"Devendra Pratap Singh"</span>,' },
+        { delay: 1150, html: '  <span class="term-key">handle</span>:     <span class="term-str">"0xdps"</span>,' },
+        { delay: 1350, html: '  <span class="term-key">role</span>:       <span class="term-str">"Principal SWE"</span>,' },
+        { delay: 1550, html: '  <span class="term-key">at</span>:         <span class="term-arr">Spinny</span>,' },
+        { delay: 1750, html: '  <span class="term-key">yearsExp</span>:   <span class="term-num">10</span>,' },
+        { delay: 1950, html: '  <span class="term-key">industries</span>: <span class="term-num">5</span>,' },
+        { delay: 2150, html: '  <span class="term-key">usersServed</span>: <span class="term-str">"10M+"</span>,' },
+        { delay: 2350, html: '  <span class="term-key">skills</span>: [' },
+        { delay: 2500, html: '    <span class="term-str">"Backend Systems"</span>,' },
+        { delay: 2650, html: '    <span class="term-str">"Distributed Systems"</span>,' },
+        { delay: 2800, html: '    <span class="term-str">"Cloud Architecture"</span>,' },
+        { delay: 2950, html: '    <span class="term-str">"Engineering Leadership"</span>,' },
+        { delay: 3100, html: '  ],' },
+        { delay: 3250, html: '  <span class="term-key">contact</span>: <span class="term-str">"dps.manit@gmail.com"</span>,' },
+        { delay: 3400, html: '}' },
+        { delay: 3600, html: '' },
+        { delay: 3750, html: '<span class="term-prompt">$</span> <span class="term-cmd">echo $status</span>' },
+        { delay: 3950, html: '<span style="color:#86efac">✓ Available for collaboration</span><span class="term-cursor"></span>' },
+      ];
+
+      const termBody = document.getElementById('term-body');
+      if (termBody) {
+        termLines.forEach(({ delay, html }) => {
+          setTimeout(() => {
+            const div = document.createElement('div');
+            div.className = 'term-line';
+            div.innerHTML = html || '&nbsp;';
+            div.style.animationDelay = '0s';
+            termBody.appendChild(div);
+          }, delay);
+        });
+      }
+
+      /* ---- Scroll reveal (IntersectionObserver) ---- */
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+      /* ---- Count-up animation ---- */
+      const countObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          const target = parseInt(el.getAttribute('data-count') ?? '0', 10);
+          const dur = 1400;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const p = Math.min((now - start) / dur, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            el.textContent = String(Math.round(ease * target));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          countObs.unobserve(el);
+        });
+      }, { threshold: 0.6 });
+
+      document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
