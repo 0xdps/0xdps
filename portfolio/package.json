@@ -21,8 +21,5 @@
   "devDependencies": {
     "astro": "^6.0.4",
     "@astrojs/sitemap": "^3.7.1"
-  },
-  "engines": {
-    "node": "22.x"
   }
 }
