@@ -105,6 +105,14 @@ const personSchema = {
     <!-- Schema.org / JSON-LD -->
     <Fragment set:html={`<script type="application/ld+json">${JSON.stringify(personSchema)}</script>`} />
 
+    <!-- Umami Analytics -->
+    <script
+      defer
+      src="https://assets.0xlabs.space/anately.js"
+      data-website-id="b1b80cdf-1466-4469-ad6c-486952ce3412"
+      data-host-url="https://analytics.0xlabs.space"
+    ></script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -241,6 +249,17 @@ const personSchema = {
       }, { threshold: 0.6 });
 
       document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+      /* ---- External link tracking (Umami) ---- */
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="http"]').forEach(a => {
+        a.addEventListener('click', () => {
+          const url = a.getAttribute('href') ?? '';
+          const label = a.getAttribute('aria-label') || a.textContent?.trim() || url;
+          if (typeof (window as any).umami?.track === 'function') {
+            (window as any).umami.track('external-link', { url, label });
+          }
+        });
+      });
     </script>
   </body>
 </html>
