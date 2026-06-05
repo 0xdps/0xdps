@@ -1,0 +1,238 @@
+---
+import { portfolioFiles } from '../../data/portfolioFiles';
+
+const recentFiles = portfolioFiles.filter(f => f.id !== 'readme').slice(0, 5);
+const allFiles = portfolioFiles;
+---
+
+<div class="welcome-screen" id="welcome-screen">
+  <div class="welcome-content">
+    <div class="welcome-logo">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="var(--vscode-accent)" stroke-width="3"/>
+        <text x="50" y="58" text-anchor="middle" fill="var(--vscode-accent)" font-family="var(--ff-display)" font-size="28" font-weight="800">0x</text>
+        <text x="50" y="78" text-anchor="middle" fill="var(--vscode-fg)" font-family="var(--ff-display)" font-size="14" font-weight="700">DPS</text>
+      </svg>
+    </div>
+
+    <h1 class="welcome-title">Welcome to 0xdps</h1>
+    <p class="welcome-subtitle">Principal Software Engineer & System Architect</p>
+
+    <div class="welcome-sections">
+      <div class="welcome-section">
+        <h2 class="welcome-section-title">Start</h2>
+        <div class="welcome-links">
+          <button class="welcome-link" data-file-id="readme">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            <span>Open README.md</span>
+          </button>
+          <button class="welcome-link" data-file-id="intro">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>About Me</span>
+          </button>
+          <button class="welcome-link" data-file-id="experience">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+            </svg>
+            <span>Experience</span>
+          </button>
+          <button class="welcome-link" data-file-id="contact">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>Get in Touch</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="welcome-section">
+        <h2 class="welcome-section-title">Recent</h2>
+        <div class="welcome-links">
+          {recentFiles.map(file => (
+            <button class="welcome-link" data-file-id={file.id}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span>{file.name}</span>
+              <span class="welcome-link-folder">0xdps</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="welcome-section">
+        <h2 class="welcome-section-title">Walkthroughs</h2>
+        <div class="welcome-links">
+          <div class="welcome-walkthrough">
+            <div class="walkthrough-icon">⌨️</div>
+            <div class="walkthrough-info">
+              <div class="walkthrough-title">Keyboard Shortcuts</div>
+              <div class="walkthrough-desc">Cmd+P to search files · Cmd+W to close tabs</div>
+            </div>
+          </div>
+          <div class="welcome-walkthrough">
+            <div class="walkthrough-icon">🎨</div>
+            <div class="walkthrough-info">
+              <div class="walkthrough-title">VS Code Theme</div>
+              <div class="walkthrough-desc">This portfolio is styled like your favorite editor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome-footer">
+      <span>Built with Astro</span>
+      <span>·</span>
+      <span>Inspired by VS Code</span>
+      <span>·</span>
+      <span>© 2026 0xdps</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .welcome-screen {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 24px;
+  }
+
+  .welcome-content {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .welcome-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    opacity: 0.9;
+  }
+
+  .welcome-title {
+    font-family: var(--ff-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--vscode-fg);
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .welcome-subtitle {
+    text-align: center;
+    color: var(--vscode-text-muted);
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+
+  .welcome-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .welcome-section-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--vscode-sidebar-fg);
+    margin-bottom: 10px;
+    padding-left: 4px;
+  }
+
+  .welcome-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .welcome-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border: none;
+    background: none;
+    color: var(--vscode-fg);
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+    width: 100%;
+  }
+
+  .welcome-link:hover {
+    background: var(--vscode-hover-bg);
+  }
+
+  .welcome-link svg {
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .welcome-link-folder {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--vscode-sidebar-fg);
+    opacity: 0.7;
+  }
+
+  .welcome-walkthrough {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+
+  .welcome-walkthrough:hover {
+    background: var(--vscode-hover-bg);
+  }
+
+  .walkthrough-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .walkthrough-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vscode-fg);
+    margin-bottom: 2px;
+  }
+
+  .walkthrough-desc {
+    font-size: 12px;
+    color: var(--vscode-text-muted);
+  }
+
+  .welcome-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--vscode-border);
+    font-size: 11px;
+    color: var(--vscode-sidebar-fg);
+  }
+</style>

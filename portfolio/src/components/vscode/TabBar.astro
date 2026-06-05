@@ -1,0 +1,143 @@
+---
+---
+
+<div class="tab-bar" id="tab-bar">
+  <div class="tab-list" id="tab-list">
+    <!-- Tabs injected by JS -->
+  </div>
+  <div class="tab-actions">
+    <button class="tab-action" id="tab-more" title="Show All Open Editors">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="1"/>
+        <circle cx="19" cy="12" r="1"/>
+        <circle cx="5" cy="12" r="1"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .tab-bar {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    background: var(--vscode-tab-bg);
+    border-bottom: 1px solid var(--vscode-border);
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .tab-list {
+    display: flex;
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    height: 36px;
+    min-width: 120px;
+    max-width: 200px;
+    background: var(--vscode-tab-inactive);
+    border-right: 1px solid var(--vscode-border);
+    color: var(--vscode-tab-fg);
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .tab-item:hover {
+    background: var(--vscode-tab-hover);
+  }
+
+  .tab-item.active {
+    background: var(--vscode-tab-active);
+    color: var(--vscode-fg);
+    border-top: 1px solid var(--vscode-accent);
+  }
+
+  .tab-item.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--vscode-accent);
+  }
+
+  .tab-icon {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .tab-name {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+
+  .tab-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: none;
+    color: inherit;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0;
+    flex-shrink: 0;
+    transition: all 0.15s;
+  }
+
+  .tab-item:hover .tab-close,
+  .tab-item.active .tab-close {
+    opacity: 1;
+  }
+
+  .tab-close:hover {
+    background: var(--vscode-close-hover);
+  }
+
+  .tab-actions {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    flex-shrink: 0;
+  }
+
+  .tab-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    color: var(--vscode-sidebar-fg);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .tab-action:hover {
+    color: var(--vscode-fg);
+    background: var(--vscode-hover-bg);
+  }
+</style>
