@@ -1,0 +1,48 @@
+portfolio/src/components/files/ExperienceFile.astro
+  s_5f4ffab1941451::t_406f7520ff7296 1-100
+portfolio/src/components/files/ReadmeFile.astro
+  s_5f4ffab1941451::t_6625c16283b776 1-73
+portfolio/src/layouts/BaseLayout.astro
+  s_5f4ffab1941451::t_bfd0e52fb5e47d 124-808
+  s_5f4ffab1941451::t_8d8ed2ef274c30 123
+portfolio/src/utils/markdown.ts
+  s_5f4ffab1941451::t_30d8d2c2d25f8b 1-80
+portfolio/src/pages/index.astro
+  s_5f4ffab1941451::t_b04baa1b8c809e 3,7
+portfolio/src/components/files/ProjectsFile.astro
+  s_5f4ffab1941451::t_5c96cd0b651d6e 1-60
+portfolio/src/components/vscode/Editor.astro
+  s_5f4ffab1941451::t_55b46d16a188f6 2-87
+portfolio/src/scripts/vscode.ts
+  s_5f4ffab1941451::t_a519c186202f44 1-258
+portfolio/src/components/files/SideProjectsFile.astro
+  s_5f4ffab1941451::t_a599986dd82f03 1-62
+portfolio/src/scripts/vscodeState.js
+  s_5f4ffab1941451::t_9b7a44024624f8 1-217
+portfolio/src/components/files/IntroFile.astro
+  s_5f4ffab1941451::t_8642301f5bad15 1-63
+portfolio/src/components/vscode/VSCodeLayout.astro
+  s_5f4ffab1941451::t_ed0b274b0b6d74 54
+portfolio/src/components/files/SkillsFile.astro
+  s_5f4ffab1941451::t_e30180c1dfd145 1-83
+portfolio/src/components/files/ServicesFile.astro
+  s_5f4ffab1941451::t_f2cf99f9588cde 1-42
+portfolio/src/data/portfolioFiles.ts
+  s_5f4ffab1941451::t_807cb12f29a84e 61-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "ac0bade1cd3f1798f6e544b24b3d4c5fd124d366",
+  "prompts": {},
+  "sessions": {
+    "s_5f4ffab1941451": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "2167f0c5-a546-435c-a4d2-06a6d8070a52",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
