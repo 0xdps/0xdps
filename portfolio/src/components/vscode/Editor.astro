@@ -1,0 +1,307 @@
+---
+import ReadmeFile from '../files/ReadmeFile.astro';
+import IntroFile from '../files/IntroFile.astro';
+import ExperienceFile from '../files/ExperienceFile.astro';
+import ProjectsFile from '../files/ProjectsFile.astro';
+import SkillsFile from '../files/SkillsFile.astro';
+import SideProjectsFile from '../files/SideProjectsFile.astro';
+import ServicesFile from '../files/ServicesFile.astro';
+---
+
+<div class="editor" id="editor">
+  <div class="editor-pane" data-pane-id="readme">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">README.md</span>
+    </div>
+    <div class="editor-body">
+      <ReadmeFile />
+    </div>
+  </div>
+
+  <div class="editor-pane" data-pane-id="intro">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">intro.md</span>
+    </div>
+    <div class="editor-body">
+      <IntroFile />
+    </div>
+  </div>
+
+  <div class="editor-pane" data-pane-id="experience">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">experience.md</span>
+    </div>
+    <div class="editor-body">
+      <ExperienceFile />
+    </div>
+  </div>
+
+  <div class="editor-pane" data-pane-id="projects">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">projects.md</span>
+    </div>
+    <div class="editor-body">
+      <ProjectsFile />
+    </div>
+  </div>
+
+  <div class="editor-pane" data-pane-id="skills">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">skills.md</span>
+    </div>
+    <div class="editor-body">
+      <SkillsFile />
+    </div>
+  </div>
+
+  <div class="editor-pane" data-pane-id="side-projects">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">side-projects.md</span>
+    </div>
+    <div class="editor-body">
+      <SideProjectsFile />
+    </div>
+  </div>
+
+  <div class="editor-pane" data-pane-id="services">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">services.md</span>
+    </div>
+    <div class="editor-body">
+      <ServicesFile />
+    </div>
+  </div>
+</div>
+
+<style>
+  .editor {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+  }
+
+  .editor-pane {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .editor-pane.active {
+    display: flex !important;
+  }
+
+  .editor-gutter {
+    width: 48px;
+    flex-shrink: 0;
+    background: var(--vscode-gutter-bg);
+    border-right: 1px solid var(--vscode-border);
+    padding: 8px 8px 8px 0;
+    text-align: right;
+    user-select: none;
+  }
+
+  .gutter-line {
+    font-family: var(--vscode-font-mono);
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--vscode-gutter-fg);
+  }
+
+  .editor-content {
+    flex: 1;
+    padding: 0;
+    overflow: auto;
+  }
+
+  .editor-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: var(--vscode-breadcrumb-bg);
+    border-bottom: 1px solid var(--vscode-border);
+    font-size: 11px;
+    color: var(--vscode-sidebar-fg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .breadcrumb-item {
+    cursor: pointer;
+    transition: color 0.1s;
+  }
+
+  .breadcrumb-item:hover {
+    color: var(--vscode-fg);
+  }
+
+  .breadcrumb-item.active {
+    color: var(--vscode-fg);
+    font-weight: 500;
+  }
+
+  .breadcrumb-sep {
+    opacity: 0.5;
+  }
+
+  .editor-body {
+    padding: 20px 32px 60px;
+    max-width: 860px;
+  }
+
+  /* Markdown styling within editor */
+  .markdown-body :global(h1) {
+    font-family: var(--ff-display);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--vscode-fg);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--vscode-border);
+    letter-spacing: -0.02em;
+  }
+
+  .markdown-body :global(h2) {
+    font-family: var(--ff-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--vscode-fg);
+    margin-top: 32px;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .markdown-body :global(h3) {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--vscode-fg);
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+
+  .markdown-body :global(p) {
+    color: var(--vscode-text-muted);
+    line-height: 1.75;
+    margin-bottom: 14px;
+    font-size: 13.5px;
+  }
+
+  .markdown-body :global(strong) {
+    color: var(--vscode-fg);
+    font-weight: 600;
+  }
+
+  .markdown-body :global(em) {
+    color: var(--vscode-accent);
+  }
+
+  .markdown-body :global(a) {
+    color: var(--vscode-link);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .markdown-body :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  .markdown-body :global(hr) {
+    border: none;
+    border-top: 1px solid var(--vscode-border);
+    margin: 24px 0;
+  }
+
+  .markdown-body :global(blockquote) {
+    border-left: 3px solid var(--vscode-accent);
+    padding-left: 16px;
+    margin: 16px 0;
+    color: var(--vscode-text-muted);
+    font-style: italic;
+  }
+
+  .markdown-body :global(ul), .markdown-body :global(ol) {
+    padding-left: 20px;
+    margin-bottom: 14px;
+  }
+
+  .markdown-body :global(li) {
+    color: var(--vscode-text-muted);
+    line-height: 1.75;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  .markdown-body :global(li::marker) {
+    color: var(--vscode-accent);
+  }
+
+  .markdown-body :global(code) {
+    font-family: var(--vscode-font-mono);
+    font-size: 12px;
+    background: var(--vscode-code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--vscode-accent);
+  }
+
+  .markdown-body :global(pre) {
+    background: var(--vscode-code-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    overflow-x: auto;
+  }
+
+  .markdown-body :global(pre code) {
+    background: none;
+    padding: 0;
+    color: var(--vscode-fg);
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+
+  .markdown-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 12.5px;
+  }
+
+  .markdown-body :global(th) {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--vscode-border);
+    color: var(--vscode-fg);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .markdown-body :global(td) {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--vscode-border);
+    color: var(--vscode-text-muted);
+  }
+
+  .markdown-body :global(tr:hover td) {
+    background: var(--vscode-hover-bg);
+  }
+</style>

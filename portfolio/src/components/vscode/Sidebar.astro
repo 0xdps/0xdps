@@ -1,0 +1,219 @@
+---
+import { portfolioFiles } from '../../data/portfolioFiles';
+
+const rootFiles = portfolioFiles.filter(f => !f.folder);
+const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
+---
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-title">EXPLORER</span>
+    <button class="sidebar-action" title="New File">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="sidebar-content">
+    <!-- Root files -->
+    {rootFiles.map(file => (
+      <div class="file-item" data-file-id={file.id} role="button" tabindex="0">
+        <span class="file-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </span>
+        <span class="file-name">{file.name}</span>
+      </div>
+    ))}
+
+    <!-- 0xdps folder -->
+    <div class="folder-item open" id="folder-0xdps">
+      <div class="folder-header" role="button" tabindex="0">
+        <span class="folder-chevron">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </span>
+        <span class="folder-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+          </svg>
+        </span>
+        <span class="folder-name">0xdps</span>
+      </div>
+      <div class="folder-children">
+        {folderFiles.map(file => (
+          <div class="file-item" data-file-id={file.id} role="button" tabindex="0">
+            <span class="file-icon">
+              {file.name.endsWith('.md') ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+                  <polyline points="13 2 13 9 20 9"/>
+                </svg>
+              )}
+            </span>
+            <span class="file-name">{file.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sidebar {
+    width: 240px;
+    background: var(--vscode-sidebar-bg);
+    border-right: 1px solid var(--vscode-border);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: width 0.2s ease;
+  }
+
+  .sidebar.collapsed {
+    width: 0;
+    border-right: none;
+  }
+
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    height: 36px;
+  }
+
+  .sidebar-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--vscode-sidebar-fg);
+  }
+
+  .sidebar-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: none;
+    color: var(--vscode-sidebar-fg);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .sidebar-action:hover {
+    color: var(--vscode-fg);
+    background: var(--vscode-hover-bg);
+  }
+
+  .sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 4px 0;
+  }
+
+  .folder-item {
+    user-select: none;
+  }
+
+  .folder-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 12px;
+    cursor: pointer;
+    color: var(--vscode-sidebar-fg);
+    transition: all 0.1s;
+  }
+
+  .folder-header:hover {
+    background: var(--vscode-hover-bg);
+    color: var(--vscode-fg);
+  }
+
+  .folder-chevron {
+    display: flex;
+    align-items: center;
+    transition: transform 0.15s;
+  }
+
+  .folder-item:not(.open) .folder-chevron {
+    transform: rotate(-90deg);
+  }
+
+  .folder-item:not(.open) .folder-children {
+    display: none;
+  }
+
+  .folder-icon {
+    display: flex;
+    align-items: center;
+    color: var(--vscode-accent);
+  }
+
+  .folder-name {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .folder-children {
+    padding-left: 8px;
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 12px 3px 28px;
+    cursor: pointer;
+    color: var(--vscode-sidebar-fg);
+    transition: all 0.1s;
+    border-left: 2px solid transparent;
+  }
+
+  .file-item:hover {
+    background: var(--vscode-hover-bg);
+    color: var(--vscode-fg);
+  }
+
+  .file-item.active {
+    background: var(--vscode-active-bg);
+    color: var(--vscode-fg);
+    border-left-color: var(--vscode-accent);
+  }
+
+  .file-icon {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .file-name {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
