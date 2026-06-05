@@ -1,0 +1,29 @@
+website/src/components/Topmate.astro
+  ddee3e2247170abe 35
+website/src/components/Services.astro
+  ddee3e2247170abe 43
+website/src/components/Hero.astro
+  ddee3e2247170abe 26-27,29
+website/src/components/Header.astro
+  ddee3e2247170abe 39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "2e396daa7ae38ec0e27303759b456b87d1fc7333",
+  "prompts": {
+    "ddee3e2247170abe": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "1fd2c6c0-4595-40cc-89bb-71c33e547e8d",
+        "model": "copilot/claude-sonnet-4.6"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 5,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
