@@ -4,7 +4,7 @@
 
 > Turning complex problems into simple, scalable systems.
 
-I'm a software engineer with **9+ years of professional experience** in backend development, distributed systems, and cloud infrastructure. Currently at Spinny, building scalable automotive-tech solutions. Specialized in backend architecture, cloud platforms, and engineering leadership. I value pragmatic trade-offs, system scalability, and clean design.
+I'm a software engineer with **10+ years of professional experience** in backend development, distributed systems, and cloud infrastructure. Currently at Spinny, building scalable automotive-tech solutions. Specialized in backend architecture, cloud platforms, and engineering leadership. I value pragmatic trade-offs, system scalability, and clean design.
 
 🌍 Based in India • 🌱 Vegetarian • 💡 Believes good engineering is about clarity — in systems and in communication
 
