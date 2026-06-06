@@ -1,0 +1,24 @@
+portfolio/src/scripts/vscodeState.ts
+  s_6e1743ead4285f::t_bc945bd88c7369 233-234
+  s_6e1743ead4285f::t_f9c534edc60770 14,22,55-101
+portfolio/src/layouts/BaseLayout.astro
+  s_6e1743ead4285f::t_ed5ca25aa79689 273,276-291,839-856
+portfolio/src/components/vscode/VSCodeLayout.astro
+  s_6e1743ead4285f::t_ed5ca25aa79689 66-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "7b37a1298bc9ed0358bbc71654c2db62f4a9d48a",
+  "prompts": {},
+  "sessions": {
+    "s_6e1743ead4285f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "66a90039-79c1-45ac-8672-75b5a9ebed12",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
