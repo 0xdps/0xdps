@@ -1,0 +1,32 @@
+portfolio/src/scripts/vscodeState.ts
+  s_6e1743ead4285f::t_a389a43a3a39d9 83-124,129-180,190,195-200,208,240-241,244,252,255,261,270,275-278,280,299,313,315,321,325-326
+  s_6e1743ead4285f::t_85b11161b96362 7,12
+  s_6e1743ead4285f::t_50c4d22526c039 20
+  s_6e1743ead4285f::t_7ad55fdf2949ee 327-328,335-336,339-355
+portfolio/src/components/vscode/Editor.astro
+  s_6e1743ead4285f::t_07158be5fe3975 108-113
+portfolio/src/layouts/BaseLayout.astro
+  s_6e1743ead4285f::t_07158be5fe3975 801-809,812,816,821
+portfolio/src/components/vscode/Sidebar.astro
+  s_6e1743ead4285f::t_07158be5fe3975 40-46,56
+portfolio/src/components/vscode/WelcomeScreen.astro
+  s_6e1743ead4285f::t_77a196277ed502 7-18,21-25,27-56,60-61,63-71,73,75-93,95-96,107,111,116-119,122-123,125-135,138-144,146,150,153-202,205-217,220-222,225-250,253,255,258,264,268-269,271-272,275-276,279,283-288,291-292,294-296,299-300,302-304,306-307,310-314,317-327,330-331,335-340,343-344,346-358,361
+portfolio/src/components/vscode/VSCodeLayout.astro
+  s_6e1743ead4285f::t_07158be5fe3975 51-65,158-260
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "e33a7d9126cd8432423a3dc9079985e74b83a132",
+  "prompts": {},
+  "sessions": {
+    "s_6e1743ead4285f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "66a90039-79c1-45ac-8672-75b5a9ebed12",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
