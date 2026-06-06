@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "pnpm run build && wrangler dev",
     "astro": "astro",
+    "generate:og": "node scripts/generate-og.mjs",
+    "preview": "pnpm run build && wrangler dev",
     "generate-types": "wrangler types",
     "deploy": "pnpm run build && wrangler deploy"
   },
@@ -23,7 +24,8 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.4",
-    "wrangler": "^4.88.0"
+    "wrangler": "^4.88.0",
+    "sharp": "^0.34.5"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.3.1"
