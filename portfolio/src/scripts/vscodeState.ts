@@ -4,10 +4,12 @@ interface Tab {
   id: string;
   name: string;
   active: boolean;
+  unsaved: boolean;
 }
 
 class VSCodeState {
   private tabs: Tab[] = [];
+  private quickOpenVisible = false;
   private activeFileId: string | null = null;
 
   init() {
@@ -15,8 +17,7 @@ class VSCodeState {
     this.setupWelcomeScreen();
     this.setupKeyboardShortcuts();
     this.setupFolderToggle();
-    
-    // Show welcome screen by default
+    this.setupQuickOpen();
     this.showWelcomeScreen();
   }
 
@@ -79,33 +80,124 @@ class VSCodeState {
     document.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'w') {
         e.preventDefault();
-        if (this.activeFileId) {
-          this.closeTab(this.activeFileId);
-        }
+        if (this.activeFileId) this.closeTab(this.activeFileId);
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === 'p') {
+        e.preventDefault();
+        this.toggleQuickOpen();
+      }
+      if (e.key === 'Escape' && this.quickOpenVisible) {
+        this.hideQuickOpen();
       }
     });
   }
 
+  // ─── Cmd+P Quick Open ─────────────────────────────────────────────────────
+  private setupQuickOpen() {
+    const overlay = document.getElementById('quick-open-overlay');
+    const input = document.getElementById('quick-open-input') as HTMLInputElement | null;
+    const results = document.getElementById('quick-open-results');
+    if (!overlay || !input || !results) return;
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) this.hideQuickOpen();
+    });
+
+    input.addEventListener('input', () => this.renderQuickOpenResults(input.value));
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { this.hideQuickOpen(); return; }
+      const items = results.querySelectorAll<HTMLElement>('.qo-item');
+      const focused = results.querySelector<HTMLElement>('.qo-item.focused');
+      if (e.key === 'Enter') {
+        const fileId = focused?.getAttribute('data-file-id');
+        if (fileId) { this.openFile(fileId); this.hideQuickOpen(); }
+        return;
+      }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (!items.length) return;
+        let idx = focused ? Array.from(items).indexOf(focused) : -1;
+        idx = e.key === 'ArrowDown' ? (idx + 1) % items.length : (idx - 1 + items.length) % items.length;
+        focused?.classList.remove('focused');
+        items[idx].classList.add('focused');
+        items[idx].scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
+  private toggleQuickOpen() {
+    this.quickOpenVisible ? this.hideQuickOpen() : this.showQuickOpen();
+  }
+
+  private showQuickOpen() {
+    const overlay = document.getElementById('quick-open-overlay');
+    const input = document.getElementById('quick-open-input') as HTMLInputElement | null;
+    if (!overlay || !input) return;
+    overlay.classList.add('visible');
+    this.quickOpenVisible = true;
+    input.value = '';
+    this.renderQuickOpenResults('');
+    requestAnimationFrame(() => input.focus());
+  }
+
+  private hideQuickOpen() {
+    document.getElementById('quick-open-overlay')?.classList.remove('visible');
+    this.quickOpenVisible = false;
+  }
+
+  private renderQuickOpenResults(query: string) {
+    const results = document.getElementById('quick-open-results');
+    if (!results) return;
+    const q = query.toLowerCase();
+    const filtered = q
+      ? portfolioFiles.filter(f => f.name.toLowerCase().includes(q) || (f.description || '').toLowerCase().includes(q))
+      : portfolioFiles;
+
+    results.innerHTML = filtered.map((f, i) => `
+      <button class="qo-item${i === 0 ? ' focused' : ''}" data-file-id="${f.id}">
+        <svg class="qo-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+        </svg>
+        <span class="qo-name">${f.name}</span>
+        <span class="qo-desc">${f.description || ''}</span>
+      </button>
+    `).join('');
+
+    results.querySelectorAll<HTMLElement>('.qo-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const fileId = item.getAttribute('data-file-id');
+        if (fileId) { this.openFile(fileId); this.hideQuickOpen(); }
+      });
+      item.addEventListener('mouseenter', () => {
+        results.querySelector('.qo-item.focused')?.classList.remove('focused');
+        item.classList.add('focused');
+      });
+    });
+  }
+
+  // ─── Open / Close ─────────────────────────────────────────────────────────
   openFile(fileId: string) {
-    // Hide welcome screen
     const welcomeScreen = document.getElementById('welcome-screen');
     if (welcomeScreen) welcomeScreen.style.display = 'none';
 
-    // Show editor
     const editor = document.getElementById('editor');
     if (editor) editor.style.display = 'flex';
 
-    // Update tabs
     this.tabs.forEach(t => t.active = false);
     const existingTab = this.tabs.find(t => t.id === fileId);
-    
+
     if (existingTab) {
       existingTab.active = true;
     } else {
-      // Get file name from portfolioFiles data
       const file = portfolioFiles.find(f => f.id === fileId);
-      const fileName = file?.name || fileId;
-      this.tabs.push({ id: fileId, name: fileName, active: true });
+      this.tabs.push({ id: fileId, name: file?.name || fileId, active: true, unsaved: true });
+      // Simulate auto-save after 2 s
+      setTimeout(() => {
+        const tab = this.tabs.find(t => t.id === fileId);
+        if (tab) { tab.unsaved = false; this.renderTabs(); }
+      }, 2000);
     }
 
     this.activeFileId = fileId;
@@ -113,6 +205,7 @@ class VSCodeState {
     this.updateActivePane();
     this.updateSidebarActive();
     this.updateTitleBar();
+    this.setupScrollTracking();
   }
 
   closeTab(fileId: string) {
@@ -140,32 +233,32 @@ class VSCodeState {
   private showWelcomeScreen() {
     const welcomeScreen = document.getElementById('welcome-screen');
     const editor = document.getElementById('editor');
-    
     if (welcomeScreen) welcomeScreen.style.display = 'flex';
     if (editor) editor.style.display = 'none';
-    
-    // Update title bar
     const titleElement = document.getElementById('titlebar-filename');
     if (titleElement) titleElement.textContent = 'Welcome';
+    const statusPos = document.getElementById('status-position');
+    if (statusPos) statusPos.textContent = 'Ln 1, Col 1';
   }
 
+  // ─── Tab rendering ─────────────────────────────────────────────────────────
   private renderTabs() {
     const tabList = document.getElementById('tab-list');
     if (!tabList) return;
-
     tabList.innerHTML = '';
 
     this.tabs.forEach(tab => {
       const tabEl = document.createElement('div');
-      tabEl.className = `tab-item ${tab.active ? 'active' : ''}`;
+      tabEl.className = `tab-item${tab.active ? ' active' : ''}`;
       tabEl.innerHTML = `
         <span class="tab-icon">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
             <polyline points="14 2 14 8 20 8"/>
           </svg>
         </span>
         <span class="tab-name">${tab.name}</span>
+        ${tab.unsaved ? '<span class="tab-dot" title="Unsaved">●</span>' : ''}
         <button class="tab-close" aria-label="Close ${tab.name}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="18" y1="6" x2="6" y2="18"/>
@@ -174,15 +267,17 @@ class VSCodeState {
         </button>
       `;
 
-      // Tab click
+      // Left-click: activate
       tabEl.addEventListener('click', (e) => {
         if ((e.target as HTMLElement).closest('.tab-close')) return;
         this.activateTab(tab.id);
       });
-
+      // Middle-click: close
+      tabEl.addEventListener('auxclick', (e) => {
+        if (e.button === 1) { e.preventDefault(); this.closeTab(tab.id); }
+      });
       // Close button
-      const closeBtn = tabEl.querySelector('.tab-close');
-      closeBtn?.addEventListener('click', (e) => {
+      tabEl.querySelector('.tab-close')?.addEventListener('click', (e) => {
         e.stopPropagation();
         this.closeTab(tab.id);
       });
@@ -201,6 +296,7 @@ class VSCodeState {
       this.updateActivePane();
       this.updateSidebarActive();
       this.updateTitleBar();
+      this.setupScrollTracking();
     }
   }
 
@@ -214,32 +310,49 @@ class VSCodeState {
       const activePane = document.querySelector<HTMLElement>(`.editor-pane[data-pane-id="${this.activeFileId}"]`);
       if (activePane) {
         activePane.style.display = 'flex';
+        void activePane.offsetWidth; // force reflow so fade re-triggers
         activePane.classList.add('active');
+        activePane.scrollTop = 0;
       }
     }
   }
 
   private updateSidebarActive() {
-    document.querySelectorAll<HTMLElement>('.file-item').forEach(item => {
-      item.classList.remove('active');
-    });
+    document.querySelectorAll<HTMLElement>('.file-item').forEach(item => item.classList.remove('active'));
 
     if (this.activeFileId) {
       const activeFile = document.querySelector<HTMLElement>(`.file-item[data-file-id="${this.activeFileId}"]`);
-      activeFile?.classList.add('active');
+      if (activeFile) {
+        activeFile.classList.add('active');
+        activeFile.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
     }
   }
 
   private updateTitleBar() {
     const titleElement = document.getElementById('titlebar-filename');
     if (titleElement) {
-      if (this.activeFileId) {
-        const activeTab = this.tabs.find(t => t.active);
-        titleElement.textContent = activeTab?.name || 'Untitled';
-      } else {
-        titleElement.textContent = 'Welcome';
-      }
+      const activeTab = this.tabs.find(t => t.active);
+      titleElement.textContent = activeTab?.name || 'Welcome';
     }
+  }
+
+  // ─── Status bar scroll tracking ──────────────────────────────────────────
+  private setupScrollTracking() {
+    const pane = document.querySelector<HTMLElement>(`.editor-pane[data-pane-id="${this.activeFileId}"]`);
+    const statusPos = document.getElementById('status-position');
+    if (!pane || !statusPos) return;
+
+    const old = (pane as any)._scrollHandler;
+    if (old) pane.removeEventListener('scroll', old);
+
+    const handler = () => {
+      const line = Math.floor(pane.scrollTop / 22) + 1;
+      statusPos.textContent = `Ln ${line}, Col 1`;
+    };
+    (pane as any)._scrollHandler = handler;
+    pane.addEventListener('scroll', handler, { passive: true });
+    handler();
   }
 }
 

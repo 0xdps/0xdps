@@ -1,102 +1,102 @@
 ---
 import { portfolioFiles } from '../../data/portfolioFiles';
-
-const recentFiles = portfolioFiles.filter(f => f.id !== 'readme').slice(0, 5);
-const allFiles = portfolioFiles;
 ---
 
 <div class="welcome-screen" id="welcome-screen">
   <div class="welcome-content">
-    <div class="welcome-logo">
-      <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
-        <rect x="10" y="10" width="80" height="80" rx="12" fill="none" stroke="var(--vscode-accent)" stroke-width="3"/>
-        <text x="50" y="58" text-anchor="middle" fill="var(--vscode-accent)" font-family="var(--ff-display)" font-size="28" font-weight="800">0x</text>
-        <text x="50" y="78" text-anchor="middle" fill="var(--vscode-fg)" font-family="var(--ff-display)" font-size="14" font-weight="700">DPS</text>
-      </svg>
+
+    <!-- Identity -->
+    <div class="welcome-identity">
+      <img class="welcome-avatar" src="/assets/profile/profile.webp" alt="Devendra Pratap Singh" width="72" height="72" />
+      <div class="welcome-id-text">
+        <h1 class="welcome-name">Devendra Pratap Singh <span class="welcome-handle">@0xdps</span></h1>
+        <p class="welcome-role">Principal Software Engineer · System Architect · Engineering Leader</p>
+        <div class="welcome-status">
+          <span class="status-dot"></span>
+          <span>Currently @ <strong>Spinny</strong> — India's Largest Used Car Platform</span>
+        </div>
+      </div>
     </div>
 
-    <h1 class="welcome-title">Welcome to 0xdps</h1>
-    <p class="welcome-subtitle">Principal Software Engineer & System Architect</p>
+    <!-- One-liner -->
+    <p class="welcome-bio">
+      10+ years building backend systems at scale across automotive, gaming, NFT &amp; entertainment.
+      Led teams, migrated clouds, and shipped products used by <strong>millions</strong>.
+    </p>
 
-    <div class="welcome-sections">
-      <div class="welcome-section">
-        <h2 class="welcome-section-title">Start</h2>
-        <div class="welcome-links">
-          <button class="welcome-link" data-file-id="readme">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- Stats row -->
+    <div class="welcome-stats">
+      <div class="ws-stat">
+        <span class="ws-val">10+</span>
+        <span class="ws-label">Years exp.</span>
+      </div>
+      <div class="ws-divider"></div>
+      <div class="ws-stat">
+        <span class="ws-val">5</span>
+        <span class="ws-label">Industries</span>
+      </div>
+      <div class="ws-divider"></div>
+      <div class="ws-stat">
+        <span class="ws-val">10M+</span>
+        <span class="ws-label">Users reached</span>
+      </div>
+      <div class="ws-divider"></div>
+      <div class="ws-stat">
+        <span class="ws-val">11</span>
+        <span class="ws-label">Team size led</span>
+      </div>
+    </div>
+
+    <!-- File shortcuts -->
+    <div class="welcome-files">
+      <p class="welcome-files-label">Open a file to explore</p>
+      <div class="welcome-file-grid">
+        {portfolioFiles.filter(f => f.id !== 'readme').map(file => (
+          <button class="welcome-file-btn" data-file-id={file.id}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="2">
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
               <polyline points="14 2 14 8 20 8"/>
             </svg>
-            <span>Open README.md</span>
+            <span class="wfb-name">{file.name}</span>
+            <span class="wfb-desc">{file.description}</span>
           </button>
-          <button class="welcome-link" data-file-id="intro">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-            <span>About Me</span>
-          </button>
-          <button class="welcome-link" data-file-id="experience">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-            </svg>
-            <span>Experience</span>
-          </button>
-          <button class="welcome-link" data-file-id="contact">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <span>Get in Touch</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="welcome-section">
-        <h2 class="welcome-section-title">Recent</h2>
-        <div class="welcome-links">
-          {recentFiles.map(file => (
-            <button class="welcome-link" data-file-id={file.id}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-              </svg>
-              <span>{file.name}</span>
-              <span class="welcome-link-folder">0xdps</span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div class="welcome-section">
-        <h2 class="welcome-section-title">Walkthroughs</h2>
-        <div class="welcome-links">
-          <div class="welcome-walkthrough">
-            <div class="walkthrough-icon">⌨️</div>
-            <div class="walkthrough-info">
-              <div class="walkthrough-title">Keyboard Shortcuts</div>
-              <div class="walkthrough-desc">Cmd+P to search files · Cmd+W to close tabs</div>
-            </div>
-          </div>
-          <div class="welcome-walkthrough">
-            <div class="walkthrough-icon">🎨</div>
-            <div class="walkthrough-info">
-              <div class="walkthrough-title">VS Code Theme</div>
-              <div class="walkthrough-desc">This portfolio is styled like your favorite editor</div>
-            </div>
-          </div>
-        </div>
+        ))}
+        <button class="welcome-file-btn readme-btn" data-file-id="readme">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          <span class="wfb-name">README.md</span>
+          <span class="wfb-desc">Quick overview &amp; getting started</span>
+        </button>
       </div>
     </div>
 
-    <div class="welcome-footer">
-      <span>Built with Astro</span>
-      <span>·</span>
-      <span>Inspired by VS Code</span>
-      <span>·</span>
-      <span>© 2026 0xdps</span>
+    <!-- Links + shortcut hint -->
+    <div class="welcome-bottom">
+      <div class="welcome-links">
+        <a href="https://github.com/0xdps" target="_blank" rel="noopener" class="wl-link" title="GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/0xdps" target="_blank" rel="noopener" class="wl-link" title="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://twitter.com/0xdps" target="_blank" rel="noopener" class="wl-link" title="Twitter">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter
+        </a>
+        <a href="https://topmate.io/i0xdps" target="_blank" rel="noopener" class="wl-link" title="Topmate">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          Topmate
+        </a>
+      </div>
+      <div class="welcome-hint">
+        <kbd>⌘P</kbd> to search files &nbsp;·&nbsp; <kbd>⌘W</kbd> to close tab
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -104,135 +104,258 @@ const allFiles = portfolioFiles;
   .welcome-screen {
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 60px 24px;
+    padding: 48px 32px 64px;
   }
 
   .welcome-content {
-    max-width: 600px;
     width: 100%;
-  }
-
-  .welcome-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-    opacity: 0.9;
-  }
-
-  .welcome-title {
-    font-family: var(--ff-display);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--vscode-fg);
-    text-align: center;
-    margin-bottom: 6px;
-    letter-spacing: -0.02em;
-  }
-
-  .welcome-subtitle {
-    text-align: center;
-    color: var(--vscode-text-muted);
-    font-size: 13px;
-    margin-bottom: 48px;
-  }
-
-  .welcome-sections {
+    max-width: 680px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 28px;
   }
 
-  .welcome-section-title {
-    font-size: 11px;
+  /* ── Identity ── */
+  .welcome-identity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .welcome-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid var(--vscode-border);
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .welcome-id-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .welcome-name {
+    font-family: var(--ff-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--vscode-fg);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .welcome-handle {
+    font-family: var(--ff-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--vscode-accent);
+    margin-left: 6px;
+  }
+
+  .welcome-role {
+    font-size: 12px;
+    color: var(--vscode-sidebar-fg);
+    line-height: 1.4;
+  }
+
+  .welcome-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--vscode-sidebar-fg);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #28c840;
+    flex-shrink: 0;
+    animation: pulse-dot 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+  }
+
+  /* ── Bio ── */
+  .welcome-bio {
+    font-size: 13.5px;
+    color: var(--vscode-sidebar-fg);
+    line-height: 1.75;
+    padding: 14px 18px;
+    background: var(--vscode-hover-bg);
+    border-left: 3px solid var(--vscode-accent);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .welcome-bio strong {
+    color: var(--vscode-fg);
+    font-weight: 600;
+  }
+
+  /* ── Stats ── */
+  .welcome-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--vscode-hover-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ws-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 8px;
+    gap: 3px;
+  }
+
+  .ws-val {
+    font-family: var(--ff-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--vscode-accent);
+    line-height: 1;
+  }
+
+  .ws-label {
+    font-size: 10px;
+    color: var(--vscode-sidebar-fg);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+  }
+
+  .ws-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--vscode-border);
+    flex-shrink: 0;
+  }
+
+  /* ── File grid ── */
+  .welcome-files-label {
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.09em;
     color: var(--vscode-sidebar-fg);
-    margin-bottom: 10px;
-    padding-left: 4px;
+    margin-bottom: 8px;
   }
 
-  .welcome-links {
+  .welcome-file-grid {
     display: flex;
     flex-direction: column;
     gap: 2px;
   }
 
-  .welcome-link {
+  .welcome-file-btn {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 7px 12px;
-    border: none;
-    background: none;
-    color: var(--vscode-fg);
-    font-size: 13px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-align: left;
     width: 100%;
-  }
-
-  .welcome-link:hover {
-    background: var(--vscode-hover-bg);
-  }
-
-  .welcome-link svg {
-    opacity: 0.6;
-    flex-shrink: 0;
-  }
-
-  .welcome-link-folder {
-    margin-left: auto;
-    font-size: 11px;
-    color: var(--vscode-sidebar-fg);
-    opacity: 0.7;
-  }
-
-  .welcome-walkthrough {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 12px;
-    border-radius: 6px;
-    transition: background 0.15s;
-  }
-
-  .welcome-walkthrough:hover {
-    background: var(--vscode-hover-bg);
-  }
-
-  .walkthrough-icon {
-    font-size: 20px;
-    line-height: 1;
-  }
-
-  .walkthrough-title {
-    font-size: 13px;
-    font-weight: 500;
+    padding: 7px 10px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.12s;
     color: var(--vscode-fg);
-    margin-bottom: 2px;
   }
 
-  .walkthrough-desc {
-    font-size: 12px;
-    color: var(--vscode-text-muted);
+  .welcome-file-btn:hover {
+    background: var(--vscode-hover-bg);
   }
 
-  .welcome-footer {
+  .wfb-name {
+    font-size: 12.5px;
+    font-family: var(--ff-mono);
+    color: var(--vscode-fg);
+    white-space: nowrap;
+    min-width: 140px;
+  }
+
+  .wfb-desc {
+    font-size: 11.5px;
+    color: var(--vscode-sidebar-fg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Bottom row ── */
+  .welcome-bottom {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 48px;
-    padding-top: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 4px;
     border-top: 1px solid var(--vscode-border);
-    font-size: 11px;
+  }
+
+  .welcome-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .wl-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
     color: var(--vscode-sidebar-fg);
+    text-decoration: none;
+    transition: all 0.12s;
+    background: none;
+  }
+
+  .wl-link:hover {
+    background: var(--vscode-hover-bg);
+    color: var(--vscode-fg);
+  }
+
+  .welcome-hint {
+    font-size: 11px;
+    color: var(--vscode-text-dim);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .welcome-hint kbd {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 5px;
+    background: var(--vscode-hover-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: 4px;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    color: var(--vscode-fg);
+  }
+
+  @media (max-width: 560px) {
+    .welcome-identity { flex-direction: column; align-items: flex-start; }
+    .welcome-bottom { flex-direction: column; align-items: flex-start; }
+    .ws-label { font-size: 9px; }
   }
 </style>
+

@@ -48,6 +48,21 @@ const files = portfolioFiles;
   </div>
 
   <StatusBar />
+
+  <!-- Cmd+P Quick Open Overlay -->
+  <div id="quick-open-overlay" class="quick-open-overlay">
+    <div class="quick-open-panel">
+      <div class="quick-open-header">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0.5;flex-shrink:0">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="quick-open-input" class="quick-open-input" placeholder="Go to file..." autocomplete="off" spellcheck="false" />
+        <kbd class="quick-open-esc">esc</kbd>
+      </div>
+      <div id="quick-open-results" class="quick-open-results"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -139,5 +154,109 @@ const files = portfolioFiles;
     flex: 1;
     overflow: hidden;
     position: relative;
+  }
+
+  /* Quick Open Overlay */
+  .quick-open-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 80px;
+  }
+
+  .quick-open-overlay.visible {
+    display: flex;
+    animation: qo-fade-in 0.1s ease;
+  }
+
+  @keyframes qo-fade-in {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .quick-open-panel {
+    width: 560px;
+    max-width: calc(100vw - 48px);
+    background: var(--vscode-sidebar-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+  }
+
+  .quick-open-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--vscode-border);
+  }
+
+  .quick-open-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--vscode-fg);
+    font-size: 13px;
+    font-family: var(--vscode-font);
+  }
+
+  .quick-open-esc {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: var(--vscode-hover-bg);
+    border: 1px solid var(--vscode-border);
+    border-radius: 4px;
+    color: var(--vscode-sidebar-fg);
+    font-family: var(--vscode-font-mono);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .quick-open-results {
+    max-height: 340px;
+    overflow-y: auto;
+    padding: 4px 0;
+  }
+
+  :global(.qo-item) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 7px 14px;
+    border: none;
+    background: none;
+    color: var(--vscode-fg);
+    font-size: 13px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s;
+  }
+
+  :global(.qo-item:hover),
+  :global(.qo-item.focused) {
+    background: var(--vscode-hover-bg);
+  }
+
+  :global(.qo-name) {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.qo-desc) {
+    font-size: 11px;
+    color: var(--vscode-sidebar-fg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
   }
 </style>
