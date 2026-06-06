@@ -270,8 +270,25 @@ const personSchema = {
         flex-direction: column;
         flex-shrink: 0;
         overflow: hidden;
+        transition: width 0.2s ease;
       }
       .sidebar.collapsed { width: 0; border-right: none; }
+
+      /* Mobile sidebar backdrop */
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 199;
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        animation: backdrop-in 0.2s ease;
+      }
+      @keyframes backdrop-in {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
       .sidebar-header {
         display: flex;
         align-items: center;
@@ -819,7 +836,24 @@ const personSchema = {
         .editor-body { padding: 16px 20px 60px; }
       }
       @media (max-width: 560px) {
-        .sidebar { display: none; }
+        .sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 200;
+          width: 260px !important;
+          transform: translateX(-100%);
+          transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          border-right: 1px solid var(--vscode-border);
+        }
+        .sidebar.mobile-open {
+          transform: translateX(0);
+        }
+        .sidebar.mobile-open ~ .sidebar-backdrop,
+        .sidebar-backdrop.visible {
+          display: block;
+        }
         .activity-bar { width: 40px; }
         .vscode-titlebar .titlebar-text { display: none; }
       }

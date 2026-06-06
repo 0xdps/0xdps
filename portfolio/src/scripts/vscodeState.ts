@@ -11,6 +11,7 @@ class VSCodeState {
   private tabs: Tab[] = [];
   private quickOpenVisible = false;
   private activeFileId: string | null = null;
+  private mobileSidebarOpen = false;
 
   init() {
     this.setupFileExplorer();
@@ -18,6 +19,7 @@ class VSCodeState {
     this.setupKeyboardShortcuts();
     this.setupFolderToggle();
     this.setupQuickOpen();
+    this.setupMobileSidebar();
     this.showWelcomeScreen();
   }
 
@@ -48,6 +50,55 @@ class VSCodeState {
         if (fileId) this.openFile(fileId);
       });
     });
+  }
+
+  // ─── Mobile Sidebar ────────────────────────────────────────────────────────
+  private setupMobileSidebar() {
+    const explorerBtn = document.querySelector<HTMLElement>('.activity-item[data-view="explorer"]');
+    const sidebar = document.querySelector<HTMLElement>('.sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    if (!explorerBtn || !sidebar || !backdrop) return;
+
+    const isMobile = () => window.innerWidth <= 560;
+
+    const openSidebar = () => {
+      sidebar.classList.add('mobile-open');
+      backdrop.classList.add('visible');
+      backdrop.style.display = 'block';
+      explorerBtn.setAttribute('aria-expanded', 'true');
+      this.mobileSidebarOpen = true;
+    };
+
+    const closeSidebar = () => {
+      sidebar.classList.remove('mobile-open');
+      backdrop.classList.remove('visible');
+      backdrop.style.display = 'none';
+      explorerBtn.setAttribute('aria-expanded', 'false');
+      this.mobileSidebarOpen = false;
+    };
+
+    explorerBtn.addEventListener('click', () => {
+      if (!isMobile()) return;
+      this.mobileSidebarOpen ? closeSidebar() : openSidebar();
+    });
+
+    backdrop.addEventListener('click', closeSidebar);
+
+    // Close when screen grows past mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (!isMobile() && this.mobileSidebarOpen) closeSidebar();
+    });
+  }
+
+  private closeMobileSidebar() {
+    if (!this.mobileSidebarOpen) return;
+    const sidebar = document.querySelector<HTMLElement>('.sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const explorerBtn = document.querySelector<HTMLElement>('.activity-item[data-view="explorer"]');
+    sidebar?.classList.remove('mobile-open');
+    if (backdrop) { backdrop.classList.remove('visible'); backdrop.style.display = 'none'; }
+    explorerBtn?.setAttribute('aria-expanded', 'false');
+    this.mobileSidebarOpen = false;
   }
 
   private setupFolderToggle() {
@@ -179,6 +230,8 @@ class VSCodeState {
 
   // ─── Open / Close ─────────────────────────────────────────────────────────
   openFile(fileId: string) {
+    this.closeMobileSidebar();
+
     const welcomeScreen = document.getElementById('welcome-screen');
     if (welcomeScreen) welcomeScreen.style.display = 'none';
 
