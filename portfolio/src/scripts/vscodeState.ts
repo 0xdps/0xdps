@@ -1,5 +1,13 @@
+import { portfolioFiles } from '../data/portfolioFiles';
+
+interface Tab {
+  id: string;
+  name: string;
+  active: boolean;
+}
+
 class VSCodeState {
-  private tabs: Array<{id: string, name: string, active: boolean}> = [];
+  private tabs: Tab[] = [];
   private activeFileId: string | null = null;
 
   init() {
@@ -19,6 +27,15 @@ class VSCodeState {
         const fileId = item.getAttribute('data-file-id');
         if (fileId) this.openFile(fileId);
       });
+
+      // Add keyboard support
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const fileId = item.getAttribute('data-file-id');
+          if (fileId) this.openFile(fileId);
+        }
+      });
     });
   }
 
@@ -33,11 +50,27 @@ class VSCodeState {
   }
 
   private setupFolderToggle() {
-    const folderHeader = document.querySelector<HTMLElement>('#folder-0xdps .folder-header');
+    const folderHeader = document.querySelector<HTMLElement>('.folder-header');
     if (folderHeader) {
       folderHeader.addEventListener('click', () => {
-        const folder = document.getElementById('folder-0xdps');
-        folder?.classList.toggle('open');
+        const sidebarContent = document.querySelector('.sidebar-content');
+        const fileItems = sidebarContent?.querySelectorAll('.file-item');
+        fileItems?.forEach(item => {
+          (item as HTMLElement).classList.toggle('hidden');
+        });
+        folderHeader.classList.toggle('collapsed');
+      });
+
+      folderHeader.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const sidebarContent = document.querySelector('.sidebar-content');
+          const fileItems = sidebarContent?.querySelectorAll('.file-item');
+          fileItems?.forEach(item => {
+            (item as HTMLElement).classList.toggle('hidden');
+          });
+          folderHeader.classList.toggle('collapsed');
+        }
       });
     }
   }
@@ -69,8 +102,9 @@ class VSCodeState {
     if (existingTab) {
       existingTab.active = true;
     } else {
-      const fileElement = document.querySelector(`[data-file-id="${fileId}"]`);
-      const fileName = fileElement?.textContent?.trim() || fileId;
+      // Get file name from portfolioFiles data
+      const file = portfolioFiles.find(f => f.id === fileId);
+      const fileName = file?.name || fileId;
       this.tabs.push({ id: fileId, name: fileName, active: true });
     }
 
@@ -109,6 +143,10 @@ class VSCodeState {
     
     if (welcomeScreen) welcomeScreen.style.display = 'flex';
     if (editor) editor.style.display = 'none';
+    
+    // Update title bar
+    const titleElement = document.getElementById('titlebar-filename');
+    if (titleElement) titleElement.textContent = 'Welcome';
   }
 
   private renderTabs() {

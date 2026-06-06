@@ -1,8 +1,9 @@
 ---
 import { portfolioFiles } from '../../data/portfolioFiles';
 
-const rootFiles = portfolioFiles.filter(f => !f.folder);
-const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
+// Reorder: folder first, then files (except README), then README last
+const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps' && f.id !== 'readme');
+const readmeFile = portfolioFiles.find(f => f.id === 'readme');
 ---
 
 <div class="sidebar" id="sidebar">
@@ -17,9 +18,47 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
   </div>
 
   <div class="sidebar-content">
-    <!-- Root files -->
-    {rootFiles.map(file => (
+    <!-- 0xdps folder header -->
+    <div class="folder-header" role="button" tabindex="0">
+      <span class="folder-chevron">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </span>
+      <span class="folder-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+        </svg>
+      </span>
+      <span class="folder-name">0xdps</span>
+    </div>
+
+    <!-- Files listed below folder -->
+    {folderFiles.map(file => (
       <div class="file-item" data-file-id={file.id} role="button" tabindex="0">
+        <span class="file-icon">
+          {file.name.endsWith('.md') ? (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+              <polyline points="13 2 13 9 20 9"/>
+            </svg>
+          )}
+        </span>
+        <span class="file-name">{file.name}</span>
+      </div>
+    ))}
+    
+    <!-- README at the end -->
+    {readmeFile && (
+      <div class="file-item" data-file-id={readmeFile.id} role="button" tabindex="0">
         <span class="file-icon">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
@@ -29,49 +68,9 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
             <polyline points="10 9 9 9 8 9"/>
           </svg>
         </span>
-        <span class="file-name">{file.name}</span>
+        <span class="file-name">{readmeFile.name}</span>
       </div>
-    ))}
-
-    <!-- 0xdps folder -->
-    <div class="folder-item open" id="folder-0xdps">
-      <div class="folder-header" role="button" tabindex="0">
-        <span class="folder-chevron">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </span>
-        <span class="folder-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
-          </svg>
-        </span>
-        <span class="folder-name">0xdps</span>
-      </div>
-      <div class="folder-children">
-        {folderFiles.map(file => (
-          <div class="file-item" data-file-id={file.id} role="button" tabindex="0">
-            <span class="file-icon">
-              {file.name.endsWith('.md') ? (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
-              ) : (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
-                  <polyline points="13 2 13 9 20 9"/>
-                </svg>
-              )}
-            </span>
-            <span class="file-name">{file.name}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    )}
   </div>
 </div>
 
@@ -133,10 +132,6 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
     padding: 4px 0;
   }
 
-  .folder-item {
-    user-select: none;
-  }
-
   .folder-header {
     display: flex;
     align-items: center;
@@ -145,6 +140,7 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
     cursor: pointer;
     color: var(--vscode-sidebar-fg);
     transition: all 0.1s;
+    user-select: none;
   }
 
   .folder-header:hover {
@@ -158,12 +154,8 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
     transition: transform 0.15s;
   }
 
-  .folder-item:not(.open) .folder-chevron {
+  .folder-header.collapsed .folder-chevron {
     transform: rotate(-90deg);
-  }
-
-  .folder-item:not(.open) .folder-children {
-    display: none;
   }
 
   .folder-icon {
@@ -177,10 +169,6 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
     font-weight: 500;
   }
 
-  .folder-children {
-    padding-left: 8px;
-  }
-
   .file-item {
     display: flex;
     align-items: center;
@@ -190,6 +178,10 @@ const folderFiles = portfolioFiles.filter(f => f.folder === '0xdps');
     color: var(--vscode-sidebar-fg);
     transition: all 0.1s;
     border-left: 2px solid transparent;
+  }
+
+  .file-item.hidden {
+    display: none;
   }
 
   .file-item:hover {
