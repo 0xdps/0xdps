@@ -4,6 +4,7 @@ export interface PortfolioFile {
   icon: string;
   color?: string;
   description: string;
+  folder?: string;
 }
 
 export const portfolioFiles: PortfolioFile[] = [
@@ -13,6 +14,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'readme',
     color: '#3b82f6',
     description: 'Quick overview and getting started',
+    folder: '0xdps',
   },
   {
     id: 'intro',
@@ -20,6 +22,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'markdown',
     color: '#42a5f5',
     description: 'About me and background',
+    folder: '0xdps',
   },
   {
     id: 'experience',
@@ -27,6 +30,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'markdown',
     color: '#42a5f5',
     description: 'Career journey and roles',
+    folder: '0xdps',
   },
   {
     id: 'projects',
@@ -34,6 +38,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'markdown',
     color: '#42a5f5',
     description: 'Featured engineering work',
+    folder: '0xdps',
   },
   {
     id: 'skills',
@@ -41,6 +46,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'markdown',
     color: '#42a5f5',
     description: 'Technical expertise',
+    folder: '0xdps',
   },
   {
     id: 'side-projects',
@@ -48,6 +54,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'markdown',
     color: '#42a5f5',
     description: 'Personal work and open source',
+    folder: '0xdps',
   },
   {
     id: 'services',
@@ -55,6 +62,7 @@ export const portfolioFiles: PortfolioFile[] = [
     icon: 'markdown',
     color: '#42a5f5',
     description: 'Mentorship and coaching',
+    folder: '0xdps',
   },
 ];
 
