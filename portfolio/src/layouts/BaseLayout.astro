@@ -798,16 +798,27 @@ const personSchema = {
       }
       .status-link:hover { color: var(--vscode-fg); }
 
+      /* Tab unsaved dot */
+      .tab-dot {
+        font-size: 8px;
+        color: var(--vscode-accent);
+        line-height: 1;
+        flex-shrink: 0;
+        opacity: 0.8;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
-        .sidebar { width: 200px; }
+        .sidebar { width: 180px; }
         .welcome-sections { grid-template-columns: 1fr; }
         .readme-hero { flex-direction: column; text-align: center; }
         .readme-stats { flex-wrap: wrap; }
+        .editor-body { padding: 16px 20px 60px; }
       }
       @media (max-width: 560px) {
         .sidebar { display: none; }
         .activity-bar { width: 40px; }
+        .vscode-titlebar .titlebar-text { display: none; }
       }
     </style>
   </head>
