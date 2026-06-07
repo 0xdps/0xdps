@@ -20,7 +20,7 @@
   "author": "Devendra Pratap Singh",
   "license": "MIT",
   "devDependencies": {
-    "@astrojs/cloudflare": "^12.5.4",
+    "@astrojs/cloudflare": "^13.6.1",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.4",
     "sharp": "^0.34.5",
