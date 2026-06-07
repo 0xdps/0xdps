@@ -1,0 +1,89 @@
+portfolio/src/components/vscode/WelcomeScreen.astro
+  s_6e1743ead4285f::t_77a196277ed502 7-361
+portfolio/src/data/portfolioFiles.ts
+  s_6e1743ead4285f::t_e36a6237d53bcb 7-65
+  s_5f4ffab1941451::t_807cb12f29a84e 69-82
+portfolio/src/components/files/SkillsFile.astro
+  s_5f4ffab1941451::t_e30180c1dfd145 1-83
+portfolio/src/components/files/ReadmeFile.astro
+  s_5f4ffab1941451::t_6625c16283b776 1-73
+portfolio/src/components/files/IntroFile.astro
+  s_5f4ffab1941451::t_8642301f5bad15 1-63
+.github/FUNDING.yml
+  h_7a2f4c8f0473b8 3
+portfolio/src/pages/index.astro
+  s_5f4ffab1941451::t_b04baa1b8c809e 3,7
+portfolio/src/components/files/ExperienceFile.astro
+  s_5f4ffab1941451::t_406f7520ff7296 1-100
+portfolio/src/components/vscode/Editor.astro
+  s_6e1743ead4285f::t_07158be5fe3975 108-113
+  s_5f4ffab1941451::t_55b46d16a188f6 2-87
+  s_6e1743ead4285f::t_28e9f2c4563ecb 94,102-103,175
+  s_6e1743ead4285f::t_88ba77ef96d284 100,173-174
+portfolio/src/components/files/ServicesFile.astro
+  s_5f4ffab1941451::t_f2cf99f9588cde 1-42
+portfolio/src/scripts/vscode.ts
+  s_5f4ffab1941451::t_a519c186202f44 1-258
+portfolio/src/components/vscode/Sidebar.astro
+  s_6e1743ead4285f::t_dbb56cbf004d04 136-177
+  s_6e1743ead4285f::t_07158be5fe3975 40-46,56
+  s_6e1743ead4285f::t_ae362f67a812cb 21-39,47-54,64-66
+  s_6e1743ead4285f::t_88ba77ef96d284 4-6
+README.md
+  h_7a2f4c8f0473b8 7
+portfolio/src/utils/markdown.ts
+  s_5f4ffab1941451::t_30d8d2c2d25f8b 1-80
+portfolio/src/components/files/ProjectsFile.astro
+  s_5f4ffab1941451::t_5c96cd0b651d6e 1-60
+portfolio/src/layouts/BaseLayout.astro
+  s_5f4ffab1941451::t_8d8ed2ef274c30 126
+  s_6e1743ead4285f::t_07158be5fe3975 821-829,832,836,858
+  s_6e1743ead4285f::t_39cffd36e31fde 79-83,93-96,106
+  s_5f4ffab1941451::t_bfd0e52fb5e47d 127-152,155-272,274-275,292-500,503-820,830-831,833-835,837-838,857,859-860
+  s_6e1743ead4285f::t_3528262b235a31 501-502
+  s_6e1743ead4285f::t_bc78c06dbd0d74 153-154
+  s_6e1743ead4285f::t_ed5ca25aa79689 273,276-291,839-856
+portfolio/src/scripts/vscodeState.ts
+  s_6e1743ead4285f::t_febfbef3dcac34 105-113,119-124
+  s_6e1743ead4285f::t_bc945bd88c7369 233-234
+  s_6e1743ead4285f::t_4fef23d545a288 1-6,8-11,33-41,114-118,125,247,291-292,421
+  s_6e1743ead4285f::t_50c4d22526c039 21
+  s_6e1743ead4285f::t_f9c534edc60770 14,22,55-101
+  s_6e1743ead4285f::t_85b11161b96362 7,12
+  s_6e1743ead4285f::t_a389a43a3a39d9 134-231,243,248-261,293-379
+  s_6e1743ead4285f::t_7ad55fdf2949ee 380-408
+portfolio/src/components/vscode/VSCodeLayout.astro
+  s_6e1743ead4285f::t_07158be5fe3975 51-65,161-263
+  s_6e1743ead4285f::t_94f9297dbc6e6f 72
+  s_6e1743ead4285f::t_ed5ca25aa79689 66-68
+portfolio/scripts/generate-og.mjs
+  s_6e1743ead4285f::t_57ff2071f3d1d0 1-130
+.gitignore
+  h_7a2f4c8f0473b8 7
+portfolio/src/components/files/SideProjectsFile.astro
+  s_5f4ffab1941451::t_a599986dd82f03 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "5076ed89303a9adc587301019a78d26e2d16e955",
+  "prompts": {},
+  "sessions": {
+    "s_5f4ffab1941451": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "2167f0c5-a546-435c-a4d2-06a6d8070a52",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    },
+    "s_6e1743ead4285f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "66a90039-79c1-45ac-8672-75b5a9ebed12",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
