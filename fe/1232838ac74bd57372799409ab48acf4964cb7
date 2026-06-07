@@ -1,0 +1,19 @@
+portfolio/package.json
+  s_cee45a7a5d79b2::t_1cc0844f29931d 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "fe1232838ac74bd57372799409ab48acf4964cb7",
+  "prompts": {},
+  "sessions": {
+    "s_cee45a7a5d79b2": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "887ed8a9-6d94-4a57-a3fd-6445b1128930",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
