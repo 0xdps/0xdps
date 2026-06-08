@@ -20,6 +20,30 @@ import ServicesFile from '../files/ServicesFile.astro';
     </div>
   </div>
 
+  <div class="editor-pane" data-pane-id="resume">
+    <div class="editor-breadcrumbs">
+      <span class="breadcrumb-item">0xdps</span>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">resume.pdf</span>
+    </div>
+    <div class="editor-body pdf-body">
+      <div class="pdf-viewer">
+        <div class="pdf-toolbar">
+          <span class="pdf-filename">resume.pdf</span>
+          <a href="/resume.pdf" target="_blank" class="pdf-open-btn" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+          </a>
+        </div>
+        <iframe src="/resume.pdf" class="pdf-iframe" title="Resume PDF"></iframe>
+      </div>
+    </div>
+  </div>
+
   <div class="editor-pane" data-pane-id="intro">
     <div class="editor-breadcrumbs">
       <span class="breadcrumb-item">0xdps</span>
@@ -313,5 +337,65 @@ import ServicesFile from '../files/ServicesFile.astro';
 
   .markdown-body :global(tr:hover td) {
     background: var(--vscode-hover-bg);
+  }
+
+  /* PDF Viewer */
+  .pdf-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .pdf-viewer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .pdf-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: var(--vscode-breadcrumb-bg);
+    border-bottom: 1px solid var(--vscode-border);
+    flex-shrink: 0;
+  }
+
+  .pdf-filename {
+    font-size: 12px;
+    color: var(--vscode-fg);
+    font-weight: 500;
+  }
+
+  .pdf-open-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: var(--vscode-accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .pdf-open-btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  .pdf-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: var(--vscode-bg);
   }
 </style>

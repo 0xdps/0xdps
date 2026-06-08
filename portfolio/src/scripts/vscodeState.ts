@@ -207,10 +207,18 @@ class VSCodeState {
 
     results.innerHTML = filtered.map((f, i) => `
       <button class="qo-item${i === 0 ? ' focused' : ''}" data-file-id="${f.id}">
-        <svg class="qo-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-        </svg>
+        ${f.icon === 'pdf' ? `
+          <svg class="qo-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <path d="M9 13h6M9 17h3M9 9h1"/>
+          </svg>
+        ` : `
+          <svg class="qo-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        `}
         <span class="qo-name">${f.name}</span>
         <span class="qo-desc">${f.description || ''}</span>
       </button>
@@ -301,14 +309,23 @@ class VSCodeState {
     tabList.innerHTML = '';
 
     this.tabs.forEach(tab => {
+      const isPdf = tab.id === 'resume';
       const tabEl = document.createElement('div');
       tabEl.className = `tab-item${tab.active ? ' active' : ''}`;
       tabEl.innerHTML = `
         <span class="tab-icon">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
+          ${isPdf ? `
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <path d="M9 13h6M9 17h3M9 9h1"/>
+            </svg>
+          ` : `
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          `}
         </span>
         <span class="tab-name">${tab.name}</span>
         ${tab.unsaved ? '<span class="tab-dot" title="Unsaved">●</span>' : ''}

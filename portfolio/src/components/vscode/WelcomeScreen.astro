@@ -53,10 +53,18 @@ import { portfolioFiles } from '../../data/portfolioFiles';
       <div class="welcome-file-grid">
         {portfolioFiles.filter(f => f.id !== 'readme').map(file => (
           <button class="welcome-file-btn" data-file-id={file.id}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="2">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-            </svg>
+            {file.icon === 'pdf' ? (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 13h6M9 17h3M9 9h1"/>
+              </svg>
+            ) : (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+            )}
             <span class="wfb-name">{file.name}</span>
             <span class="wfb-desc">{file.description}</span>
           </button>

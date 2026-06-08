@@ -17,6 +17,14 @@ export const portfolioFiles: PortfolioFile[] = [
     folder: '0xdps',
   },
   {
+    id: 'resume',
+    name: 'resume.pdf',
+    icon: 'pdf',
+    color: '#e74c3c',
+    description: 'Downloadable resume',
+    folder: '0xdps',
+  },
+  {
     id: 'intro',
     name: 'intro.md',
     icon: 'markdown',
