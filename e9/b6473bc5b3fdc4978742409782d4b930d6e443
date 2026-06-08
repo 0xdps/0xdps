@@ -1,0 +1,36 @@
+.gitignore
+  h_7a2f4c8f0473b8 36
+portfolio/src/scripts/vscodeState.ts
+  s_586689b591205d::t_a233f6a16f742b 210-221
+  s_586689b591205d::t_d4a1be8da421e5 312,317-328
+portfolio/src/data/portfolioFiles.ts
+  s_586689b591205d::t_1bf0230ea24b13 20-26
+portfolio/src/components/vscode/Editor.astro
+  s_586689b591205d::t_8c12e30d9867a1 341-400
+  s_586689b591205d::t_f3a3f410e984da 23-46
+portfolio/src/components/vscode/WelcomeScreen.astro
+  s_586689b591205d::t_f8b87c3670d58c 56-67
+portfolio/src/components/vscode/Sidebar.astro
+  s_586689b591205d::t_84448237ffaa37 40-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "e9b6473bc5b3fdc4978742409782d4b930d6e443",
+  "prompts": {},
+  "humans": {
+    "h_7a2f4c8f0473b8": {
+      "author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_586689b591205d": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "61b2ee70-8321-4fff-8165-6bf740b18c38",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
