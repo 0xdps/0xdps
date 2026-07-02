@@ -1,0 +1,14 @@
+portfolio/public/_redirects
+  h_95aea6b4aa8772 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "664682a224ff708b99f74bebe08c451c4442166b",
+  "prompts": {},
+  "humans": {
+    "h_95aea6b4aa8772": {
+      "author": "Devendra Pratap <dps.manit@gmail.com>"
+    }
+  }
+}
