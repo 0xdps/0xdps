@@ -1,0 +1,14 @@
+portfolio/astro.config.mjs
+  h_7a2f4c8f0473b8 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "3ef37d73ad1cc0d6d0d9705cba9830de0d32a5df",
+  "prompts": {},
+  "humans": {
+    "h_7a2f4c8f0473b8": {
+      "author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}

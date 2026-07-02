@@ -1,0 +1,31 @@
+portfolio/package.json
+  s_6e1743ead4285f::t_39cffd36e31fde 10-11
+  s_6e1743ead4285f::t_b160a16b683f47 23,25
+.gitignore
+  h_7a2f4c8f0473b8 7
+portfolio/src/layouts/BaseLayout.astro
+  s_6e1743ead4285f::t_39cffd36e31fde 79-83,93-96,106
+portfolio/scripts/generate-og.mjs
+  s_6e1743ead4285f::t_57ff2071f3d1d0 1-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "7ffe711561ec0c422134938dd2995975fc3ae965",
+  "prompts": {},
+  "humans": {
+    "h_7a2f4c8f0473b8": {
+      "author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_6e1743ead4285f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "66a90039-79c1-45ac-8672-75b5a9ebed12",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}

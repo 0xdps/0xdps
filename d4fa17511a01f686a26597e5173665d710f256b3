@@ -1,0 +1,14 @@
+portfolio/wrangler.jsonc
+  h_7a2f4c8f0473b8 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "d4fa17511a01f686a26597e5173665d710f256b3",
+  "prompts": {},
+  "humans": {
+    "h_7a2f4c8f0473b8": {
+      "author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}

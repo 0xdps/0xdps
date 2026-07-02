@@ -1,0 +1,14 @@
+portfolio/package.json
+  h_7a2f4c8f0473b8 26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "9a99cd677d4176df86b4b2073d9b266e3011a8ff",
+  "prompts": {},
+  "humans": {
+    "h_7a2f4c8f0473b8": {
+      "author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}

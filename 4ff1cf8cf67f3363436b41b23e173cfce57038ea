@@ -1,0 +1,23 @@
+website/src/layouts/BaseLayout.astro
+  ddee3e2247170abe 74-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "4ff1cf8cf67f3363436b41b23e173cfce57038ea",
+  "prompts": {
+    "ddee3e2247170abe": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "1fd2c6c0-4595-40cc-89bb-71c33e547e8d",
+        "model": "copilot/claude-sonnet-4.6"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>",
+      "messages": [],
+      "total_additions": 9,
+      "total_deletions": 0,
+      "accepted_lines": 9,
+      "overriden_lines": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+portfolio/pnpm-workspace.yaml
+  s_cee45a7a5d79b2::t_9f78ef97d82733 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "1afb926fd1babdf8a36c67dfb4dcbe4aaba72da6",
+  "prompts": {},
+  "sessions": {
+    "s_cee45a7a5d79b2": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "887ed8a9-6d94-4a57-a3fd-6445b1128930",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "Devendra Pratap Singh <dps.manit@gmail.com>"
+    }
+  }
+}
