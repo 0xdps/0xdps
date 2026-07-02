@@ -1,0 +1,16 @@
+portfolio/public/_redirects
+  h_95aea6b4aa8772 1
+portfolio/src/components/vscode/Editor.astro
+  h_95aea6b4aa8772 27,32-33,42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "50bc009226990d661a74b18e2eb8c6f798a0eacd",
+  "prompts": {},
+  "humans": {
+    "h_95aea6b4aa8772": {
+      "author": "Devendra Pratap <dps.manit@gmail.com>"
+    }
+  }
+}
